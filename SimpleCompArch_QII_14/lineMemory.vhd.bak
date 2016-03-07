@@ -1,0 +1,39 @@
+library	ieee;
+use ieee.std_logic_1164.all;
+USE ieee.numeric_std.all; 
+use work.MP_lib.all;
+
+entity LineMemory is
+port ( 	
+
+	tagIndex : in std_logic_vector(6 downto 0);
+	hit : out std_logic; 
+	lineIndex: in std_logic_vector(3 downto 0);
+	
+		);
+		
+end LineMemory;
+
+architecture behav of LineMemory is
+
+
+type line_array is array (0 to 7) of std_logic_vector(6 downto 0);
+signal memory: line_array;
+begin 
+	process(tagIndex, hit, LineIndex)
+	begin
+	
+	line_check <= to_integer(unsigned(lineIndex));
+	tagFound <= 0;
+	FOR i IN 0 TO 7 LOOP
+		if ((memory(i) = tagIndex) and  (i = line_check))then 
+			hit <= 1
+		end if;
+	end loop;
+	
+	end process;
+end behav; 
+	
+	
+		
+

@@ -1,0 +1,77 @@
+library	ieee;
+use ieee.std_logic_1164.all;
+USE ieee.numeric_std.all; 
+use work.MP_lib.all;
+
+entity DataMemory is
+port ( 	
+
+	readEnable : in std_logic;
+	writeEnable: in std_logic;
+	lineIndex: in std_logic_vector(3 downto 0);
+	dataOut: out std_logic_vector(15 downto 0);
+	dataIn: in std_logic_vector(15 downto 0);
+	wordIndex: in std_logic_vector(1 downto 0);
+
+		);
+		
+end LineMemory;
+
+architecture behav of LineMemory is
+
+type data_array is array (0 to 7)(0 to 3) of std_logic_vector(6 downto 0);
+signal memory1: data_array;
+line_check <= to_integer(unsigned(lineIndex));
+word_check <= to_integer(unsigned (wordIndex));
+writeStatus<= 0;
+
+begin 
+
+	read1: process(readEnable, lineIndex, dataOut, wordIndex)
+	begin 
+
+	if (readEnable = 1) then
+		for i in 0 to 7 loop
+			if ( i = line_check) then 
+				
+				for j in 0 to 3 loop 
+				
+					if (j = wordCheck) then 
+						dataOut <= memory1(i)(j);
+					end if;
+				end loop;
+			end if;
+		end loop;
+	end if;	
+	end process;
+	
+   write1: process(writeEnable, lineIndex, dataIn, wordIndex)
+	begin 
+		if (writeEnable =1)then 
+			
+			for i in 0 to 7 loop
+			if ( i = line_check) then 
+				
+				for j in 0 to 3 loop 
+				
+					if (j = wordCheck) then 
+						memory1(i)(j) <= dataIn; 
+
+					end if;
+				end loop;
+			end if;
+		end loop;
+	end if;
+	end process;
+	
+end behav;
+		
+			
+				
+		
+		
+		
+		
+		
+		
+		

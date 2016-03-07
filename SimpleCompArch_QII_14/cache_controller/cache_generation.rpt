@@ -1,0 +1,29 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: ip-generate --project-directory=C:\Users\fjkulsdt\Desktop\SimpleCompArch_QII_14\SimpleCompArch_QII_14 --output-directory=C:\Users\fjkulsdt\Desktop\SimpleCompArch_QII_14\SimpleCompArch_QII_14\cache_controller --report-file=bsf:C:\Users\fjkulsdt\Desktop\SimpleCompArch_QII_14\SimpleCompArch_QII_14\cache_controller\cache.bsf --system-info=DEVICE_FAMILY="Cyclone IV E" --system-info=DEVICE=EP4CE115F29C7 --system-info=DEVICE_SPEEDGRADE=7 --component-file=C:\Users\fjkulsdt\Desktop\SimpleCompArch_QII_14\SimpleCompArch_QII_14\cache.qsys
+Progress: Loading SimpleCompArch_QII_14/cache.qsys
+Progress: Reading input file
+Progress: Adding sram_0 [altera_up_avalon_sram 14.0]
+Progress: Parameterizing module sram_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: ip-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: ip-generate --project-directory=C:\Users\fjkulsdt\Desktop\SimpleCompArch_QII_14\SimpleCompArch_QII_14 --output-directory=C:\Users\fjkulsdt\Desktop\SimpleCompArch_QII_14\SimpleCompArch_QII_14\cache_controller\synthesis --file-set=QUARTUS_SYNTH --report-file=html:C:\Users\fjkulsdt\Desktop\SimpleCompArch_QII_14\SimpleCompArch_QII_14\cache_controller\cache.html --report-file=sopcinfo:C:\Users\fjkulsdt\Desktop\SimpleCompArch_QII_14\SimpleCompArch_QII_14\cache.sopcinfo --report-file=cmp:C:\Users\fjkulsdt\Desktop\SimpleCompArch_QII_14\SimpleCompArch_QII_14\cache_controller\cache.cmp --report-file=qip:C:\Users\fjkulsdt\Desktop\SimpleCompArch_QII_14\SimpleCompArch_QII_14\cache_controller\synthesis\cache.qip --report-file=svd:C:\Users\fjkulsdt\Desktop\SimpleCompArch_QII_14\SimpleCompArch_QII_14\cache_controller\synthesis\cache.svd --report-file=regmap:C:\Users\fjkulsdt\Desktop\SimpleCompArch_QII_14\SimpleCompArch_QII_14\cache_controller\synthesis\cache.regmap --report-file=xml:C:\Users\fjkulsdt\Desktop\SimpleCompArch_QII_14\SimpleCompArch_QII_14\cache_controller\cache.xml --report-file=debuginfo:C:\Users\fjkulsdt\Desktop\SimpleCompArch_QII_14\SimpleCompArch_QII_14\cache_controller\synthesis\cache.debuginfo --system-info=DEVICE_FAMILY="Cyclone IV E" --system-info=DEVICE=EP4CE115F29C7 --system-info=DEVICE_SPEEDGRADE=7 --component-file=C:\Users\fjkulsdt\Desktop\SimpleCompArch_QII_14\SimpleCompArch_QII_14\cache.qsys --language=VHDL
+Progress: Loading SimpleCompArch_QII_14/cache.qsys
+Progress: Reading input file
+Progress: Adding sram_0 [altera_up_avalon_sram 14.0]
+Progress: Parameterizing module sram_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: cache: Generating cache "cache" for QUARTUS_SYNTH
+Info: sram_0: Starting Generation of SRAM or SSRAM Controller
+Info: sram_0: "cache" instantiated altera_up_avalon_sram "sram_0"
+Info: cache: Done "cache" with 2 modules, 2 files
+Info: ip-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

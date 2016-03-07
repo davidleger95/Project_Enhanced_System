@@ -1,0 +1,88 @@
+library	ieee;
+use ieee.std_logic_1164.all;
+USE ieee.numeric_std.all; 
+use work.MP_lib.all;
+
+entity CacheController is
+port ( 	
+		MreIn					:	in STD_LOGIC;
+		MweIn					:	in STD_LOGIC;
+		MreOUT				:  out STD_LOGIC;
+		MweOUT				:  out STD_LOGIC;
+		addressIN				:	in STD_LOGIC_VECTOR(11 downto 0);
+		addressOUT			: out STD_LOGIC_VECTOR (11 downto 0);
+		
+		data_in				:	in STD_LOGIC_VECTOR(15 downto 0);
+		data_out_cpu				:	out STD_LOGIC_VECTOR(15 downto 0)
+		data_out_mem        : out std_logic_vector (15 downto 0);
+		replaceStatusIn      : in std_logic; 
+		replaceStatusOut     : out std_logic
+		);
+		
+end CacheController;
+
+architecture behav of Cache is
+signal tempDataIn : std_logic_vector(15 downto 0);
+signal tempDataOut : std_logic_vector(15 downto 0);
+signal tagIndex: std_logic_vector(6 downto 0);
+signal lineIndex: std_logic_vector(3 downto 0);
+signal wordIndex: std_logic_vector(1 downto 0);
+signal hit: STD_LOGIC; 
+--signal replaceStatus : std_logic;
+
+
+
+begin 
+
+unit1 : lineMemory port map(tagIndex, hit, lineIndex,);
+unit2 : dataMemory port map(Mrein, Mrwin, lineIndex, tempDataOut, tempDataIn, wordIndex);
+
+read: process( MreIn, MreOUT, tagIndex, lineIndex, wordIndex, hit, addressOUT, data_out_cpu, tempDataOut)
+	begin 
+		if (MreIn =1) then 
+			tagIndex <= addressIN(11 downto 5);
+			lineIndex <= addressIN(4 downto 2);
+			
+			if (hit =1 ) then 
+				wordIndex <= addressIN (1 downto 0);
+				data_out_cpu <= tempDataOut;
+				MreOUT <= 0;
+				replaceStatusOut <= 0;
+			else 
+				MreOUT <= 1; 
+				addressOUT <= addressIN; 
+				replaceStatusOut <= 1;
+				
+			end if;
+		end if;
+	end process;
+
+write: process( MweIn, MweOUT, tagIndex, lineIndex, wordIndex, hit, addressOUT, data_out_mem, data_in, tempDataIn)
+	begin 
+		if (Mwe =1) then 
+			tagIndex <= addressIN(11 downto 5);
+			lineIndex <= addressIN(4 downto 2);
+
+			if (hit =1 ) then 
+				wordIndex <= addressIN (1 downto 0);
+				tempDataIn <= data_in;
+				MweOUT <= 0;
+				ReplaceStatusOut <= 0;
+			else 
+				MreOUT <= 1; 
+				addressOUT <= addressIN; 
+				replaceStatusOut <=1;
+			end if;
+		end if;
+	end process;			
+replaceBlock: process(replaceStatusIn, MweIn)
+		begin 
+			If (replaceStatusIn =1 ) then 
+				MweIn <= 1;
+				write 
+			end if; 
+		end process;
+end behav; 
+			
+			
+			

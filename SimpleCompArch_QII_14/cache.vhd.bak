@@ -1,0 +1,78 @@
+library	ieee;
+use ieee.std_logic_1164.all;
+USE ieee.numeric_std.all; 
+use work.MP_lib.all;
+
+entity Cache is
+port ( 	
+		clock					: 	in STD_LOGIC;
+		reset					:  IN STD_LOGIC;
+		Mre					:	in STD_LOGIC;
+		Mwe					:	in STD_LOGIC;
+		address				:	in STD_LOGIC_VECTOR(11 downto 0);
+		data_in				:	in STD_LOGIC_VECTOR(15 downto 0);
+		data_out				:	out STD_LOGIC_VECTOR(15 downto 0)
+		);
+		
+end Cache;
+
+architecture behav of Cache is
+signal MreIn : std_logic;
+signal MweIn : std_logic;
+signal MreOut: std_logic;
+signal MweOut: std_logic;
+signal addressIn: std_LOGIC_VECTOR(11 downto 0);
+signal addressOut: std_LOGIC_VECTOR(11 downto 0);
+signal dataIn : std_logic_vector(15 downto 0);
+signal data_out_cpu : std_logic_vector(15 downto 0);
+signal data_out_mem : std_logic_vector(15 downto 0);
+signal replaceStatusIn: STD_LOGIC;
+signal replaceStautsOut: std_logic; 
+
+signal M
+
+ begin 
+ 
+Unit1: CacheController port map(MreIn, MweIn, MreOut, MweOut, addressIn, addressOut, dataIn, 
+data_out_cpu, data_out_mem, replaceStatusIn, replaceStatusOut);
+Unit2: MainMemory port map(clock,reset,MreOut,MweOut,addressOut, data_out_mem, dataIn);
+
+	read: process ( )
+	begin 
+		if (rising_edge(clock)) then 
+			if (Mre = 1) then
+				MreIn <= Mre ; 
+				addressIn <= address;
+				replaceStatusIn <= 0;
+			end if;
+		end if;
+	end process;
+	
+	write: process() 
+	begin 
+		if (rising_edge(clock)) then 
+			if (Mwe = 1) then 
+				MweIn <= mwe; 
+				addressIn <= address;
+				replaceStatusIn <=0;
+			end if;
+		end if;
+	end process;
+	
+	replaceBlock: process()
+	begin 
+		if (rising_edge(clock)) then 
+			if (replaceStatusOut = 1) then 
+				--------------------------------------------------
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
