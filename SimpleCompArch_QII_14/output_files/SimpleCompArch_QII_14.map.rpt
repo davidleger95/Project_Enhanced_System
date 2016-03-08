@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SimpleCompArch_QII_14
-Mon Mar 07 17:38:00 2016
+Tue Mar 08 15:35:07 2016
 Quartus II 64-Bit Version 14.0.2 Build 209 09/17/2014 SJ Full Version
 
 
@@ -20,18 +20,17 @@ Quartus II 64-Bit Version 14.0.2 Build 209 09/17/2014 SJ Full Version
  12. General Register Statistics
  13. Inverted Register Statistics
  14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Source assignments for Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated
- 16. Parameter Settings for User Entity Instance: Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component
+ 15. Source assignments for Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated
+ 16. Parameter Settings for User Entity Instance: Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component
  17. altsyncram Parameter Settings by Entity Instance
- 18. Port Connectivity Checks: "Cache:Unit2|MainMemory:Unit2"
- 19. Port Connectivity Checks: "Cache:Unit2|CacheController:Unit1|DataMemory:unit2"
- 20. Port Connectivity Checks: "Cache:Unit2|CacheController:Unit1|LineMemory:unit1"
- 21. Port Connectivity Checks: "Cache:Unit2|CacheController:Unit1"
- 22. Port Connectivity Checks: "CPU:Unit1|ctrl_unit:Unit0|bigmux:U3"
- 23. Port Connectivity Checks: "CPU:Unit1|ctrl_unit:Unit0"
- 24. Post-Synthesis Netlist Statistics for Top Partition
- 25. Elapsed Time Per Partition
- 26. Analysis & Synthesis Messages
+ 18. Port Connectivity Checks: "Cache:Unit2|CacheController:Unit1|DataMemory:unit2"
+ 19. Port Connectivity Checks: "Cache:Unit2|CacheController:Unit1|LineMemory:unit1"
+ 20. Port Connectivity Checks: "Cache:Unit2|CacheController:Unit1"
+ 21. Port Connectivity Checks: "CPU:Unit1|ctrl_unit:Unit0|bigmux:U3"
+ 22. Port Connectivity Checks: "CPU:Unit1|ctrl_unit:Unit0"
+ 23. Post-Synthesis Netlist Statistics for Top Partition
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
 
 
 
@@ -58,7 +57,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Mar 07 17:38:00 2016       ;
+; Analysis & Synthesis Status        ; Successful - Tue Mar 08 15:35:07 2016       ;
 ; Quartus II 64-Bit Version          ; 14.0.2 Build 209 09/17/2014 SJ Full Version ;
 ; Revision Name                      ; SimpleCompArch_QII_14                       ;
 ; Top-level Entity Name              ; SimpleCompArch                              ;
@@ -180,40 +179,41 @@ agreement for further details.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                        ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                    ; Library ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------+---------+
-; cacheController.vhd              ; yes             ; User VHDL File               ; C:/Users/dorozco/Downloads/Project_Enhanced_System/SimpleCompArch_QII_14/cacheController.vhd    ;         ;
-; smallmux.vhd                     ; yes             ; User VHDL File               ; C:/Users/dorozco/Downloads/Project_Enhanced_System/SimpleCompArch_QII_14/smallmux.vhd           ;         ;
-; SimpleCompArch.vhd               ; yes             ; User VHDL File               ; C:/Users/dorozco/Downloads/Project_Enhanced_System/SimpleCompArch_QII_14/SimpleCompArch.vhd     ;         ;
-; reg_file.vhd                     ; yes             ; User VHDL File               ; C:/Users/dorozco/Downloads/Project_Enhanced_System/SimpleCompArch_QII_14/reg_file.vhd           ;         ;
-; PC.vhd                           ; yes             ; User VHDL File               ; C:/Users/dorozco/Downloads/Project_Enhanced_System/SimpleCompArch_QII_14/PC.vhd                 ;         ;
-; obuf.vhd                         ; yes             ; User VHDL File               ; C:/Users/dorozco/Downloads/Project_Enhanced_System/SimpleCompArch_QII_14/obuf.vhd               ;         ;
-; MP_lib.vhd                       ; yes             ; User VHDL File               ; C:/Users/dorozco/Downloads/Project_Enhanced_System/SimpleCompArch_QII_14/MP_lib.vhd             ;         ;
-; IR.vhd                           ; yes             ; User VHDL File               ; C:/Users/dorozco/Downloads/Project_Enhanced_System/SimpleCompArch_QII_14/IR.vhd                 ;         ;
-; datapath.vhd                     ; yes             ; User VHDL File               ; C:/Users/dorozco/Downloads/Project_Enhanced_System/SimpleCompArch_QII_14/datapath.vhd           ;         ;
-; ctrl_unit.vhd                    ; yes             ; User VHDL File               ; C:/Users/dorozco/Downloads/Project_Enhanced_System/SimpleCompArch_QII_14/ctrl_unit.vhd          ;         ;
-; CPU.vhd                          ; yes             ; User VHDL File               ; C:/Users/dorozco/Downloads/Project_Enhanced_System/SimpleCompArch_QII_14/CPU.vhd                ;         ;
-; controller.vhd                   ; yes             ; User VHDL File               ; C:/Users/dorozco/Downloads/Project_Enhanced_System/SimpleCompArch_QII_14/controller.vhd         ;         ;
-; bigmux.vhd                       ; yes             ; User VHDL File               ; C:/Users/dorozco/Downloads/Project_Enhanced_System/SimpleCompArch_QII_14/bigmux.vhd             ;         ;
-; alu.vhd                          ; yes             ; User VHDL File               ; C:/Users/dorozco/Downloads/Project_Enhanced_System/SimpleCompArch_QII_14/alu.vhd                ;         ;
-; MainMemory.vhd                   ; yes             ; User Wizard-Generated File   ; C:/Users/dorozco/Downloads/Project_Enhanced_System/SimpleCompArch_QII_14/MainMemory.vhd         ;         ;
-; cache.vhd                        ; yes             ; User VHDL File               ; C:/Users/dorozco/Downloads/Project_Enhanced_System/SimpleCompArch_QII_14/cache.vhd              ;         ;
-; lineMemory.vhd                   ; yes             ; User VHDL File               ; C:/Users/dorozco/Downloads/Project_Enhanced_System/SimpleCompArch_QII_14/lineMemory.vhd         ;         ;
-; dataMemory.vhd                   ; yes             ; User VHDL File               ; C:/Users/dorozco/Downloads/Project_Enhanced_System/SimpleCompArch_QII_14/dataMemory.vhd         ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/altera/14.0/quartus/libraries/megafunctions/altsyncram.tdf                                   ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/altera/14.0/quartus/libraries/megafunctions/stratix_ram_block.inc                            ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/altera/14.0/quartus/libraries/megafunctions/lpm_mux.inc                                      ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/altera/14.0/quartus/libraries/megafunctions/lpm_decode.inc                                   ;         ;
-; aglobal140.inc                   ; yes             ; Megafunction                 ; c:/altera/14.0/quartus/libraries/megafunctions/aglobal140.inc                                   ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/altera/14.0/quartus/libraries/megafunctions/a_rdenreg.inc                                    ;         ;
-; altrom.inc                       ; yes             ; Megafunction                 ; c:/altera/14.0/quartus/libraries/megafunctions/altrom.inc                                       ;         ;
-; altram.inc                       ; yes             ; Megafunction                 ; c:/altera/14.0/quartus/libraries/megafunctions/altram.inc                                       ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                 ; c:/altera/14.0/quartus/libraries/megafunctions/altdpram.inc                                     ;         ;
-; db/altsyncram_75q3.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/dorozco/Downloads/Project_Enhanced_System/SimpleCompArch_QII_14/db/altsyncram_75q3.tdf ;         ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                ;
++----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                  ; Library ;
++----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------+---------+
+; cacheController.vhd              ; yes             ; User VHDL File                         ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/cacheController.vhd    ;         ;
+; smallmux.vhd                     ; yes             ; User VHDL File                         ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/smallmux.vhd           ;         ;
+; SimpleCompArch.vhd               ; yes             ; User VHDL File                         ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/SimpleCompArch.vhd     ;         ;
+; reg_file.vhd                     ; yes             ; User VHDL File                         ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/reg_file.vhd           ;         ;
+; PC.vhd                           ; yes             ; User VHDL File                         ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/PC.vhd                 ;         ;
+; obuf.vhd                         ; yes             ; User VHDL File                         ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/obuf.vhd               ;         ;
+; MP_lib.vhd                       ; yes             ; User VHDL File                         ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/MP_lib.vhd             ;         ;
+; IR.vhd                           ; yes             ; User VHDL File                         ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/IR.vhd                 ;         ;
+; datapath.vhd                     ; yes             ; User VHDL File                         ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/datapath.vhd           ;         ;
+; ctrl_unit.vhd                    ; yes             ; User VHDL File                         ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/ctrl_unit.vhd          ;         ;
+; CPU.vhd                          ; yes             ; User VHDL File                         ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/CPU.vhd                ;         ;
+; controller.vhd                   ; yes             ; User VHDL File                         ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/controller.vhd         ;         ;
+; bigmux.vhd                       ; yes             ; User VHDL File                         ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/bigmux.vhd             ;         ;
+; alu.vhd                          ; yes             ; User VHDL File                         ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/alu.vhd                ;         ;
+; cache.vhd                        ; yes             ; User VHDL File                         ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/cache.vhd              ;         ;
+; lineMemory.vhd                   ; yes             ; User VHDL File                         ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/lineMemory.vhd         ;         ;
+; dataMemory.vhd                   ; yes             ; User VHDL File                         ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/dataMemory.vhd         ;         ;
+; MainMemory2.vhd                  ; yes             ; User Wizard-Generated File             ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/MainMemory2.vhd        ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/altera/14.0/quartus/libraries/megafunctions/altsyncram.tdf                                 ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/altera/14.0/quartus/libraries/megafunctions/stratix_ram_block.inc                          ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/altera/14.0/quartus/libraries/megafunctions/lpm_mux.inc                                    ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/altera/14.0/quartus/libraries/megafunctions/lpm_decode.inc                                 ;         ;
+; aglobal140.inc                   ; yes             ; Megafunction                           ; c:/altera/14.0/quartus/libraries/megafunctions/aglobal140.inc                                 ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/altera/14.0/quartus/libraries/megafunctions/a_rdenreg.inc                                  ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; c:/altera/14.0/quartus/libraries/megafunctions/altrom.inc                                     ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; c:/altera/14.0/quartus/libraries/megafunctions/altram.inc                                     ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; c:/altera/14.0/quartus/libraries/megafunctions/altdpram.inc                                   ;         ;
+; db/altsyncram_tls3.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/db/altsyncram_tls3.tdf ;         ;
+; ./m9k_mem.hex                    ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/m9k_mem.hex            ;         ;
++----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------+---------+
 
 
 +-------------------------------------------------------------+
@@ -261,13 +261,13 @@ agreement for further details.
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                          ;
-+--------+--------------+---------+--------------+--------------+----------------------------------------------+-----------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                              ; IP Include File ;
-+--------+--------------+---------+--------------+--------------+----------------------------------------------+-----------------+
-; Altera ; RAM: 1-PORT  ; 14.0    ; N/A          ; N/A          ; |SimpleCompArch|Cache:Unit2|MainMemory:Unit2 ; MainMemory.vhd  ;
-+--------+--------------+---------+--------------+--------------+----------------------------------------------+-----------------+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                           ;
++--------+--------------+---------+--------------+--------------+-----------------------------------------------+-----------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                               ; IP Include File ;
++--------+--------------+---------+--------------+--------------+-----------------------------------------------+-----------------+
+; Altera ; RAM: 1-PORT  ; 14.0    ; N/A          ; N/A          ; |SimpleCompArch|Cache:Unit2|MainMemory2:Unit2 ; MainMemory2.vhd ;
++--------+--------------+---------+--------------+--------------+-----------------------------------------------+-----------------+
 
 
 Encoding Type:  One-Hot
@@ -313,6 +313,8 @@ Encoding Type:  One-Hot
 ; Register name                                            ; Reason for Removal                                               ;
 +----------------------------------------------------------+------------------------------------------------------------------+
 ; Cache:Unit2|Mre_mem                                      ; Stuck at VCC due to stuck port data_in                           ;
+; Cache:Unit2|MainMemory2:Unit2|counter[0..31]             ; Lost fanout                                                      ;
+; Cache:Unit2|MainMemory2:Unit2|slowClock                  ; Lost fanout                                                      ;
 ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|RFr2a_ctrl[0]    ; Stuck at GND due to stuck port data_in                           ;
 ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|RFwa_ctrl[0..3]  ; Stuck at GND due to stuck port data_in                           ;
 ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|RFr1a_ctrl[0..3] ; Stuck at GND due to stuck port data_in                           ;
@@ -622,7 +624,7 @@ Encoding Type:  One-Hot
 ; CPU:Unit1|datapath:Unit1|reg_file:U2|tmp_rf[0][6]        ; Stuck at GND due to stuck port data_in                           ;
 ; CPU:Unit1|datapath:Unit1|reg_file:U2|tmp_rf[0][7]        ; Stuck at GND due to stuck port data_in                           ;
 ; CPU:Unit1|ctrl_unit:Unit0|PC:U1|tmp_PC[12..15]           ; Lost fanout                                                      ;
-; Total Number of Removed Registers = 336                  ;                                                                  ;
+; Total Number of Removed Registers = 369                  ;                                                                  ;
 +----------------------------------------------------------+------------------------------------------------------------------+
 
 
@@ -903,6 +905,12 @@ Encoding Type:  One-Hot
 ;                                                       ;                           ; CPU:Unit1|datapath:Unit1|reg_file:U2|RFr1[13],       ;
 ;                                                       ;                           ; CPU:Unit1|datapath:Unit1|reg_file:U2|RFr1[14],       ;
 ;                                                       ;                           ; CPU:Unit1|datapath:Unit1|reg_file:U2|RFr1[15]        ;
+; Cache:Unit2|MainMemory2:Unit2|counter[3]              ; Lost Fanouts              ; Cache:Unit2|MainMemory2:Unit2|counter[26],           ;
+;                                                       ;                           ; Cache:Unit2|MainMemory2:Unit2|counter[27],           ;
+;                                                       ;                           ; Cache:Unit2|MainMemory2:Unit2|counter[28],           ;
+;                                                       ;                           ; Cache:Unit2|MainMemory2:Unit2|counter[29],           ;
+;                                                       ;                           ; Cache:Unit2|MainMemory2:Unit2|counter[30],           ;
+;                                                       ;                           ; Cache:Unit2|MainMemory2:Unit2|counter[31]            ;
 ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|state.S4      ; Stuck at GND              ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|state.S4a,   ;
 ;                                                       ; due to stuck port data_in ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|RFr1e_ctrl,  ;
 ;                                                       ;                           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|ALUs_ctrl[0] ;
@@ -913,6 +921,8 @@ Encoding Type:  One-Hot
 ;                                                       ; due to stuck port data_in ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|RFs_ctrl[1]  ;
 ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|state.S11     ; Stuck at GND              ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|state.S11a,  ;
 ;                                                       ; due to stuck port data_in ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|Mwe_ctrl     ;
+; Cache:Unit2|Mre_mem                                   ; Stuck at VCC              ; Cache:Unit2|MainMemory2:Unit2|slowClock              ;
+;                                                       ; due to stuck port data_in ;                                                      ;
 ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|state.S5      ; Stuck at GND              ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|state.S5a    ;
 ;                                                       ; due to stuck port data_in ;                                                      ;
 ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|state.S7a     ; Stuck at GND              ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|state.S7b    ;
@@ -965,103 +975,94 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------+
-; Source assignments for Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated ;
-+---------------------------------+--------------------+------+------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                   ;
-+---------------------------------+--------------------+------+------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                    ;
-+---------------------------------+--------------------+------+------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated ;
++---------------------------------+--------------------+------+-------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                    ;
++---------------------------------+--------------------+------+-------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                     ;
++---------------------------------+--------------------+------+-------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component ;
-+------------------------------------+----------------------+-----------------------------------------------+
-; Parameter Name                     ; Value                ; Type                                          ;
-+------------------------------------+----------------------+-----------------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                       ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                    ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                  ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                  ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped                                       ;
-; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                                       ;
-; WIDTH_A                            ; 64                   ; Signed Integer                                ;
-; WIDTHAD_A                          ; 12                   ; Signed Integer                                ;
-; NUMWORDS_A                         ; 4096                 ; Signed Integer                                ;
-; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                                       ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                       ;
-; OUTDATA_ACLR_A                     ; CLEAR0               ; Untyped                                       ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                       ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped                                       ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                       ;
-; WIDTH_B                            ; 1                    ; Signed Integer                                ;
-; WIDTHAD_B                          ; 1                    ; Signed Integer                                ;
-; NUMWORDS_B                         ; 0                    ; Signed Integer                                ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped                                       ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                       ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                       ;
-; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                       ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                       ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                       ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped                                       ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                       ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                       ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                       ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                       ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                       ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Signed Integer                                ;
-; RAM_BLOCK_TYPE                     ; M9K                  ; Untyped                                       ;
-; BYTE_SIZE                          ; 8                    ; Signed Integer                                ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                       ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                       ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                       ;
-; INIT_FILE                          ; UNUSED               ; Untyped                                       ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                       ;
-; MAXIMUM_DEPTH                      ; 0                    ; Signed Integer                                ;
-; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                       ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                       ;
-; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                       ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                       ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                       ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                       ;
-; ENABLE_ECC                         ; FALSE                ; Untyped                                       ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                       ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Signed Integer                                ;
-; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                       ;
-; CBXI_PARAMETER                     ; altsyncram_75q3      ; Untyped                                       ;
-+------------------------------------+----------------------+-----------------------------------------------+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                           ;
++------------------------------------+----------------------+------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                        ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                   ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                 ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                        ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                                        ;
+; WIDTH_A                            ; 64                   ; Signed Integer                                 ;
+; WIDTHAD_A                          ; 10                   ; Signed Integer                                 ;
+; NUMWORDS_A                         ; 1024                 ; Signed Integer                                 ;
+; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                                        ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                        ;
+; OUTDATA_ACLR_A                     ; CLEAR0               ; Untyped                                        ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                        ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                        ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                        ;
+; WIDTH_B                            ; 1                    ; Signed Integer                                 ;
+; WIDTHAD_B                          ; 1                    ; Signed Integer                                 ;
+; NUMWORDS_B                         ; 0                    ; Signed Integer                                 ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                        ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                        ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                        ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                        ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                        ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                        ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                        ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                        ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                        ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                        ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                        ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                 ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Signed Integer                                 ;
+; RAM_BLOCK_TYPE                     ; M9K                  ; Untyped                                        ;
+; BYTE_SIZE                          ; 8                    ; Signed Integer                                 ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                        ;
+; INIT_FILE                          ; ./m9k_mem.hex        ; Untyped                                        ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                        ;
+; MAXIMUM_DEPTH                      ; 0                    ; Signed Integer                                 ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                        ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                        ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                        ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Signed Integer                                 ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                        ;
+; CBXI_PARAMETER                     ; altsyncram_tls3      ; Untyped                                        ;
++------------------------------------+----------------------+------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------------------+
-; altsyncram Parameter Settings by Entity Instance                                                         ;
-+-------------------------------------------+--------------------------------------------------------------+
-; Name                                      ; Value                                                        ;
-+-------------------------------------------+--------------------------------------------------------------+
-; Number of entity instances                ; 1                                                            ;
-; Entity Instance                           ; Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component ;
-;     -- OPERATION_MODE                     ; SINGLE_PORT                                                  ;
-;     -- WIDTH_A                            ; 64                                                           ;
-;     -- NUMWORDS_A                         ; 4096                                                         ;
-;     -- OUTDATA_REG_A                      ; CLOCK0                                                       ;
-;     -- WIDTH_B                            ; 1                                                            ;
-;     -- NUMWORDS_B                         ; 0                                                            ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                                       ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                 ;
-;     -- RAM_BLOCK_TYPE                     ; M9K                                                          ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                    ;
-+-------------------------------------------+--------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Cache:Unit2|MainMemory:Unit2"                                                           ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                             ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; data_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                          ;
++-------------------------------------------+---------------------------------------------------------------+
+; Name                                      ; Value                                                         ;
++-------------------------------------------+---------------------------------------------------------------+
+; Number of entity instances                ; 1                                                             ;
+; Entity Instance                           ; Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                                   ;
+;     -- WIDTH_A                            ; 64                                                            ;
+;     -- NUMWORDS_A                         ; 1024                                                          ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                                        ;
+;     -- WIDTH_B                            ; 1                                                             ;
+;     -- NUMWORDS_B                         ; 0                                                             ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                        ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                  ;
+;     -- RAM_BLOCK_TYPE                     ; M9K                                                           ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                     ;
++-------------------------------------------+---------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------+
@@ -1088,7 +1089,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Port            ; Type  ; Severity ; Details                  ;
 +-----------------+-------+----------+--------------------------+
 ; replacestatusin ; Input ; Info     ; Stuck at GND             ;
-; data_block_in   ; Input ; Info     ; Stuck at GND             ;
 +-----------------+-------+----------+--------------------------+
 
 
@@ -1150,7 +1150,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 14.0.2 Build 209 09/17/2014 SJ Full Version
-    Info: Processing started: Mon Mar 07 17:37:55 2016
+    Info: Processing started: Tue Mar 08 15:35:03 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SimpleCompArch_QII_14 -c SimpleCompArch_QII_14
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file cachecontroller.vhd
@@ -1198,9 +1198,6 @@ Info (12021): Found 2 design units, including 1 entities, in source file bigmux.
 Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
     Info (12022): Found design unit 1: alu-behv
     Info (12023): Found entity 1: alu
-Info (12021): Found 2 design units, including 1 entities, in source file mainmemory.vhd
-    Info (12022): Found design unit 1: mainmemory-SYN
-    Info (12023): Found entity 1: MainMemory
 Info (12021): Found 2 design units, including 1 entities, in source file cache.vhd
     Info (12022): Found design unit 1: Cache-behav
     Info (12023): Found entity 1: Cache
@@ -1210,6 +1207,9 @@ Info (12021): Found 2 design units, including 1 entities, in source file linemem
 Info (12021): Found 2 design units, including 1 entities, in source file datamemory.vhd
     Info (12022): Found design unit 1: DataMemory-behav
     Info (12023): Found entity 1: DataMemory
+Info (12021): Found 2 design units, including 1 entities, in source file mainmemory2.vhd
+    Info (12022): Found design unit 1: mainmemory2-SYN
+    Info (12023): Found entity 1: MainMemory2
 Info (12127): Elaborating entity "SimpleCompArch" for the top level hierarchy
 Info (12128): Elaborating entity "CPU" for hierarchy "CPU:Unit1"
 Info (12128): Elaborating entity "ctrl_unit" for hierarchy "CPU:Unit1|ctrl_unit:Unit0"
@@ -1257,11 +1257,74 @@ Info (12128): Elaborating entity "reg_file" for hierarchy "CPU:Unit1|datapath:Un
 Info (12128): Elaborating entity "alu" for hierarchy "CPU:Unit1|datapath:Unit1|alu:U3"
 Info (12128): Elaborating entity "Cache" for hierarchy "Cache:Unit2"
 Warning (10541): VHDL Signal Declaration warning at cache.vhd(24): used implicit default value for signal "Mwe_mem" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at cache.vhd(27): object "dataIn" assigned a value but never read
-Warning (10541): VHDL Signal Declaration warning at cache.vhd(29): used implicit default value for signal "data_out_mem" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at cache.vhd(27): used implicit default value for signal "dataIn" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning (10541): VHDL Signal Declaration warning at cache.vhd(32): used implicit default value for signal "address_block_in" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning (10492): VHDL Process Statement warning at cache.vhd(52): signal "data_out_cpu" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10873): Using initial value X (don't care) for net "data_block_in" at cache.vhd(31)
+Warning (10631): VHDL Process Statement warning at cache.vhd(66): inferring latch(es) for signal or variable "data_block_in", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "data_block_in[0]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[1]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[2]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[3]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[4]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[5]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[6]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[7]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[8]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[9]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[10]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[11]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[12]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[13]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[14]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[15]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[16]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[17]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[18]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[19]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[20]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[21]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[22]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[23]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[24]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[25]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[26]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[27]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[28]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[29]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[30]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[31]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[32]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[33]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[34]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[35]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[36]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[37]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[38]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[39]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[40]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[41]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[42]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[43]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[44]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[45]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[46]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[47]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[48]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[49]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[50]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[51]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[52]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[53]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[54]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[55]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[56]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[57]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[58]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[59]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[60]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[61]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[62]" at cache.vhd(66)
+Info (10041): Inferred latch for "data_block_in[63]" at cache.vhd(66)
 Info (12128): Elaborating entity "CacheController" for hierarchy "Cache:Unit2|CacheController:Unit1"
 Warning (10541): VHDL Signal Declaration warning at cacheController.vhd(23): used implicit default value for signal "read_data" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning (10541): VHDL Signal Declaration warning at cacheController.vhd(24): used implicit default value for signal "write_data" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
@@ -1979,13 +2042,10 @@ Info (10041): Inferred latch for "dataOut[13]" at dataMemory.vhd(34)
 Info (10041): Inferred latch for "dataOut[14]" at dataMemory.vhd(34)
 Info (10041): Inferred latch for "dataOut[15]" at dataMemory.vhd(34)
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "memory1" into its bus
-Info (12128): Elaborating entity "MainMemory" for hierarchy "Cache:Unit2|MainMemory:Unit2"
-Warning (10541): VHDL Signal Declaration warning at MainMemory.vhd(54): used implicit default value for signal "data_out" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at MainMemory.vhd(61): object "out_data" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at MainMemory.vhd(64): object "tag_plus_line" assigned a value but never read
-Info (12128): Elaborating entity "altsyncram" for hierarchy "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component"
-Info (12130): Elaborated megafunction instantiation "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component"
-Info (12133): Instantiated megafunction "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component" with the following parameter:
+Info (12128): Elaborating entity "MainMemory2" for hierarchy "Cache:Unit2|MainMemory2:Unit2"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component"
+Info (12130): Elaborated megafunction instantiation "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component"
+Info (12133): Instantiated megafunction "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component" with the following parameter:
     Info (12134): Parameter "address_aclr_a" = "UNUSED"
     Info (12134): Parameter "address_aclr_b" = "NONE"
     Info (12134): Parameter "address_reg_b" = "CLOCK1"
@@ -2006,10 +2066,10 @@ Info (12133): Instantiated megafunction "Cache:Unit2|MainMemory:Unit2|altsyncram
     Info (12134): Parameter "indata_aclr_a" = "UNUSED"
     Info (12134): Parameter "indata_aclr_b" = "NONE"
     Info (12134): Parameter "indata_reg_b" = "CLOCK1"
-    Info (12134): Parameter "init_file" = "UNUSED"
+    Info (12134): Parameter "init_file" = "./m9k_mem.hex"
     Info (12134): Parameter "init_file_layout" = "PORT_A"
     Info (12134): Parameter "maximum_depth" = "0"
-    Info (12134): Parameter "numwords_a" = "4096"
+    Info (12134): Parameter "numwords_a" = "1024"
     Info (12134): Parameter "numwords_b" = "0"
     Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
     Info (12134): Parameter "outdata_aclr_a" = "CLEAR0"
@@ -2029,17 +2089,146 @@ Info (12133): Instantiated megafunction "Cache:Unit2|MainMemory:Unit2|altsyncram
     Info (12134): Parameter "width_byteena_a" = "1"
     Info (12134): Parameter "width_byteena_b" = "1"
     Info (12134): Parameter "width_eccstatus" = "3"
-    Info (12134): Parameter "widthad_a" = "12"
+    Info (12134): Parameter "widthad_a" = "10"
     Info (12134): Parameter "widthad_b" = "1"
     Info (12134): Parameter "wrcontrol_aclr_a" = "UNUSED"
     Info (12134): Parameter "wrcontrol_aclr_b" = "NONE"
     Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_75q3.tdf
-    Info (12023): Found entity 1: altsyncram_75q3
-Info (12128): Elaborating entity "altsyncram_75q3" for hierarchy "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_tls3.tdf
+    Info (12023): Found entity 1: altsyncram_tls3
+Info (12128): Elaborating entity "altsyncram_tls3" for hierarchy "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated"
+Critical Warning (127004): Memory depth (1024) in the design file differs from memory depth (4096) in the Memory Initialization File "C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/m9k_mem.hex" -- truncated remaining initial content value to fit RAM
 Info (12128): Elaborating entity "obuf" for hierarchy "obuf:Unit3"
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[1]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[2]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[3]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[4]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[5]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[6]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[7]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[8]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[9]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[10]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[11]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[12]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[13]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[14]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[15]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[16]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[17]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[18]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[19]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[20]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[21]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[22]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[23]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[24]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[25]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[26]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[27]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[28]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[29]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[30]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[31]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[32]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[33]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[34]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[35]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[36]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[37]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[38]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[39]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[40]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[41]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[42]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[43]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[44]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[45]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[46]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[47]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[48]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[49]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[50]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[51]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[52]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[53]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[54]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[55]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[56]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[57]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[58]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[59]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[60]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[61]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[62]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[63]" is permanently enabled
+Warning (14026): LATCH primitive "Cache:Unit2|data_block_in[0]" is permanently enabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[1]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[0]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[3]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[4]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[5]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[6]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[7]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[8]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[9]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[10]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[11]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[12]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[13]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[14]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[15]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[16]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[17]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[18]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[19]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[20]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[21]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[22]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[23]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[24]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[25]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[26]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[27]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[28]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[29]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[30]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[31]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[32]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[33]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[34]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[35]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[36]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[37]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[38]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[39]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[40]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[41]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[42]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[43]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[44]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[45]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[46]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[47]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[48]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[49]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[50]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[51]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[52]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[53]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[54]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[55]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[56]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[57]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[58]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[59]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[60]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[61]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[62]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[63]" is permanently disabled
+Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|write_DBlock[2]" is permanently disabled
 Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|LineMemory:unit1|memory[6][4]" is permanently disabled
 Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|LineMemory:unit1|memory[6][3]" is permanently disabled
 Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|LineMemory:unit1|memory[6][2]" is permanently disabled
@@ -2099,70 +2288,70 @@ Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|LineMemory:u
 Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|LineMemory:unit1|memory[0][0]" is permanently disabled
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[0]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[1]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[2]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[3]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[4]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[5]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[6]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[7]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[8]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[9]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[10]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[11]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[12]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[13]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[14]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[15]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[16]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[17]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[18]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[19]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[20]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[21]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[22]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[23]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[24]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[25]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[26]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[27]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[28]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[29]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[30]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[31]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[32]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[33]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[34]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[35]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[36]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[37]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[38]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[39]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[40]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[41]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[42]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[43]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[44]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[45]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[46]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[47]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[48]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[49]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[50]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[51]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[52]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[53]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[54]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[55]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[56]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[57]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[58]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[59]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[60]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[61]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[62]"
-        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_75q3:auto_generated|q_a[63]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[0]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[1]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[2]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[3]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[4]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[5]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[6]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[7]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[8]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[9]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[10]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[11]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[12]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[13]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[14]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[15]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[16]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[17]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[18]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[19]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[20]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[21]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[22]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[23]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[24]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[25]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[26]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[27]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[28]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[29]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[30]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[31]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[32]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[33]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[34]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[35]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[36]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[37]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[38]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[39]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[40]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[41]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[42]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[43]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[44]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[45]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[46]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[47]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[48]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[49]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[50]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[51]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[52]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[53]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[54]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[55]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[56]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[57]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[58]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[59]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[60]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[61]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[62]"
+        Warning (14320): Synthesized away node "Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component|altsyncram_tls3:auto_generated|q_a[63]"
 Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|DataMemory:unit2|memory1[7][3][9]" is permanently disabled
 Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|DataMemory:unit2|memory1[7][3][8]" is permanently disabled
 Warning (14025): LATCH primitive "Cache:Unit2|CacheController:Unit1|DataMemory:unit2|memory1[7][3][7]" is permanently disabled
@@ -2309,17 +2498,17 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "D_mdin_bus[15]" is stuck at GND
     Warning (13410): Pin "D_Mwe" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 8 registers lost all their fanouts during netlist optimizations.
+Info (17049): 41 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Info (21057): Implemented 141 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 99 output pins
     Info (21061): Implemented 40 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 296 warnings
-    Info: Peak virtual memory: 605 megabytes
-    Info: Processing ended: Mon Mar 07 17:38:00 2016
-    Info: Elapsed time: 00:00:05
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 421 warnings
+    Info: Peak virtual memory: 601 megabytes
+    Info: Processing ended: Tue Mar 08 15:35:07 2016
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:03
 
 

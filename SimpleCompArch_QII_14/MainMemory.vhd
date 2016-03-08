@@ -59,8 +59,6 @@ END MainMemory;
 ARCHITECTURE SYN OF mainmemory IS
 
 	SIGNAL out_data	: STD_LOGIC_VECTOR (63 DOWNTO 0);
-	type ram_type is array (0 to 4096) of std_logic_vector(16 downto 0);
-	signal tmp_ram: ram_type;
 	signal tag_plus_line : std_logic_vector (9 downto 0);
 	signal number_address : integer ; 
 	signal temp_address : std_logic_vector(11 downto 0);
@@ -68,7 +66,26 @@ BEGIN
 	
 	tag_plus_line <= address(11 downto 2);
 
-	
+   setAddres: process(clock, rst, Mwe, address)
+	begin
+		if rst='1' then
+			data_out <= ZERO;
+		else
+			if (clock'event and clock = '1') then
+				if (Mre ='1' and Mwe ='0') then								 
+					temp_address <= tag_plus_line and "00";
+					out_data(15 downto 0) <= tmp_ram(to_integer(temp_address));
+					temp_address <= tag_plus_line and "01";
+					out_data(31 downto 16) <= tmp_ram(to_integer(temp_address));
+					temp_address <= tag_plus_line and "10";
+					out_data(47 downto 32) <= tmp_ram(to_integer(temp_address));
+					temp_address <= tag_plus_line and "11";
+					out_data(63 downto 48) <= tmp_ram(to_integer(temp_address));
+					
+				end if;
+			end if;
+		end if;
+	end process;
 	
 	altsyncram_component : altsyncram
 	GENERIC MAP (
@@ -153,26 +170,7 @@ BEGIN
 --		end if;
 --	end process;
 ---------------------------------------------------------------------------------------------------
---    read: process(clock, rst, Mwe, address)
---	begin
---		if rst='1' then
---			data_out <= ZERO;
---		else
---			if (clock'event and clock = '1') then
---				if (Mre ='1' and Mwe ='0') then								 
---					temp_address <= tag_plus_line and "00";
---					out_data(15 downto 0) <= tmp_ram(to_integer(temp_address));
---					temp_address <= tag_plus_line and "01";
---					out_data(31 downto 16) <= tmp_ram(to_integer(temp_address));
---					temp_address <= tag_plus_line and "10";
---					out_data(47 downto 32) <= tmp_ram(to_integer(temp_address));
---					temp_address <= tag_plus_line and "11";
---					out_data(63 downto 48) <= tmp_ram(to_integer(temp_address));
---					
---				end if;
---			end if;
---		end if;
---	end process;
+
 -----------------------------------------------------------------------------------------------------
 
 END SYN;

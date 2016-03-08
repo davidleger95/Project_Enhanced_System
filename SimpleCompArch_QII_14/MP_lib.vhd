@@ -95,7 +95,7 @@ port(
 );
 end component;
 
-component MainMemory is
+component MainMemory2 is
 port ( 	
 	clock	: 	in std_logic;
 	rst		: 	in std_logic;

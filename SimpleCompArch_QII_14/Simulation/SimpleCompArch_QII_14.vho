@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 14.0.2 Build 209 09/17/2014 SJ Full Version"
 
--- DATE "03/07/2016 17:38:32"
+-- DATE "03/08/2016 15:35:33"
 
 -- 
 -- Device: Altera EP4CE115F29C7 Package FBGA780
@@ -38,23 +38,23 @@ ENTITY 	SimpleCompArch IS
     PORT (
 	sys_clk : IN std_logic;
 	sys_rst : IN std_logic;
-	sys_output : OUT std_logic_vector(15 DOWNTO 0);
-	D_rfout_bus : OUT std_logic_vector(15 DOWNTO 0);
-	D_RFwa : OUT std_logic_vector(3 DOWNTO 0);
-	D_RFr1a : OUT std_logic_vector(3 DOWNTO 0);
-	D_RFr2a : OUT std_logic_vector(3 DOWNTO 0);
-	D_RFwe : OUT std_logic;
-	D_RFr1e : OUT std_logic;
-	D_RFr2e : OUT std_logic;
-	D_RFs : OUT std_logic_vector(1 DOWNTO 0);
-	D_ALUs : OUT std_logic_vector(1 DOWNTO 0);
-	D_PCld : OUT std_logic;
-	D_jpz : OUT std_logic;
-	D_mdout_bus : OUT std_logic_vector(15 DOWNTO 0);
-	D_mdin_bus : OUT std_logic_vector(15 DOWNTO 0);
-	D_mem_addr : OUT std_logic_vector(11 DOWNTO 0);
-	D_Mre : OUT std_logic;
-	D_Mwe : OUT std_logic
+	sys_output : BUFFER std_logic_vector(15 DOWNTO 0);
+	D_rfout_bus : BUFFER std_logic_vector(15 DOWNTO 0);
+	D_RFwa : BUFFER std_logic_vector(3 DOWNTO 0);
+	D_RFr1a : BUFFER std_logic_vector(3 DOWNTO 0);
+	D_RFr2a : BUFFER std_logic_vector(3 DOWNTO 0);
+	D_RFwe : BUFFER std_logic;
+	D_RFr1e : BUFFER std_logic;
+	D_RFr2e : BUFFER std_logic;
+	D_RFs : BUFFER std_logic_vector(1 DOWNTO 0);
+	D_ALUs : BUFFER std_logic_vector(1 DOWNTO 0);
+	D_PCld : BUFFER std_logic;
+	D_jpz : BUFFER std_logic;
+	D_mdout_bus : BUFFER std_logic_vector(15 DOWNTO 0);
+	D_mdin_bus : BUFFER std_logic_vector(15 DOWNTO 0);
+	D_mem_addr : BUFFER std_logic_vector(11 DOWNTO 0);
+	D_Mre : BUFFER std_logic;
+	D_Mwe : BUFFER std_logic
 	);
 END SimpleCompArch;
 

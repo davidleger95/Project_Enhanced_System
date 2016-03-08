@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="SimpleCompArch_QII_14">
-		<CBX_INST_ENTRY INSTANCE_NAME="|SimpleCompArch|Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_75q3.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|SimpleCompArch|Cache:Unit2|MainMemory2:Unit2|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_tls3.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

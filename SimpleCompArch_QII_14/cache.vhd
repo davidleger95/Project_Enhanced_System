@@ -37,7 +37,7 @@ signal replaceStatusOut: std_logic;
 begin 
  
 	Unit1: CacheController port map(MreIn, MweIn, address, address_mem, data_in, data_out_cpu, replaceStatusIn, replaceStatusOut, data_block_in, address_block_in);
-	Unit2: MainMemory port map(clock,reset, Mre_mem, Mwe_mem, address_mem, data_out_mem, dataIn);
+	Unit2: MainMemory2 port map(clock,reset, Mre_mem, Mwe_mem, address_mem, dataIn, data_out_mem);
 
 	read: process (clock, Mre, Mwe, MreIn, address)
 	begin 
@@ -72,10 +72,10 @@ begin
 			end if;
 		replaceStatusIn <= '1';
 		data_block_in <= data_out_mem;
-		data_out <= data_out_cpu;
+		--data_out <= data_out_cpu;
 		end if;
 		replaceStatusIn <= '0';
-		data_out <= data_out_cpu;
+		--data_out <= data_out_cpu;
 		end process;
 end behav;
 		

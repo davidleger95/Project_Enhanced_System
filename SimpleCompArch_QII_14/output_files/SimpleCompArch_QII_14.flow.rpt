@@ -1,5 +1,5 @@
 Flow report for SimpleCompArch_QII_14
-Mon Mar 07 17:38:32 2016
+Tue Mar 08 15:35:33 2016
 Quartus II 64-Bit Version 14.0.2 Build 209 09/17/2014 SJ Full Version
 
 
@@ -41,7 +41,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Mon Mar 07 17:38:32 2016       ;
+; Flow Status                        ; Successful - Tue Mar 08 15:35:33 2016       ;
 ; Quartus II 64-Bit Version          ; 14.0.2 Build 209 09/17/2014 SJ Full Version ;
 ; Revision Name                      ; SimpleCompArch_QII_14                       ;
 ; Top-level Entity Name              ; SimpleCompArch                              ;
@@ -65,7 +65,7 @@ agreement for further details.
 +-------------------+-----------------------+
 ; Option            ; Setting               ;
 +-------------------+-----------------------+
-; Start date & time ; 03/07/2016 17:37:56   ;
+; Start date & time ; 03/08/2016 15:35:04   ;
 ; Main task         ; Compilation           ;
 ; Revision Name     ; SimpleCompArch_QII_14 ;
 +-------------------+-----------------------+
@@ -76,7 +76,7 @@ agreement for further details.
 +------------------------------------------------+---------------------------------------+-----------------------+----------------+----------------+
 ; Assignment Name                                ; Value                                 ; Default Value         ; Entity Name    ; Section Id     ;
 +------------------------------------------------+---------------------------------------+-----------------------+----------------+----------------+
-; COMPILER_SIGNATURE_ID                          ; 203178706079675.145738667604144       ; --                    ; --             ; --             ;
+; COMPILER_SIGNATURE_ID                          ; 203178706079675.145746570407664       ; --                    ; --             ; --             ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST                ; On                                    ; --                    ; --             ; eda_simulation ;
 ; EDA_NETLIST_WRITER_OUTPUT_DIR                  ; ./simulation                          ; --                    ; --             ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT                         ; Vhdl                                  ; --                    ; --             ; eda_simulation ;
@@ -88,8 +88,10 @@ agreement for further details.
 ; IP_TOOL_VERSION                                ; 14.0                                  ; --                    ; --             ; --             ;
 ; MAX_CORE_JUNCTION_TEMP                         ; 85                                    ; --                    ; --             ; --             ;
 ; MIN_CORE_JUNCTION_TEMP                         ; 0                                     ; --                    ; --             ; --             ;
-; MISC_FILE                                      ; MainMemory_inst.vhd                   ; --                    ; --             ; --             ;
-; MISC_FILE                                      ; MainMemory.cmp                        ; --                    ; --             ; --             ;
+; MISC_FILE                                      ; MainMemory2.bsf                       ; --                    ; --             ; --             ;
+; MISC_FILE                                      ; MainMemory2_inst.vhd                  ; --                    ; --             ; --             ;
+; MISC_FILE                                      ; MainMemory2.inc                       ; --                    ; --             ; --             ;
+; MISC_FILE                                      ; MainMemory2.cmp                       ; --                    ; --             ; --             ;
 ; NUM_PARALLEL_PROCESSORS                        ; All                                   ; --                    ; --             ; --             ;
 ; OPTIMIZE_TIMING                                ; Off                                   ; Normal compilation    ; --             ; --             ;
 ; OUTPUT_IO_TIMING_FAR_END_VMEAS                 ; Half Signal Swing                     ; --                    ; --             ; --             ;
@@ -112,12 +114,12 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 605 MB              ; 00:00:03                           ;
-; Fitter                    ; 00:00:16     ; 1.5                     ; 1227 MB             ; 00:00:15                           ;
-; Assembler                 ; 00:00:05     ; 1.0                     ; 506 MB              ; 00:00:04                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 637 MB              ; 00:00:03                           ;
-; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 444 MB              ; 00:00:00                           ;
-; Total                     ; 00:00:28     ; --                      ; --                  ; 00:00:25                           ;
+; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 601 MB              ; 00:00:03                           ;
+; Fitter                    ; 00:00:12     ; 1.8                     ; 1230 MB             ; 00:00:15                           ;
+; Assembler                 ; 00:00:04     ; 1.0                     ; 506 MB              ; 00:00:04                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 633 MB              ; 00:00:03                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 443 MB              ; 00:00:00                           ;
+; Total                     ; 00:00:22     ; --                      ; --                  ; 00:00:25                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
