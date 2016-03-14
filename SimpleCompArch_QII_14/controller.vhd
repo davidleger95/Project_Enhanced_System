@@ -32,19 +32,25 @@ port(	clock:		in std_logic;
 	Ms_ctrl:	out std_logic_vector(1 downto 0);
 	Mre_ctrl:	out std_logic;
 	Mwe_ctrl:	out std_logic;
-	oe_ctrl:	out std_logic
+	oe_ctrl:	out std_logic;
+	delayReq : in std_logic
 );
 end controller;
 
 architecture fsm of controller is
 
-  type state_type is (  S0,S1,S1a,S1b,S2,S3,S3a,S3b,S4,S4a,S4b,S5,S5a,S5b,
+  type state_type is (  S0,S1,S1a,S1b,Sdelay,S2,S3,S3a,S3b,S4,S4a,S4b,S5,S5a,S5b,
 			S6,S6a,S7,S7a,S7b,S8,S8a,S8b,S9,S9a,S9b,S10,S11,S11a);
   signal state: state_type;
+  signal nextState: state_type;
+  signal delayNum : integer := 2;
+  signal useDelay : std_logic; 
 	
 begin
+	useDelay <= delayReq;
   process(clock, rst, IR_word)
     variable OPCODE: std_logic_vector(3 downto 0);
+	 variable NumDelayCycles: integer;		
   begin
     if rst='1' then			   
 	Ms_ctrl <= "10";
@@ -82,6 +88,13 @@ begin
 	  		state <= S1b;			-- Fetch end ...
 	  when S1b => PCinc_ctrl <= '0';
 		   state <= S2;
+	  when Sdelay => PCinc_ctrl <= '0';
+		   numDelayCycles := numDelayCycles -1 ;
+			if (numDelayCycles = 0) then
+				state <= nextState;
+			else 
+				state <= Sdelay;
+			end if;
 	  				
 	  when S2 =>	OPCODE := IR_word(15 downto 12);
 			  case OPCODE is
@@ -101,8 +114,15 @@ begin
 			RFs_ctrl <= "01";  -- RF[rn] <= mem[direct]
 			Ms_ctrl <= "01";
 			Mre_ctrl <= '1';
-			Mwe_ctrl <= '0';		  
-			state <= S3a;
+			Mwe_ctrl <= '0';
+			--useDelay <= '1';
+			if (useDelay = '0') then
+				state <= S3a;
+			else
+				state <= Sdelay;
+				numDelayCycles := delayNum;
+				nextState <= S3a;
+			end if;
 	  when S3a =>   RFwe_ctrl <= '1'; 
 	        Mre_ctrl <= '0'; 
 			state <= S3b;
@@ -114,10 +134,18 @@ begin
 			Ms_ctrl <= "01";
 			ALUs_ctrl <= "00";	  
 			IRld_ctrl <= '0';
+			--useDelay <= '1';
 			state <= S4a;			-- read value from RF
 	  when S4a =>   Mre_ctrl <= '0';
 			Mwe_ctrl <= '1';
-			state <= S4b;			-- write into memory
+			if (useDelay = '0') then
+				state <= S4b;
+			else
+				state <= Sdelay;
+				numDelayCycles := delayNum;
+				nextState <= S4b;
+			end if;
+					-- write into memory
 	  when S4b =>   Ms_ctrl <= "10";				  
 			Mwe_ctrl <= '0';
 			state <= S1;
@@ -128,10 +156,17 @@ begin
 			ALUs_ctrl <= "01";
 			RFr2a_ctrl <= IR_word(7 downto 4); 
 			RFr2e_ctrl <= '1'; -- set addr.& data
+			--useDelay <= '1'
 			state <= S5a;
 	  when S5a =>   Mre_ctrl <= '0';			
 			Mwe_ctrl <= '1'; -- write into memory
-			state <= S5b;
+			if (useDelay = '0') then
+				state <= S5b;
+			else
+				state <= Sdelay;
+				numDelayCycles := delayNum;
+				nextState <= S5b;
+			end if;
 	  when S5b => 	Ms_ctrl <= "10";-- return
 			Mwe_ctrl <= '0';
 			state <= S1;
@@ -183,7 +218,13 @@ begin
 	  when S11 =>   Ms_ctrl <= "01";
 			Mre_ctrl <= '1'; -- read memory
 			Mwe_ctrl <= '0';		  
-			state <= S11a;
+			if (useDelay = '0') then
+				state <= S11a;
+			else
+				state <= Sdelay;
+				numDelayCycles := delayNum;
+				nextState <= S11a;
+			end if;
 	  when S11a =>  oe_ctrl <= '1'; 
 			state <= S1;
 	  when others =>

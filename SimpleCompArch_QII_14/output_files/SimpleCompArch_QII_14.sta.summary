@@ -2,64 +2,76 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'sys_clk'
-Slack : -1.378
-TNS   : -15.757
+Type  : Slow 1200mV 85C Model Setup 'writeTag'
+Slack : -11.633
+TNS   : -11.633
 
-Type  : Slow 1200mV 85C Model Hold 'sys_clk'
-Slack : 0.401
+Type  : Slow 1200mV 85C Model Setup 'lineIndex[0]'
+Slack : 2.280
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Recovery 'sys_clk'
-Slack : -5.141
-TNS   : -61.692
+Type  : Slow 1200mV 85C Model Hold 'lineIndex[0]'
+Slack : -6.601
+TNS   : -275.443
 
-Type  : Slow 1200mV 85C Model Removal 'sys_clk'
-Slack : 5.506
-TNS   : 0.000
+Type  : Slow 1200mV 85C Model Hold 'writeTag'
+Slack : -6.223
+TNS   : -280.862
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'sys_clk'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'writeTag'
 Slack : -3.000
-TNS   : -37.695
+TNS   : -3.096
 
-Type  : Slow 1200mV 0C Model Setup 'sys_clk'
-Slack : -1.131
-TNS   : -12.382
-
-Type  : Slow 1200mV 0C Model Hold 'sys_clk'
-Slack : 0.353
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Recovery 'sys_clk'
-Slack : -4.609
-TNS   : -55.308
-
-Type  : Slow 1200mV 0C Model Removal 'sys_clk'
-Slack : 4.940
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'sys_clk'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'lineIndex[0]'
 Slack : -3.000
-TNS   : -37.695
+TNS   : -3.000
 
-Type  : Fast 1200mV 0C Model Setup 'sys_clk'
-Slack : -0.163
-TNS   : -0.558
+Type  : Slow 1200mV 0C Model Setup 'writeTag'
+Slack : -10.369
+TNS   : -10.369
 
-Type  : Fast 1200mV 0C Model Hold 'sys_clk'
-Slack : 0.181
+Type  : Slow 1200mV 0C Model Setup 'lineIndex[0]'
+Slack : 2.129
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Recovery 'sys_clk'
-Slack : -2.412
-TNS   : -28.944
+Type  : Slow 1200mV 0C Model Hold 'lineIndex[0]'
+Slack : -5.868
+TNS   : -244.223
 
-Type  : Fast 1200mV 0C Model Removal 'sys_clk'
-Slack : 2.851
-TNS   : 0.000
+Type  : Slow 1200mV 0C Model Hold 'writeTag'
+Slack : -5.541
+TNS   : -249.946
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'sys_clk'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'lineIndex[0]'
 Slack : -3.000
-TNS   : -37.897
+TNS   : -3.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'writeTag'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Fast 1200mV 0C Model Setup 'writeTag'
+Slack : -6.486
+TNS   : -6.486
+
+Type  : Fast 1200mV 0C Model Setup 'lineIndex[0]'
+Slack : 0.914
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'lineIndex[0]'
+Slack : -3.845
+TNS   : -158.571
+
+Type  : Fast 1200mV 0C Model Hold 'writeTag'
+Slack : -3.723
+TNS   : -170.380
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'writeTag'
+Slack : -3.000
+TNS   : -70.590
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'lineIndex[0]'
+Slack : -3.000
+TNS   : -36.111
 
 ------------------------------------------------------------

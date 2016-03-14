@@ -1,5 +1,5 @@
 Flow report for SimpleCompArch_QII_14
-Tue Mar 08 15:35:33 2016
+Mon Mar 14 17:01:25 2016
 Quartus II 64-Bit Version 14.0.2 Build 209 09/17/2014 SJ Full Version
 
 
@@ -41,18 +41,18 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue Mar 08 15:35:33 2016       ;
+; Flow Status                        ; Successful - Mon Mar 14 17:01:25 2016       ;
 ; Quartus II 64-Bit Version          ; 14.0.2 Build 209 09/17/2014 SJ Full Version ;
 ; Revision Name                      ; SimpleCompArch_QII_14                       ;
-; Top-level Entity Name              ; SimpleCompArch                              ;
+; Top-level Entity Name              ; LineMemory                                  ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 39 / 114,480 ( < 1 % )                      ;
-;     Total combinational functions  ; 34 / 114,480 ( < 1 % )                      ;
-;     Dedicated logic registers      ; 27 / 114,480 ( < 1 % )                      ;
-; Total registers                    ; 27                                          ;
-; Total pins                         ; 101 / 529 ( 19 % )                          ;
+; Total logic elements               ; 123 / 114,480 ( < 1 % )                     ;
+;     Total combinational functions  ; 123 / 114,480 ( < 1 % )                     ;
+;     Dedicated logic registers      ; 0 / 114,480 ( 0 % )                         ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 13 / 529 ( 2 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
 ; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
@@ -65,48 +65,49 @@ agreement for further details.
 +-------------------+-----------------------+
 ; Option            ; Setting               ;
 +-------------------+-----------------------+
-; Start date & time ; 03/08/2016 15:35:04   ;
+; Start date & time ; 03/14/2016 16:53:14   ;
 ; Main task         ; Compilation           ;
 ; Revision Name     ; SimpleCompArch_QII_14 ;
 +-------------------+-----------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                 ;
-+------------------------------------------------+---------------------------------------+-----------------------+----------------+----------------+
-; Assignment Name                                ; Value                                 ; Default Value         ; Entity Name    ; Section Id     ;
-+------------------------------------------------+---------------------------------------+-----------------------+----------------+----------------+
-; COMPILER_SIGNATURE_ID                          ; 203178706079675.145746570407664       ; --                    ; --             ; --             ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST                ; On                                    ; --                    ; --             ; eda_simulation ;
-; EDA_NETLIST_WRITER_OUTPUT_DIR                  ; ./simulation                          ; --                    ; --             ; eda_simulation ;
-; EDA_OUTPUT_DATA_FORMAT                         ; Vhdl                                  ; --                    ; --             ; eda_simulation ;
-; EDA_SIMULATION_TOOL                            ; ModelSim-Altera (VHDL)                ; <None>                ; --             ; --             ;
-; EDA_USER_COMPILED_SIMULATION_LIBRARY_DIRECTORY ; Simulation                            ; --                    ; --             ; eda_simulation ;
-; FITTER_EFFORT                                  ; Fast Fit                              ; Auto Fit              ; --             ; --             ;
-; IP_GENERATED_DEVICE_FAMILY                     ; {Cyclone IV E}                        ; --                    ; --             ; --             ;
-; IP_TOOL_NAME                                   ; RAM: 1-PORT                           ; --                    ; --             ; --             ;
-; IP_TOOL_VERSION                                ; 14.0                                  ; --                    ; --             ; --             ;
-; MAX_CORE_JUNCTION_TEMP                         ; 85                                    ; --                    ; --             ; --             ;
-; MIN_CORE_JUNCTION_TEMP                         ; 0                                     ; --                    ; --             ; --             ;
-; MISC_FILE                                      ; MainMemory2.bsf                       ; --                    ; --             ; --             ;
-; MISC_FILE                                      ; MainMemory2_inst.vhd                  ; --                    ; --             ; --             ;
-; MISC_FILE                                      ; MainMemory2.inc                       ; --                    ; --             ; --             ;
-; MISC_FILE                                      ; MainMemory2.cmp                       ; --                    ; --             ; --             ;
-; NUM_PARALLEL_PROCESSORS                        ; All                                   ; --                    ; --             ; --             ;
-; OPTIMIZE_TIMING                                ; Off                                   ; Normal compilation    ; --             ; --             ;
-; OUTPUT_IO_TIMING_FAR_END_VMEAS                 ; Half Signal Swing                     ; --                    ; --             ; --             ;
-; OUTPUT_IO_TIMING_FAR_END_VMEAS                 ; Half Signal Swing                     ; --                    ; --             ; --             ;
-; OUTPUT_IO_TIMING_NEAR_END_VMEAS                ; Half Vccio                            ; --                    ; --             ; --             ;
-; OUTPUT_IO_TIMING_NEAR_END_VMEAS                ; Half Vccio                            ; --                    ; --             ; --             ;
-; PARTITION_COLOR                                ; 16764057                              ; --                    ; SimpleCompArch ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL            ; PLACEMENT_AND_ROUTING                 ; --                    ; SimpleCompArch ; Top            ;
-; PARTITION_NETLIST_TYPE                         ; SOURCE                                ; --                    ; SimpleCompArch ; Top            ;
-; POWER_BOARD_THERMAL_MODEL                      ; None (CONSERVATIVE)                   ; --                    ; --             ; --             ;
-; POWER_PRESET_COOLING_SOLUTION                  ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --                    ; --             ; --             ;
-; PROJECT_OUTPUT_DIRECTORY                       ; output_files                          ; --                    ; --             ; --             ;
-; SMART_RECOMPILE                                ; On                                    ; Off                   ; --             ; --             ;
-; TOP_LEVEL_ENTITY                               ; SimpleCompArch                        ; SimpleCompArch_QII_14 ; --             ; --             ;
-+------------------------------------------------+---------------------------------------+-----------------------+----------------+----------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                                                                ;
++------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------+-------------+----------------+
+; Assignment Name                                ; Value                                                                                   ; Default Value         ; Entity Name ; Section Id     ;
++------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID                          ; 203178706078977.145798519401896                                                         ; --                    ; --          ; --             ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST                ; Off                                                                                     ; --                    ; --          ; eda_simulation ;
+; EDA_NETLIST_WRITER_OUTPUT_DIR                  ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/simulation/qsim/ ; --                    ; --          ; eda_simulation ;
+; EDA_OUTPUT_DATA_FORMAT                         ; Verilog Hdl                                                                             ; --                    ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                            ; ModelSim-Altera (Verilog)                                                               ; <None>                ; --          ; --             ;
+; EDA_TIME_SCALE                                 ; 1 ps                                                                                    ; --                    ; --          ; eda_simulation ;
+; EDA_USER_COMPILED_SIMULATION_LIBRARY_DIRECTORY ; Simulation                                                                              ; --                    ; --          ; eda_simulation ;
+; FITTER_EFFORT                                  ; Fast Fit                                                                                ; Auto Fit              ; --          ; --             ;
+; IP_GENERATED_DEVICE_FAMILY                     ; {Cyclone IV E}                                                                          ; --                    ; --          ; --             ;
+; IP_TOOL_NAME                                   ; RAM: 1-PORT                                                                             ; --                    ; --          ; --             ;
+; IP_TOOL_VERSION                                ; 14.0                                                                                    ; --                    ; --          ; --             ;
+; MAX_CORE_JUNCTION_TEMP                         ; 85                                                                                      ; --                    ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP                         ; 0                                                                                       ; --                    ; --          ; --             ;
+; MISC_FILE                                      ; MainMemory2.bsf                                                                         ; --                    ; --          ; --             ;
+; MISC_FILE                                      ; MainMemory2_inst.vhd                                                                    ; --                    ; --          ; --             ;
+; MISC_FILE                                      ; MainMemory2.inc                                                                         ; --                    ; --          ; --             ;
+; MISC_FILE                                      ; MainMemory2.cmp                                                                         ; --                    ; --          ; --             ;
+; NUM_PARALLEL_PROCESSORS                        ; All                                                                                     ; --                    ; --          ; --             ;
+; OPTIMIZE_TIMING                                ; Off                                                                                     ; Normal compilation    ; --          ; --             ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS                 ; Half Signal Swing                                                                       ; --                    ; --          ; --             ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS                 ; Half Signal Swing                                                                       ; --                    ; --          ; --             ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS                ; Half Vccio                                                                              ; --                    ; --          ; --             ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS                ; Half Vccio                                                                              ; --                    ; --          ; --             ;
+; PARTITION_COLOR                                ; 16764057                                                                                ; --                    ; LineMemory  ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL            ; PLACEMENT_AND_ROUTING                                                                   ; --                    ; LineMemory  ; Top            ;
+; PARTITION_NETLIST_TYPE                         ; SOURCE                                                                                  ; --                    ; LineMemory  ; Top            ;
+; POWER_BOARD_THERMAL_MODEL                      ; None (CONSERVATIVE)                                                                     ; --                    ; --          ; --             ;
+; POWER_PRESET_COOLING_SOLUTION                  ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                                                   ; --                    ; --          ; --             ;
+; PROJECT_OUTPUT_DIRECTORY                       ; output_files                                                                            ; --                    ; --          ; --             ;
+; SMART_RECOMPILE                                ; On                                                                                      ; Off                   ; --          ; --             ;
+; TOP_LEVEL_ENTITY                               ; LineMemory                                                                              ; SimpleCompArch_QII_14 ; --          ; --             ;
++------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------+-------------+----------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -114,12 +115,22 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 601 MB              ; 00:00:03                           ;
-; Fitter                    ; 00:00:12     ; 1.8                     ; 1230 MB             ; 00:00:15                           ;
-; Assembler                 ; 00:00:04     ; 1.0                     ; 506 MB              ; 00:00:04                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 633 MB              ; 00:00:03                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 443 MB              ; 00:00:00                           ;
-; Total                     ; 00:00:22     ; --                      ; --                  ; 00:00:25                           ;
+; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 597 MB              ; 00:00:02                           ;
+; Fitter                    ; 00:00:11     ; 1.6                     ; 1227 MB             ; 00:00:14                           ;
+; Assembler                 ; 00:00:04     ; 1.0                     ; 503 MB              ; 00:00:04                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 637 MB              ; 00:00:03                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 443 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 455 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 471 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 455 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 455 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 455 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 455 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 455 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 455 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 455 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 455 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:29     ; --                      ; --                  ; 00:00:34                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -128,11 +139,21 @@ agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; FR-ECE-30181     ; Windows 7 ; 6.1        ; x86_64         ;
-; Fitter                    ; FR-ECE-30181     ; Windows 7 ; 6.1        ; x86_64         ;
-; Assembler                 ; FR-ECE-30181     ; Windows 7 ; 6.1        ; x86_64         ;
-; TimeQuest Timing Analyzer ; FR-ECE-30181     ; Windows 7 ; 6.1        ; x86_64         ;
-; EDA Netlist Writer        ; FR-ECE-30181     ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; FR-ECE-30158     ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; FR-ECE-30158     ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; FR-ECE-30158     ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; FR-ECE-30158     ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer        ; FR-ECE-30158     ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer        ; FR-ECE-30158     ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer        ; FR-ECE-30158     ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer        ; FR-ECE-30158     ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer        ; FR-ECE-30158     ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer        ; FR-ECE-30158     ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer        ; FR-ECE-30158     ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer        ; FR-ECE-30158     ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer        ; FR-ECE-30158     ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer        ; FR-ECE-30158     ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer        ; FR-ECE-30158     ; Windows 7 ; 6.1        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 
@@ -144,6 +165,16 @@ quartus_fit --read_settings_files=off --write_settings_files=off SimpleCompArch_
 quartus_asm --read_settings_files=off --write_settings_files=off SimpleCompArch_QII_14 -c SimpleCompArch_QII_14
 quartus_sta SimpleCompArch_QII_14 -c SimpleCompArch_QII_14
 quartus_eda --read_settings_files=off --write_settings_files=off SimpleCompArch_QII_14 -c SimpleCompArch_QII_14
+quartus_eda --gen_testbench --check_outputs=on --tool=modelsim_oem --format=verilog SimpleCompArch_QII_14 -c SimpleCompArch_QII_14 --vector_source=C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/lineMemory.vwf --testbench_file=C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/simulation/qsim/lineMemory.vwf.vt
+quartus_eda --functional=off --flatten_buses=off --timescale=1ps --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/simulation/qsim/ SimpleCompArch_QII_14 -c SimpleCompArch_QII_14
+quartus_eda --gen_testbench --check_outputs=on --tool=modelsim_oem --format=verilog SimpleCompArch_QII_14 -c SimpleCompArch_QII_14 --vector_source=C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/lineMemory.vwf --testbench_file=C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/simulation/qsim/lineMemory.vwf.vt
+quartus_eda --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/simulation/qsim/ SimpleCompArch_QII_14 -c SimpleCompArch_QII_14
+quartus_eda --gen_testbench --check_outputs=on --tool=modelsim_oem --format=verilog SimpleCompArch_QII_14 -c SimpleCompArch_QII_14 --vector_source=C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/lineMemory.vwf --testbench_file=C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/simulation/qsim/lineMemory.vwf.vt
+quartus_eda --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/simulation/qsim/ SimpleCompArch_QII_14 -c SimpleCompArch_QII_14
+quartus_eda --gen_testbench --check_outputs=on --tool=modelsim_oem --format=verilog SimpleCompArch_QII_14 -c SimpleCompArch_QII_14 --vector_source=C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/lineMemory.vwf --testbench_file=C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/simulation/qsim/lineMemory.vwf.vt
+quartus_eda --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/simulation/qsim/ SimpleCompArch_QII_14 -c SimpleCompArch_QII_14
+quartus_eda --gen_testbench --check_outputs=on --tool=modelsim_oem --format=verilog SimpleCompArch_QII_14 -c SimpleCompArch_QII_14 --vector_source=C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/lineMemory.vwf --testbench_file=C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/simulation/qsim/lineMemory.vwf.vt
+quartus_eda --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/simulation/qsim/ SimpleCompArch_QII_14 -c SimpleCompArch_QII_14
 
 
 

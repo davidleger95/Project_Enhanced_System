@@ -5,14 +5,14 @@ use work.MP_lib.all;
 
 entity DataMemory is
 port ( 	
-
+	reset:     in std_logic;
 	readEnable : in std_logic;
 	writeEnable: in std_logic;
 	lineIndex: in std_logic_vector(2 downto 0);
 	dataOut: out std_logic_vector(15 downto 0);
 	dataIn: in std_logic_vector(15 downto 0);
 	wordIndex: in std_logic_vector(1 downto 0);
-	replaceBlock: in std_logic;
+	replaceBlock: buffer std_logic;
 	data_block : in std_logic_vector(63 downto 0)
 		);
 		
@@ -71,6 +71,7 @@ word_check <= to_integer(unsigned (wordIndex));
 					memory1(i, 1) <= data_block(31 downto 16);
 					memory1(i, 2) <= data_block(47 downto 32);
 					memory1(i, 3) <= data_block(63 downto 48);
+					replaceBlock <= '0';
 				end if;
 			end loop;
 	end if;

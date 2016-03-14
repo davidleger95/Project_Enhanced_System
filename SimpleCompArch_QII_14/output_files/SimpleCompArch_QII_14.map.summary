@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Tue Mar 08 15:35:07 2016
+Analysis & Synthesis Status : Successful - Mon Mar 14 16:53:17 2016
 Quartus II 64-Bit Version : 14.0.2 Build 209 09/17/2014 SJ Full Version
 Revision Name : SimpleCompArch_QII_14
-Top-level Entity Name : SimpleCompArch
+Top-level Entity Name : LineMemory
 Family : Cyclone IV E
-Total logic elements : 40
-    Total combinational functions : 33
-    Dedicated logic registers : 27
-Total registers : 27
-Total pins : 101
+Total logic elements : 123
+    Total combinational functions : 123
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 13
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

@@ -35,8 +35,9 @@ port (
 		D_RFwa_s, D_RFr1a_s, D_RFr2a_s: out std_logic_vector(3 downto 0);
 		D_RFwe_s, D_RFr1e_s, D_RFr2e_s: out std_logic;
 		D_RFs_s, D_ALUs_s: out std_logic_vector(1 downto 0);
-		D_PCld_s, D_jpz_s: out std_logic
-		-- end debug variables				
+		D_PCld_s, D_jpz_s: out std_logic;
+		-- end debug variables	
+		delayReq : in std_logic
 );
 end component;
 
@@ -82,7 +83,8 @@ port(
 	Ms_ctrl:	out std_logic_vector(1 downto 0);
 	Mre_ctrl:	out std_logic;
 	Mwe_ctrl:	out std_logic;
-	oe_ctrl:	out std_logic
+	oe_ctrl:	out std_logic;
+	delayReq : in std_logic
 );
 end component;
 
@@ -114,12 +116,16 @@ port (
 	Mwe		:	in std_logic;
 	address	:	in std_logic_vector(11 downto 0);
 	data_in	:	in std_logic_vector(15 downto 0);
-	data_out:	out std_logic_vector(15 downto 0)
+	data_out:	out std_logic_vector(15 downto 0);
+	delayReq :  out std_logic
 );
 end component;
 
 component CacheController is
-port(		MreIn					:	in STD_LOGIC;
+port(	
+		clock					: in std_logic;
+		reset					:  in std_logic;
+		MreIn					:	in STD_LOGIC;
 		MweIn					:	in STD_LOGIC;
 		addressIN			:	in STD_LOGIC_VECTOR(11 downto 0);
 		addressOUT			:  out STD_LOGIC_VECTOR (11 downto 0);
@@ -128,25 +134,32 @@ port(		MreIn					:	in STD_LOGIC;
 		replaceStatusIn   :  in std_logic; 
 		replaceStatusOut  :  out std_logic;
 		data_block_in     :  in std_logic_vector(63 downto 0);
-		address_block_in  :  in std_logic_vector(11 downto 0));
+		address_block_in  :  in std_logic_vector(11 downto 0);
+		delayReq: out std_logic
+		);
 end component;
 
 component LineMemory is
-port(	tagIndex : in std_logic_vector(6 downto 0);
+port(	
+	reset : in std_logic;
+	tagIndex : in std_logic_vector(6 downto 0);
 	hit : out std_logic; 
 	lineIndex: in std_logic_vector(2 downto 0);
-	writeTag  : in std_logic);
+	writeTag  : buffer std_logic
+
+	);
 end component;
 
 component DataMemory is 
 port(
+	reset      : in std_logic;
 	readEnable : in std_logic;
 	writeEnable: in std_logic;
 	lineIndex: in std_logic_vector(2 downto 0);
 	dataOut: out std_logic_vector(15 downto 0);
 	dataIn: in std_logic_vector(15 downto 0);
 	wordIndex: in std_logic_vector(1 downto 0);
-	replaceBlock: in std_logic;
+	replaceBlock: buffer std_logic;
 	data_block : in std_logic_vector(63 downto 0));
 end component;
 
@@ -215,7 +228,8 @@ port(
 	ALUs_cu:	out	std_logic_vector(1 downto 0);	
 	Mre_cu:		out 	std_logic;
 	Mwe_cu:		out 	std_logic;
-	oe_cu:		out 	std_logic
+	oe_cu:		out 	std_logic;
+	delayReq :  in std_logic 
 );
 end component;
 

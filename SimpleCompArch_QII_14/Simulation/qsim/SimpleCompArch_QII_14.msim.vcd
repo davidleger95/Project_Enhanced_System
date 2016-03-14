@@ -1,0 +1,699 @@
+$comment
+	File created using the following command:
+		vcd file SimpleCompArch_QII_14.msim.vcd -direction
+$end
+$date
+	Mon Mar 14 17:01:26 2016
+$end
+$version
+	ModelSim Version 10.1e
+$end
+$timescale
+	1ps
+$end
+$scope module LineMemory_vlg_vec_tst $end
+$var reg 3 ! lineIndex [2:0] $end
+$var reg 1 " reset $end
+$var reg 7 # tagIndex [6:0] $end
+$var reg 1 $ writeTag $end
+$var wire 1 % hit $end
+$var wire 1 & sampler $end
+$scope module i1 $end
+$var wire 1 ' gnd $end
+$var wire 1 ( vcc $end
+$var wire 1 ) unknown $end
+$var tri1 1 * devclrn $end
+$var tri1 1 + devpor $end
+$var tri1 1 , devoe $end
+$var wire 1 - hit~output_o $end
+$var wire 1 . writeTag~input_o $end
+$var wire 1 / lineIndex[1]~input_o $end
+$var wire 1 0 lineIndex[0]~input_o $end
+$var wire 1 1 tagIndex[6]~input_o $end
+$var wire 1 2 lineIndex[2]~input_o $end
+$var wire 1 3 memory[6][6]~29_combout $end
+$var wire 1 4 memory[2][0]~22_combout $end
+$var wire 1 5 reset~input_o $end
+$var wire 1 6 memory[2][0]~21_combout $end
+$var wire 1 7 memory[0][0]~35_combout $end
+$var wire 1 8 memory[0][0]~35clkctrl_outclk $end
+$var wire 1 9 memory[0][6]~combout $end
+$var wire 1 : read~3_combout $end
+$var wire 1 ; tagIndex[2]~input_o $end
+$var wire 1 < memory[3][2]~25_combout $end
+$var wire 1 = memory[0][2]~combout $end
+$var wire 1 > tagIndex[3]~input_o $end
+$var wire 1 ? memory[6][3]~26_combout $end
+$var wire 1 @ memory[0][3]~combout $end
+$var wire 1 A read~1_combout $end
+$var wire 1 B tagIndex[5]~input_o $end
+$var wire 1 C memory[6][5]~28_combout $end
+$var wire 1 D memory[0][5]~combout $end
+$var wire 1 E tagIndex[4]~input_o $end
+$var wire 1 F memory[6][4]~27_combout $end
+$var wire 1 G memory[0][4]~combout $end
+$var wire 1 H read~2_combout $end
+$var wire 1 I tagIndex[1]~input_o $end
+$var wire 1 J memory[5][1]~34_combout $end
+$var wire 1 K memory[0][1]~combout $end
+$var wire 1 L tagIndex[0]~input_o $end
+$var wire 1 M memory[6][0]~20_combout $end
+$var wire 1 N memory[0][0]~combout $end
+$var wire 1 O read~0_combout $end
+$var wire 1 P read~4_combout $end
+$var wire 1 Q memory[3][0]~18_combout $end
+$var wire 1 R memory[1][0]~38_combout $end
+$var wire 1 S memory[1][0]~38clkctrl_outclk $end
+$var wire 1 T memory[1][5]~combout $end
+$var wire 1 U memory[1][4]~combout $end
+$var wire 1 V read~7_combout $end
+$var wire 1 W memory[1][6]~combout $end
+$var wire 1 X read~8_combout $end
+$var wire 1 Y memory[1][2]~combout $end
+$var wire 1 Z memory[1][3]~combout $end
+$var wire 1 [ read~6_combout $end
+$var wire 1 \ memory[1][1]~combout $end
+$var wire 1 ] memory[7][0]~30_combout $end
+$var wire 1 ^ memory[1][0]~combout $end
+$var wire 1 _ read~5_combout $end
+$var wire 1 ` read~9_combout $end
+$var wire 1 a tagFound~21_combout $end
+$var wire 1 b memory[6][1]~24_combout $end
+$var wire 1 c memory[5][1]~33_combout $end
+$var wire 1 d memory[7][6]~37_combout $end
+$var wire 1 e memory[7][6]~37clkctrl_outclk $end
+$var wire 1 f memory[7][1]~combout $end
+$var wire 1 g memory[7][0]~combout $end
+$var wire 1 h tagFound~15_combout $end
+$var wire 1 i memory[7][6]~combout $end
+$var wire 1 j tagFound~18_combout $end
+$var wire 1 k memory[7][4]~combout $end
+$var wire 1 l memory[7][5]~combout $end
+$var wire 1 m tagFound~17_combout $end
+$var wire 1 n memory[6][2]~32_combout $end
+$var wire 1 o memory[7][2]~combout $end
+$var wire 1 p memory[7][3]~combout $end
+$var wire 1 q tagFound~16_combout $end
+$var wire 1 r tagFound~19_combout $end
+$var wire 1 s memory[6][6]~31_combout $end
+$var wire 1 t memory[6][6]~31clkctrl_outclk $end
+$var wire 1 u memory[6][0]~combout $end
+$var wire 1 v memory[6][1]~combout $end
+$var wire 1 w tagFound~10_combout $end
+$var wire 1 x memory[6][4]~combout $end
+$var wire 1 y memory[6][5]~combout $end
+$var wire 1 z tagFound~12_combout $end
+$var wire 1 { memory[6][2]~combout $end
+$var wire 1 | memory[6][3]~combout $end
+$var wire 1 } tagFound~11_combout $end
+$var wire 1 ~ memory[6][6]~combout $end
+$var wire 1 !! tagFound~13_combout $end
+$var wire 1 "! tagFound~14_combout $end
+$var wire 1 #! memory[3][0]~36_combout $end
+$var wire 1 $! memory[3][0]~36clkctrl_outclk $end
+$var wire 1 %! memory[3][0]~combout $end
+$var wire 1 &! memory[3][1]~combout $end
+$var wire 1 '! tagFound~5_combout $end
+$var wire 1 (! memory[3][6]~combout $end
+$var wire 1 )! memory[3][5]~combout $end
+$var wire 1 *! memory[3][4]~combout $end
+$var wire 1 +! tagFound~7_combout $end
+$var wire 1 ,! tagFound~8_combout $end
+$var wire 1 -! memory[2][0]~23_combout $end
+$var wire 1 .! memory[2][0]~23clkctrl_outclk $end
+$var wire 1 /! memory[2][1]~combout $end
+$var wire 1 0! memory[2][0]~combout $end
+$var wire 1 1! tagFound~0_combout $end
+$var wire 1 2! memory[2][5]~combout $end
+$var wire 1 3! memory[2][4]~combout $end
+$var wire 1 4! tagFound~2_combout $end
+$var wire 1 5! memory[2][2]~combout $end
+$var wire 1 6! memory[2][3]~combout $end
+$var wire 1 7! tagFound~1_combout $end
+$var wire 1 8! memory[2][6]~combout $end
+$var wire 1 9! tagFound~3_combout $end
+$var wire 1 :! tagFound~4_combout $end
+$var wire 1 ;! memory[3][3]~combout $end
+$var wire 1 <! memory[3][2]~combout $end
+$var wire 1 =! tagFound~6_combout $end
+$var wire 1 >! tagFound~9_combout $end
+$var wire 1 ?! tagFound~20_combout $end
+$var wire 1 @! memory[5][1]~39_combout $end
+$var wire 1 A! memory[5][1]~39clkctrl_outclk $end
+$var wire 1 B! memory[5][0]~combout $end
+$var wire 1 C! memory[5][1]~combout $end
+$var wire 1 D! tagFound~27_combout $end
+$var wire 1 E! memory[4][0]~19_combout $end
+$var wire 1 F! memory[4][0]~40_combout $end
+$var wire 1 G! memory[4][0]~40clkctrl_outclk $end
+$var wire 1 H! memory[4][6]~combout $end
+$var wire 1 I! tagFound~25_combout $end
+$var wire 1 J! memory[4][5]~combout $end
+$var wire 1 K! memory[4][4]~combout $end
+$var wire 1 L! tagFound~24_combout $end
+$var wire 1 M! memory[4][3]~combout $end
+$var wire 1 N! memory[4][2]~combout $end
+$var wire 1 O! tagFound~23_combout $end
+$var wire 1 P! memory[4][0]~combout $end
+$var wire 1 Q! memory[4][1]~combout $end
+$var wire 1 R! tagFound~22_combout $end
+$var wire 1 S! tagFound~26_combout $end
+$var wire 1 T! memory[5][6]~combout $end
+$var wire 1 U! memory[5][4]~combout $end
+$var wire 1 V! memory[5][5]~combout $end
+$var wire 1 W! tagFound~29_combout $end
+$var wire 1 X! tagFound~30_combout $end
+$var wire 1 Y! memory[5][3]~combout $end
+$var wire 1 Z! memory[5][2]~combout $end
+$var wire 1 [! tagFound~28_combout $end
+$var wire 1 \! tagFound~31_combout $end
+$var wire 1 ]! tagFound~32_combout $end
+$var wire 1 ^! tagFound~combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1 !
+1"
+b0 #
+0$
+0%
+x&
+0'
+1(
+x)
+1*
+1+
+1,
+0-
+0.
+0/
+10
+01
+02
+03
+04
+15
+16
+17
+18
+09
+0:
+0;
+0<
+0=
+0>
+0?
+0@
+1A
+0B
+0C
+0D
+0E
+0F
+0G
+1H
+0I
+0J
+0K
+0L
+0M
+0N
+1O
+0P
+1Q
+1R
+1S
+0T
+0U
+1V
+0W
+1X
+0Y
+0Z
+1[
+0\
+1]
+1^
+0_
+0`
+0a
+1b
+0c
+1d
+1e
+1f
+1g
+0h
+0i
+0j
+0k
+0l
+1m
+1n
+1o
+0p
+0q
+0r
+1s
+1t
+0u
+1v
+0w
+0x
+0y
+1z
+1{
+0|
+0}
+0~
+0!!
+0"!
+1#!
+1$!
+1%!
+1&!
+0'!
+0(!
+0)!
+0*!
+1+!
+1,!
+1-!
+1.!
+1/!
+00!
+01!
+02!
+03!
+14!
+05!
+06!
+17!
+08!
+09!
+0:!
+0;!
+0<!
+1=!
+0>!
+0?!
+1@!
+1A!
+1B!
+0C!
+0D!
+0E!
+1F!
+1G!
+0H!
+0I!
+0J!
+0K!
+1L!
+0M!
+1N!
+0O!
+0P!
+0Q!
+1R!
+0S!
+0T!
+0U!
+0V!
+1W!
+1X!
+0Y!
+1Z!
+0[!
+0\!
+0]!
+0^!
+$end
+#30000
+0"
+05
+0&
+0F!
+0@!
+0#!
+0d
+0R
+06
+0G!
+0A!
+0$!
+0e
+0S
+0-!
+0s
+07
+0.!
+0t
+08
+#40000
+b0 !
+00
+1&
+0X!
+1I!
+19!
+0X
+0Q
+1:
+0,!
+1P
+1a
+1]!
+1^!
+1-
+1%
+#80000
+b1 #
+b1 !
+10
+1L
+0&
+1X!
+0I!
+09!
+1X
+1Q
+0:
+0R!
+1D!
+1_
+0O
+1`
+1,!
+0P
+#160000
+b11 !
+b0 #
+b10 !
+0L
+00
+1/
+1&
+1R!
+0D!
+0_
+1O
+0X!
+1I!
+19!
+0X
+0Q
+1:
+0a
+0`
+1P
+0,!
+0]!
+0^!
+0-
+0%
+#200000
+b0 !
+0/
+0&
+1a
+1]!
+1^!
+1-
+1%
+#240000
+b100 !
+b1000 #
+b1100 #
+b1110 #
+b1111 #
+b101 !
+b111 !
+1L
+1I
+1;
+1>
+10
+1/
+12
+1&
+0R!
+1'!
+1h
+0O
+0=!
+07!
+0[
+0A
+1X!
+0I!
+09!
+1j
+1c
+0:
+0a
+0P
+0]!
+0^!
+0-
+0%
+#310000
+1$
+1.
+0&
+1d
+1M
+1J
+1?
+1<
+1e
+1p
+1q
+1r
+1?!
+1]!
+#420000
+0$
+0.
+1&
+0d
+0M
+0J
+0?
+0<
+0e
+1^!
+1-
+1%
+#440000
+b11 !
+b111 #
+b11 #
+b1 #
+b0 #
+b10 !
+b0 !
+0L
+0I
+0;
+0>
+00
+0/
+02
+0&
+1R!
+0'!
+0h
+1O
+1=!
+17!
+0q
+1[
+1A
+0X!
+1I!
+19!
+0j
+0c
+1:
+0?!
+0r
+1P
+0]!
+1a
+0^!
+1]!
+0-
+0%
+1^!
+1-
+1%
+#530000
+b100 !
+b1000 #
+b1100 #
+b1110 #
+b1111 #
+b101 !
+b111 !
+1L
+1I
+1;
+1>
+10
+1/
+12
+1&
+0R!
+1'!
+1h
+0O
+0=!
+07!
+1q
+0[
+0A
+1X!
+0I!
+09!
+1j
+1c
+0:
+0a
+1r
+0P
+0]!
+1?!
+0^!
+1]!
+0-
+0%
+1^!
+1-
+1%
+#680000
+b111 #
+b11 #
+b1 #
+b0 #
+b110 !
+00
+0L
+0I
+0;
+0>
+0&
+0X!
+1I!
+1!!
+0j
+0c
+1R!
+0'!
+0h
+1O
+1=!
+17!
+0q
+1[
+1A
+0r
+0?!
+0]!
+0^!
+0-
+0%
+#740000
+b1000 #
+1>
+1&
+0=!
+07!
+0[
+0A
+#750000
+1$
+1.
+0&
+0n
+0b
+0]
+1?
+14
+1s
+1t
+1|
+0{
+0v
+1}
+1w
+1"!
+1?!
+1]!
+#850000
+0$
+0.
+1&
+1n
+1b
+1]
+0?
+04
+1^!
+1{
+1v
+0|
+0s
+1-
+0t
+1%
+0}
+0w
+0"!
+0?!
+0]!
+0^!
+0-
+0%
+#870000
+b10 !
+b0 !
+0/
+02
+0&
+19!
+0!!
+1:
+#900000
+b100 !
+b110 !
+1/
+12
+1&
+09!
+1!!
+0:
+#970000
+b0 #
+b10 !
+b0 !
+0/
+02
+0>
+0&
+19!
+0!!
+1:
+1=!
+17!
+1[
+1A
+1P
+1a
+1]!
+1^!
+1-
+1%
+#1000000

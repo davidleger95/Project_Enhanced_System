@@ -1,0 +1,32 @@
+# do SimpleCompArch_QII_14.do 
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module LineMemory
+# 
+# Top level modules:
+# 	LineMemory
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module LineMemory_vlg_sample_tst
+# -- Compiling module LineMemory_vlg_check_tst
+# -- Compiling module LineMemory_vlg_vec_tst
+# 
+# Top level modules:
+# 	LineMemory_vlg_vec_tst
+# vsim -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver -c -voptargs=\"+acc\" -t 1ps -novopt work.LineMemory_vlg_vec_tst 
+# Loading work.LineMemory_vlg_vec_tst
+# Loading work.LineMemory
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading work.LineMemory_vlg_sample_tst
+# Loading work.LineMemory_vlg_check_tst
+# ERROR! Vector Mismatch for output port hit :: @time = 80000.000 ps
+#      Expected value = 0
+#      Real value = 1
+#           1 mismatched vectors : Simulation failed !
+# ** Note: $finish    : lineMemory.vwf.vt(157)
+#    Time: 1 us  Iteration: 0  Instance: /LineMemory_vlg_vec_tst/tb_out
