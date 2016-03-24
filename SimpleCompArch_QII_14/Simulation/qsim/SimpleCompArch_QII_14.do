@@ -1,10 +1,10 @@
-onerror {exit -code 1}
+onerror {quit -f}
 vlib work
 vlog -work work SimpleCompArch_QII_14.vo
-vlog -work work lineMemory.vwf.vt
-vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.LineMemory_vlg_vec_tst -voptargs="+acc"
+vlog -work work SimpleCompArch_QII_14.vt
+vsim -novopt -c -t 1ps -L cycloneiv_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate work.SimpleCompArch_vlg_vec_tst
 vcd file -direction SimpleCompArch_QII_14.msim.vcd
-vcd add -internal LineMemory_vlg_vec_tst/*
-vcd add -internal LineMemory_vlg_vec_tst/i1/*
+vcd add -internal SimpleCompArch_vlg_vec_tst/*
+vcd add -internal SimpleCompArch_vlg_vec_tst/i1/*
+add wave /*
 run -all
-quit -f

@@ -34,144 +34,108 @@
 --agreement for further details.
 
 
-library	ieee;
-use ieee.std_logic_1164.all;
-USE ieee.numeric_std.all; 
-use work.MP_lib.all;
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
 
 LIBRARY altera_mf;
 USE altera_mf.altera_mf_components.all;
 
 ENTITY MainMemory IS
 	PORT
-	(
-	clock	: 	in std_logic;
+	( --clock_en : in std_logic;
+		clock		: 	in std_logic;
 	rst		: 	in std_logic;
 	Mre		:	in std_logic;
 	Mwe		:	in std_logic;
-	address	:	in std_logic_vector(11 downto 0);
+	addressIn	:	in std_ulogic_vector(11 downto 0);
+	writeAddress : in std_ulogic_vector(9 downto 0);
 	data_in	:	in std_logic_vector(63 downto 0);
-	data_out:	out std_logic_vector (63 downto 0)
+	data_out:	out std_logic_vector (63 downto 0);
+	slowClock_out : out std_logic
 	);
 END MainMemory;
 
 
 ARCHITECTURE SYN OF mainmemory IS
 
-	SIGNAL out_data	: STD_LOGIC_VECTOR (63 DOWNTO 0);
-	signal tag_plus_line : std_logic_vector (9 downto 0);
-	signal number_address : integer ; 
-	signal temp_address : std_logic_vector(11 downto 0);
+	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (63 DOWNTO 0);
+	signal slowClock : std_logic:='0';
+	signal counter : integer:= 1;
+	signal blockAddress : std_logic_vector(9 downto 0);
+	signal write_data : std_logic;
+	
 BEGIN
+	slowClock_out <= slowClock;
+	data_out    <= sub_wire0(63 DOWNTO 0);
+	write_data <= Mwe;
 	
-	tag_plus_line <= address(11 downto 2);
-
-   setAddres: process(clock, rst, Mwe, address)
-	begin
-		if rst='1' then
-			data_out <= ZERO;
-		else
-			if (clock'event and clock = '1') then
-				if (Mre ='1' and Mwe ='0') then								 
-					temp_address <= tag_plus_line and "00";
-					out_data(15 downto 0) <= tmp_ram(to_integer(temp_address));
-					temp_address <= tag_plus_line and "01";
-					out_data(31 downto 16) <= tmp_ram(to_integer(temp_address));
-					temp_address <= tag_plus_line and "10";
-					out_data(47 downto 32) <= tmp_ram(to_integer(temp_address));
-					temp_address <= tag_plus_line and "11";
-					out_data(63 downto 48) <= tmp_ram(to_integer(temp_address));
-					
+	
+	
+	delayClock : process (clock)
+		
+	begin 
+ 
+			if(rising_edge(clock)) then 
+				if (counter = 4) then 
+					slowClock <= not slowClock;
+					counter <= 1;
+				else
+					counter <= counter +1;
 				end if;
+--				if (Mwe = '1') then
+--					write_data <= '1';
+--					slowClock <= '1';
+--				end if;
 			end if;
-		end if;
 	end process;
+	address : process (Mre, Mwe) 
+	begin 
+		if (Mre = '1') then 
+			blockAddress <= to_stdlogicvector(addressIn(11 downto 2));
+		end if;
+		if (Mwe = '1') then
+			blockAddress <= to_stdlogicvector(writeAddress); 
+		end if;
 	
+	end process;
+--	write : process ( Mwe) 
+--	begin 
+--		if (rising_edge(Mwe)) then
+--			write_data <= '1';
+--			slowClock <= '1';
+--		end if;
+--	end process;
+
 	altsyncram_component : altsyncram
 	GENERIC MAP (
 		clock_enable_input_a => "BYPASS",
 		clock_enable_output_a => "BYPASS",
+		init_file => "fibonacci-64bits.mif",
 		intended_device_family => "Cyclone IV E",
 		lpm_hint => "ENABLE_RUNTIME_MOD=NO",
 		lpm_type => "altsyncram",
-		numwords_a => 4096,
+		numwords_a => 1024,
 		operation_mode => "SINGLE_PORT",
 		outdata_aclr_a => "CLEAR0",
-		outdata_reg_a => "CLOCK0",
+		outdata_reg_a => "UNREGISTERED",
 		power_up_uninitialized => "FALSE",
 		ram_block_type => "M9K",
 		read_during_write_mode_port_a => "NEW_DATA_NO_NBE_READ",
-		widthad_a => 12,
+		widthad_a => 10,
 		width_a => 64,
 		width_byteena_a => 1
 	)
 	PORT MAP (
-
-	clock0 =>	clock,	
-	aclr0 => rst,
-	rden_a => Mre,
-	wren_a => Mwe,
-	address_a => address,
-	data_a => data_in,
-	q_a =>out_data
+		aclr0 => rst,
+		address_a => blockAddress,
+		clock0 => slowClock,
+		data_a => data_in,
+		rden_a => Mre,
+		wren_a => write_data,
+		q_a => sub_wire0
 	);
 
 
-
---	write: process(clock, rst, Mre, address, data_in)
---	begin							-- program to generate the first 15 coeff. of the  equation y(n) = 2x(n) + y(n-1) - y(n-2)	 
---		if rst='1' then		-- x=2,3,...,12,13,14, y(0)=1 andy(1)=3.
---			tmp_ram <= (
---						0 => x"3002",	   	-- R0 <- #2			-> x(2)=2
---						1 => x"3101",			-- R1 <- #1			-> to increment by 1 and y(0) - 1
---						2 => x"3203",			-- R2 <- #3			-> y(1) = 3
---						3 => x"3352",			-- R3 <- #52		   -> pointer to mem. location of 1st calculated coeff.
---						4 => x"3401",			-- R4 <- #1			-> to increment by 1
---						5 => x"1150",			-- M[50] <- R1 	-> M[50]=1
---						6 => x"1251",			-- M[51] <- R2 	-> M[51]=3
---						7 => x"1070",         -- M[70] <- R0		-> temp storage of x(n)
---						8 => x"0570",         -- R5<- M[70]    	-> R5=R0
---						9 => x"4500",			-- R5<- R5+R0		-> R5=2*R0  (2x)
---						10 => x"4520",			-- R5<- R5+R2		-> R5=R5+R2  (2x+y(n-1))
---						11 => x"5510",			-- R5<- R5-R1		-> R5=R5-R1  (2x+y(n-1)-y(n-2))
---						12 => x"2350",			-- M[R3]<-R5		-> M[R3] = y(n)
---						13 => x"4340",			-- R3<-R3+R4		-> R3=R3+1
---						14 => x"1271",			-- M[71] <- R2		-> temp storage of x(n)
---						15 => x"1572",			-- M[72] <- R5		-> temp storage of x(n)
---						16 => x"0171",			-- R1<- M[71]    	-> R1=y(n-2)
---						17 => x"0272",			-- R2<- M[72]    	-> R2=y(n-1)
---						18 => x"4040",			-- R0<- R0+R4		-> R0=R0+1   (x(n+1))
---						19 => x"065E",			-- R6 <- M[5E]		-> R6<- M[5E]   (y(14))
---						20 => x"6607",  		-- R6=0: PC<- #7 ->loop if R6=0	
---				
---						21 => x"7050",			-- output<- M[50]   mov obuf_out,M[50]
---						22 => x"7051",			-- output<- M[51]   mov obuf_out,M[51]
---						23 => x"7052",			-- output<- M[52]   mov obuf_out,M[52]
---						24 => x"7053",			-- output<- M[53]   mov obuf_out,M[53]
---						25 => x"7054",			-- output<- M[54]   mov obuf_out,M[54]
---						26 => x"7055",			-- output<- M[55]   mov obuf_out,M[55]
---						27 => x"7056",			-- output<- M[56]   mov obuf_out,M[56]
---						28 => x"7057",			-- output<- M[57]   mov obuf_out,M[57]
---						29 => x"7058",			-- output<- M[58]   mov obuf_out,M[58]
---						30 => x"7059",			-- output<- M[59]   mov obuf_out,M[59]			
---						31 => x"705A",			-- output<- M[5A]   mov obuf_out,M[59]			
---						32 => x"705B",			-- output<- M[5B]   mov obuf_out,M[59]			
---						33 => x"705C",			-- output<- M[5C]   mov obuf_out,M[59]			
---						34 => x"705D",			-- output<- M[5D]   mov obuf_out,M[59]			
---						35 => x"705E",			-- output<- M[5E]   mov obuf_out,M[59]			
---						36 => x"F000",			-- halt
---						others => x"0000");
---		else
---			if (clock'event and clock = '1') then
---				if (Mwe ='1' and Mre = '0') then
---					tmp_ram(to_integer(address)) <= data_in;
---				end if;
---			end if;
---		end if;
---	end process;
----------------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------------
 
 END SYN;
 
@@ -185,7 +149,7 @@ END SYN;
 -- Retrieval info: PRIVATE: AclrOutput NUMERIC "1"
 -- Retrieval info: PRIVATE: BYTE_ENABLE NUMERIC "0"
 -- Retrieval info: PRIVATE: BYTE_SIZE NUMERIC "8"
--- Retrieval info: PRIVATE: BlankMemory NUMERIC "1"
+-- Retrieval info: PRIVATE: BlankMemory NUMERIC "0"
 -- Retrieval info: PRIVATE: CLOCK_ENABLE_INPUT_A NUMERIC "0"
 -- Retrieval info: PRIVATE: CLOCK_ENABLE_OUTPUT_A NUMERIC "0"
 -- Retrieval info: PRIVATE: Clken NUMERIC "0"
@@ -197,53 +161,54 @@ END SYN;
 -- Retrieval info: PRIVATE: JTAG_ENABLED NUMERIC "0"
 -- Retrieval info: PRIVATE: JTAG_ID STRING "NONE"
 -- Retrieval info: PRIVATE: MAXIMUM_DEPTH NUMERIC "0"
--- Retrieval info: PRIVATE: MIFfilename STRING ""
--- Retrieval info: PRIVATE: NUMWORDS_A NUMERIC "4096"
+-- Retrieval info: PRIVATE: MIFfilename STRING "mem-file.mif"
+-- Retrieval info: PRIVATE: NUMWORDS_A NUMERIC "1024"
 -- Retrieval info: PRIVATE: RAM_BLOCK_TYPE NUMERIC "2"
 -- Retrieval info: PRIVATE: READ_DURING_WRITE_MODE_PORT_A NUMERIC "3"
 -- Retrieval info: PRIVATE: RegAddr NUMERIC "1"
 -- Retrieval info: PRIVATE: RegData NUMERIC "1"
--- Retrieval info: PRIVATE: RegOutput NUMERIC "1"
+-- Retrieval info: PRIVATE: RegOutput NUMERIC "0"
 -- Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
 -- Retrieval info: PRIVATE: SingleClock NUMERIC "1"
 -- Retrieval info: PRIVATE: UseDQRAM NUMERIC "1"
 -- Retrieval info: PRIVATE: WRCONTROL_ACLR_A NUMERIC "0"
--- Retrieval info: PRIVATE: WidthAddr NUMERIC "12"
--- Retrieval info: PRIVATE: WidthData NUMERIC "16"
+-- Retrieval info: PRIVATE: WidthAddr NUMERIC "10"
+-- Retrieval info: PRIVATE: WidthData NUMERIC "64"
 -- Retrieval info: PRIVATE: rden NUMERIC "1"
 -- Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
 -- Retrieval info: CONSTANT: CLOCK_ENABLE_INPUT_A STRING "BYPASS"
 -- Retrieval info: CONSTANT: CLOCK_ENABLE_OUTPUT_A STRING "BYPASS"
+-- Retrieval info: CONSTANT: INIT_FILE STRING "mem-file.mif"
 -- Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone IV E"
 -- Retrieval info: CONSTANT: LPM_HINT STRING "ENABLE_RUNTIME_MOD=NO"
 -- Retrieval info: CONSTANT: LPM_TYPE STRING "altsyncram"
--- Retrieval info: CONSTANT: NUMWORDS_A NUMERIC "4096"
+-- Retrieval info: CONSTANT: NUMWORDS_A NUMERIC "1024"
 -- Retrieval info: CONSTANT: OPERATION_MODE STRING "SINGLE_PORT"
 -- Retrieval info: CONSTANT: OUTDATA_ACLR_A STRING "CLEAR0"
--- Retrieval info: CONSTANT: OUTDATA_REG_A STRING "CLOCK0"
+-- Retrieval info: CONSTANT: OUTDATA_REG_A STRING "UNREGISTERED"
 -- Retrieval info: CONSTANT: POWER_UP_UNINITIALIZED STRING "FALSE"
 -- Retrieval info: CONSTANT: RAM_BLOCK_TYPE STRING "M9K"
 -- Retrieval info: CONSTANT: READ_DURING_WRITE_MODE_PORT_A STRING "NEW_DATA_NO_NBE_READ"
--- Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "12"
--- Retrieval info: CONSTANT: WIDTH_A NUMERIC "16"
+-- Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "10"
+-- Retrieval info: CONSTANT: WIDTH_A NUMERIC "64"
 -- Retrieval info: CONSTANT: WIDTH_BYTEENA_A NUMERIC "1"
 -- Retrieval info: USED_PORT: aclr 0 0 0 0 INPUT GND "aclr"
--- Retrieval info: USED_PORT: address 0 0 12 0 INPUT NODEFVAL "address[11..0]"
+-- Retrieval info: USED_PORT: address 0 0 10 0 INPUT NODEFVAL "address[9..0]"
 -- Retrieval info: USED_PORT: clock 0 0 0 0 INPUT VCC "clock"
--- Retrieval info: USED_PORT: data 0 0 16 0 INPUT NODEFVAL "data[15..0]"
--- Retrieval info: USED_PORT: q 0 0 16 0 OUTPUT NODEFVAL "q[15..0]"
+-- Retrieval info: USED_PORT: data 0 0 64 0 INPUT NODEFVAL "data[63..0]"
+-- Retrieval info: USED_PORT: q 0 0 64 0 OUTPUT NODEFVAL "q[63..0]"
 -- Retrieval info: USED_PORT: rden 0 0 0 0 INPUT VCC "rden"
 -- Retrieval info: USED_PORT: wren 0 0 0 0 INPUT NODEFVAL "wren"
 -- Retrieval info: CONNECT: @aclr0 0 0 0 0 aclr 0 0 0 0
--- Retrieval info: CONNECT: @address_a 0 0 12 0 address 0 0 12 0
+-- Retrieval info: CONNECT: @address_a 0 0 10 0 address 0 0 10 0
 -- Retrieval info: CONNECT: @clock0 0 0 0 0 clock 0 0 0 0
--- Retrieval info: CONNECT: @data_a 0 0 16 0 data 0 0 16 0
+-- Retrieval info: CONNECT: @data_a 0 0 64 0 data 0 0 64 0
 -- Retrieval info: CONNECT: @rden_a 0 0 0 0 rden 0 0 0 0
 -- Retrieval info: CONNECT: @wren_a 0 0 0 0 wren 0 0 0 0
--- Retrieval info: CONNECT: q 0 0 16 0 @q_a 0 0 16 0
+-- Retrieval info: CONNECT: q 0 0 64 0 @q_a 0 0 64 0
 -- Retrieval info: GEN_FILE: TYPE_NORMAL MainMemory.vhd TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL MainMemory.inc FALSE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL MainMemory.cmp TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL MainMemory.bsf FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL MainMemory_inst.vhd TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL MainMemory_inst.vhd FALSE
 -- Retrieval info: LIB_FILE: altera_mf

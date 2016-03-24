@@ -14,7 +14,9 @@ use ieee.std_logic_unsigned.all;
 use work.MP_lib.all;
 
 entity controller is
-port(	clock:		in std_logic;
+port(	
+	controller_en : in std_logic;
+	clock:		in std_logic;
 	rst:		in std_logic;
 	IR_word:	in std_logic_vector(15 downto 0);
 	RFs_ctrl:	out std_logic_vector(1 downto 0);
@@ -38,13 +40,15 @@ end controller;
 
 architecture fsm of controller is
 
-  type state_type is (  S0,S1,S1a,S1b,S2,S3,S3a,S3b,S4,S4a,S4b,S5,S5a,S5b,
+  type state_type is (  sDelay, sDelay2, S0,S1,S1a,S1b,S2,S3,S3a,S3b,S4,S4a,S4b,S5,S5a,S5b,
 			S6,S6a,S7,S7a,S7b,S8,S8a,S8b,S9,S9a,S9b,S10,S11,S11a);
   signal state: state_type;
-	
+  signal nextState : state_type;
+  signal numDelayCylcles : integer;
 begin
   process(clock, rst, IR_word)
     variable OPCODE: std_logic_vector(3 downto 0);
+	 
   begin
     if rst='1' then			   
 	Ms_ctrl <= "10";
@@ -61,6 +65,17 @@ begin
 
     elsif (clock'event and clock='1') then
 	case state is 
+--		when sDelay => 
+--			if (controller_en = '0') then 
+--				state <= nextState;
+--			end if;
+--			
+--		when sDelay2 => 
+--			numDelayCylcles <= numDelayCylcles -1;
+--			if (numDelayCylcles = 0) then 
+--				state <= nextState;
+--			end if;
+--			
 	  when S0 =>	PCclr_ctrl <= '0';	-- Reset State	
 			state <= S1;	
 
@@ -74,13 +89,19 @@ begin
 			Mwe_ctrl <= '0';
 			jmpen_ctrl <= '0';
 			oe_ctrl <= '0';
-			state <= S1a;
+--			state <= sDelay2;
+--			nextState <= s1a;
+--			numDelayCylcles <= 3;
+			state <= s1a;
 	  when S1a => 	
 	        IRld_ctrl <= '0';
 	        PCinc_ctrl <= '1';
 	        Mre_ctrl <= '0';
-	  		state <= S1b;			-- Fetch end ...
+--	  		state <= sDelay;
+--		   nextState <= S1b;			-- Fetch end ...
+			state <= s1b;
 	  when S1b => PCinc_ctrl <= '0';
+
 		   state <= S2;
 	  				
 	  when S2 =>	OPCODE := IR_word(15 downto 12);
@@ -102,10 +123,15 @@ begin
 			Ms_ctrl <= "01";
 			Mre_ctrl <= '1';
 			Mwe_ctrl <= '0';		  
-			state <= S3a;
+--			state <= sDelay2;
+--			nextState <= s3a;
+--			numDelayCylcles <= 3;
+			state<= s3a;
 	  when S3a =>   RFwe_ctrl <= '1'; 
 	        Mre_ctrl <= '0'; 
-			state <= S3b;
+--			state <= sDelay;
+--		   nextState <= S3b;	
+			state <= s3b;
 	  when S3b => 	RFwe_ctrl <= '0';
 			state <= S1;
 	    
@@ -117,10 +143,15 @@ begin
 			state <= S4a;			-- read value from RF
 	  when S4a =>   Mre_ctrl <= '0';
 			Mwe_ctrl <= '1';
-			state <= S4b;			-- write into memory
+--			state <= sDelay2;
+--			nextState <= s4b;
+--			numDelayCylcles <= 3;      -- write into memory
+			state <= s4b;
 	  when S4b =>   Ms_ctrl <= "10";				  
 			Mwe_ctrl <= '0';
-			state <= S1;
+--			state <= sDelay;
+--		   nextState <= S1;
+			state <= s1;
 		
 	  when S5 =>	RFr1a_ctrl <= IR_word(11 downto 8);	
 			RFr1e_ctrl <= '1'; -- mem[RF[rn]] <= RF[rm]
@@ -131,11 +162,16 @@ begin
 			state <= S5a;
 	  when S5a =>   Mre_ctrl <= '0';			
 			Mwe_ctrl <= '1'; -- write into memory
-			state <= S5b;
+--			state <= sDelay2;
+--			nextState <= s5b;
+--			numDelayCylcles <= 3;
+			state <= s5b;
 	  when S5b => 	Ms_ctrl <= "10";-- return
 			Mwe_ctrl <= '0';
-			state <= S1;
-					
+--			state <= sDelay;
+--		   nextState <= S1;	
+			state <= s1; 
+--					
 	  when S6 =>	RFwa_ctrl <= IR_word(11 downto 8);	
 			RFwe_ctrl <= '1'; -- RF[rn] <= imm.
 			RFs_ctrl <= "10";
@@ -183,9 +219,15 @@ begin
 	  when S11 =>   Ms_ctrl <= "01";
 			Mre_ctrl <= '1'; -- read memory
 			Mwe_ctrl <= '0';		  
-			state <= S11a;
+--			state <= sDelay2;
+--			nextState <= s11a;
+--			numDelayCylcles <= 3;
+			state <= s11a;
 	  when S11a =>  oe_ctrl <= '1'; 
-			state <= S1;
+			Mre_ctrl <= '0';
+--			state <= sDelay;
+--		   nextState <= S1;	
+			state <= s1;
 	  when others =>
 	end case;
     end if;

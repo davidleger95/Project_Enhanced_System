@@ -1,0 +1,269 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'sys_clk'
+Slack : -8.567
+TNS   : -5336.316
+
+Type  : Slow 1200mV 85C Model Setup 'Cache:Unit2|CacheController:Unit1|send_block_out'
+Slack : -7.205
+TNS   : -371.824
+
+Type  : Slow 1200mV 85C Model Setup 'sys_rst'
+Slack : -4.875
+TNS   : -1089.431
+
+Type  : Slow 1200mV 85C Model Setup 'Cache:Unit2|MainMemory:Unit2|slowClock'
+Slack : -1.963
+TNS   : -24.033
+
+Type  : Slow 1200mV 85C Model Setup 'Cache:Unit2|CacheController:Unit1|replaceStatusOut'
+Slack : -1.876
+TNS   : -7.617
+
+Type  : Slow 1200mV 85C Model Setup 'CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl'
+Slack : -1.139
+TNS   : -8.761
+
+Type  : Slow 1200mV 85C Model Hold 'sys_rst'
+Slack : -2.389
+TNS   : -108.047
+
+Type  : Slow 1200mV 85C Model Hold 'sys_clk'
+Slack : -0.317
+TNS   : -2.494
+
+Type  : Slow 1200mV 85C Model Hold 'Cache:Unit2|CacheController:Unit1|replaceStatusOut'
+Slack : -0.262
+TNS   : -1.239
+
+Type  : Slow 1200mV 85C Model Hold 'CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl'
+Slack : 0.039
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Cache:Unit2|MainMemory:Unit2|slowClock'
+Slack : 0.241
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Cache:Unit2|CacheController:Unit1|send_block_out'
+Slack : 1.570
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'sys_clk'
+Slack : -3.485
+TNS   : -1611.114
+
+Type  : Slow 1200mV 85C Model Recovery 'sys_rst'
+Slack : -0.440
+TNS   : -0.991
+
+Type  : Slow 1200mV 85C Model Removal 'sys_rst'
+Slack : -1.888
+TNS   : -764.443
+
+Type  : Slow 1200mV 85C Model Removal 'sys_clk'
+Slack : -0.741
+TNS   : -72.301
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'sys_clk'
+Slack : -3.000
+TNS   : -1306.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'sys_rst'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Cache:Unit2|MainMemory:Unit2|slowClock'
+Slack : -2.174
+TNS   : -69.568
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Cache:Unit2|CacheController:Unit1|send_block_out'
+Slack : -1.000
+TNS   : -64.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl'
+Slack : 0.409
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Cache:Unit2|CacheController:Unit1|replaceStatusOut'
+Slack : 0.409
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'sys_clk'
+Slack : -7.680
+TNS   : -4668.810
+
+Type  : Slow 1200mV 0C Model Setup 'Cache:Unit2|CacheController:Unit1|send_block_out'
+Slack : -6.416
+TNS   : -328.323
+
+Type  : Slow 1200mV 0C Model Setup 'sys_rst'
+Slack : -4.329
+TNS   : -928.613
+
+Type  : Slow 1200mV 0C Model Setup 'Cache:Unit2|CacheController:Unit1|replaceStatusOut'
+Slack : -1.737
+TNS   : -7.090
+
+Type  : Slow 1200mV 0C Model Setup 'Cache:Unit2|MainMemory:Unit2|slowClock'
+Slack : -1.670
+TNS   : -19.847
+
+Type  : Slow 1200mV 0C Model Setup 'CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl'
+Slack : -1.053
+TNS   : -7.987
+
+Type  : Slow 1200mV 0C Model Hold 'sys_rst'
+Slack : -2.131
+TNS   : -90.549
+
+Type  : Slow 1200mV 0C Model Hold 'sys_clk'
+Slack : -0.288
+TNS   : -1.972
+
+Type  : Slow 1200mV 0C Model Hold 'Cache:Unit2|CacheController:Unit1|replaceStatusOut'
+Slack : -0.136
+TNS   : -0.483
+
+Type  : Slow 1200mV 0C Model Hold 'CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl'
+Slack : 0.152
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Cache:Unit2|MainMemory:Unit2|slowClock'
+Slack : 0.243
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Cache:Unit2|CacheController:Unit1|send_block_out'
+Slack : 1.404
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'sys_clk'
+Slack : -3.046
+TNS   : -1397.111
+
+Type  : Slow 1200mV 0C Model Recovery 'sys_rst'
+Slack : -0.479
+TNS   : -1.099
+
+Type  : Slow 1200mV 0C Model Removal 'sys_rst'
+Slack : -1.655
+TNS   : -671.359
+
+Type  : Slow 1200mV 0C Model Removal 'sys_clk'
+Slack : -0.709
+TNS   : -71.523
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'sys_clk'
+Slack : -3.000
+TNS   : -1306.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'sys_rst'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Cache:Unit2|MainMemory:Unit2|slowClock'
+Slack : -2.174
+TNS   : -69.568
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Cache:Unit2|CacheController:Unit1|send_block_out'
+Slack : -1.000
+TNS   : -64.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Cache:Unit2|CacheController:Unit1|replaceStatusOut'
+Slack : 0.430
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl'
+Slack : 0.453
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'sys_clk'
+Slack : -4.990
+TNS   : -2805.697
+
+Type  : Fast 1200mV 0C Model Setup 'Cache:Unit2|CacheController:Unit1|send_block_out'
+Slack : -4.105
+TNS   : -209.682
+
+Type  : Fast 1200mV 0C Model Setup 'sys_rst'
+Slack : -2.444
+TNS   : -458.991
+
+Type  : Fast 1200mV 0C Model Setup 'Cache:Unit2|MainMemory:Unit2|slowClock'
+Slack : -1.069
+TNS   : -9.688
+
+Type  : Fast 1200mV 0C Model Setup 'Cache:Unit2|CacheController:Unit1|replaceStatusOut'
+Slack : -0.790
+TNS   : -1.901
+
+Type  : Fast 1200mV 0C Model Setup 'CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl'
+Slack : -0.373
+TNS   : -1.182
+
+Type  : Fast 1200mV 0C Model Hold 'sys_rst'
+Slack : -1.554
+TNS   : -95.207
+
+Type  : Fast 1200mV 0C Model Hold 'sys_clk'
+Slack : -0.376
+TNS   : -3.355
+
+Type  : Fast 1200mV 0C Model Hold 'Cache:Unit2|CacheController:Unit1|replaceStatusOut'
+Slack : -0.057
+TNS   : -0.202
+
+Type  : Fast 1200mV 0C Model Hold 'Cache:Unit2|MainMemory:Unit2|slowClock'
+Slack : 0.112
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl'
+Slack : 0.132
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Cache:Unit2|CacheController:Unit1|send_block_out'
+Slack : 0.820
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'sys_clk'
+Slack : -1.859
+TNS   : -865.078
+
+Type  : Fast 1200mV 0C Model Recovery 'sys_rst'
+Slack : -0.159
+TNS   : -0.314
+
+Type  : Fast 1200mV 0C Model Removal 'sys_rst'
+Slack : -1.121
+TNS   : -453.754
+
+Type  : Fast 1200mV 0C Model Removal 'sys_clk'
+Slack : -0.483
+TNS   : -47.305
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'sys_clk'
+Slack : -3.000
+TNS   : -1339.298
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'sys_rst'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Cache:Unit2|CacheController:Unit1|send_block_out'
+Slack : -1.000
+TNS   : -64.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Cache:Unit2|MainMemory:Unit2|slowClock'
+Slack : -1.000
+TNS   : -32.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Cache:Unit2|CacheController:Unit1|replaceStatusOut'
+Slack : 0.349
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl'
+Slack : 0.383
+TNS   : 0.000
+
+------------------------------------------------------------

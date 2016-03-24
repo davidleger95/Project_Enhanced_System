@@ -19,6 +19,111 @@ constant subt : std_logic_vector(3 downto 0) := "0101";
 constant jz  : std_logic_vector(3 downto 0) := "0110";
 constant halt  : std_logic_vector(3 downto 0) := "1111";
 constant readm  : std_logic_vector(3 downto 0) := "0111";
+constant mov5 : std_logic_vector(3 downto 0) := "1011";
+
+component TagMemory is 
+port(	clock_en: in std_logic;
+	clock: in std_logic; 
+	reset: in std_logic;
+	tag_in: in std_logic_vector(6 downto 0);
+	hit : out std_ulogic; 
+	line_in: in std_logic_vector(2 downto 0);
+	write_en  : in std_logic;
+	tag_out : out std_logic_vector(6 downto 0);
+	read_en : in std_logic
+	);
+end component;
+
+component DataMemory is 
+port(	clock_en : in std_logic;
+	clock : in std_logic;
+	reset:     in std_logic;
+	read_en : in std_logic;
+	write_en: in std_logic;
+	line_in: in std_logic_vector(2 downto 0);
+	data_out: out std_logic_vector(15 downto 0);
+	data_in: in std_logic_vector(15 downto 0);
+	word_in: in std_logic_vector(1 downto 0);
+	write_block: in std_logic;
+	blockReplaced: out std_logic;
+	data_block : in std_logic_vector(63 downto 0);
+	send_block_out  : in std_logic ; 
+	data_block_out : out std_logic_vector (63 downto 0));
+end component;
+
+component CacheController is 
+port(	clock_en				:in std_logic;
+		clock					: in std_logic;
+		reset					: in std_LOGIC;
+		MreIn					:	in STD_LOGIC;
+		MweIn					:	in STD_LOGIC;
+		addressIN			:	in STD_LOGIC_VECTOR(11 downto 0);
+		addressOUT			:  out STD_LOGIC_VECTOR (11 downto 0);
+		data_in				:  in STD_LOGIC_VECTOR(15 downto 0);
+		data_out_cpu		:  out STD_LOGIC_VECTOR(15 downto 0);
+		replaceStatusIn   :  in std_logic; 
+		replaceStatusOut  :  out std_logic;
+		data_block_in     :  in std_logic_vector(63 downto 0);
+		address_block_in  :  in std_logic_vector(11 downto 0);
+		delayReq				: out std_logic;
+		done_out             : out std_logic;
+		data_block_out     : out std_logic_vector(63 downto 0);
+		send_block_out_mem     : out std_logic;
+		done_write_back     : in std_logic;
+		blockAddressOut : out std_logic_vector(9 downto 0); 
+		state_d					: out std_logic_vector(3 downto 0)
+		);
+end component;
+
+component MainMemory IS
+	PORT
+	(
+--clock_en : in std_logic; 
+	clock		: 	in std_logic;
+	rst		: 	in std_logic;
+	Mre		:	in std_logic;
+	Mwe		:	in std_logic;
+	addressIn	:	in std_logic_vector(11 downto 0);
+	writeAddress : in std_logic_vector(9 downto 0);
+	data_in	:	in std_logic_vector(63 downto 0);
+	data_out:	out std_logic_vector (63 downto 0);
+	slowClock_out : out std_logic
+	);
+END component;
+
+component Cache is
+port (
+		clock					: 	in STD_LOGIC;
+		reset					:  in STD_LOGIC;
+		Mre					:	in STD_LOGIC;
+		Mwe					:	in STD_LOGIC;
+		address				:	in STD_LOGIC_VECTOR(11 downto 0);
+		data_in				:	in STD_LOGIC_VECTOR(15 downto 0);
+		data_out				:	out STD_LOGIC_VECTOR(15 downto 0);
+		delayReq				: out std_logic;
+		controller_en_d : out std_LOGIC;
+		state_con_d : out std_LOGIC_VECTOR(3 downto 0);
+		cache_state_d : out std_logic_vector(3 downto 0)
+		
+		-----debug signals----
+--		state_con_d : out std_LOGIC_VECTOR(3 downto 0);
+--		cache_state_d : out std_logic_vector(3 downto 0);
+--		done_cache : out std_LOGIC;
+--		done_controller_d : out std_logic;
+--		
+--		done_check_d : out std_logic;
+--		replaceStatusOut_d : out std_logic; 
+--		replaceStatusIn_d : out std_logic;
+--		mem_block_out_d : out std_logic_vector(63 downto 0);
+--		slowClock_d : out std_logic;
+--		write_block_d : out std_logic;
+--		cont_out_block : out std_logic_vector(63 downto 0);
+--		write_back_mem_d : out std_logic;
+--		done_write_back_d : out std_logic;
+--		write_address_mem_d : out std_LOGIC_VECTOR(9 downto 0)
+		);
+		
+end component;
 
 component CPU is
 port (	
@@ -30,14 +135,15 @@ port (
 		Mre_s						: out std_logic;
 		Mwe_s						: out std_logic;	
 		oe_s						: out std_logic;
+		controller_en        : in std_logic;
+		state_cpu            : out std_logic_vector(11 downto 0 ) ;
 		-- Debug variables: output to upper level for simulation purpose only
 		D_rfout_bus: out std_logic_vector(15 downto 0);  
 		D_RFwa_s, D_RFr1a_s, D_RFr2a_s: out std_logic_vector(3 downto 0);
 		D_RFwe_s, D_RFr1e_s, D_RFr2e_s: out std_logic;
 		D_RFs_s, D_ALUs_s: out std_logic_vector(1 downto 0);
-		D_PCld_s, D_jpz_s: out std_logic;
-		-- end debug variables	
-		delayReq : in std_logic
+		D_PCld_s, D_jpz_s: out std_logic
+		-- end debug variables				
 );
 end component;
 
@@ -65,6 +171,8 @@ end component;
 
 component controller is
 port(	
+	state_cpu            : out std_logic_vector(11 downto 0 ) ;
+	controller_en : in std_logic;
 	clock:		in std_logic;
 	rst:		in std_logic;
 	IR_word:	in std_logic_vector(15 downto 0);
@@ -83,8 +191,7 @@ port(
 	Ms_ctrl:	out std_logic_vector(1 downto 0);
 	Mre_ctrl:	out std_logic;
 	Mwe_ctrl:	out std_logic;
-	oe_ctrl:	out std_logic;
-	delayReq : in std_logic
+	oe_ctrl:	out std_logic
 );
 end component;
 
@@ -97,70 +204,16 @@ port(
 );
 end component;
 
-component MainMemory2 is
+component memory is
 port ( 	
 	clock	: 	in std_logic;
 	rst		: 	in std_logic;
 	Mre		:	in std_logic;
 	Mwe		:	in std_logic;
-	address	:	in std_logic_vector(11 downto 0);
-	data_in	:	in std_logic_vector(63 downto 0);
-	data_out:	out std_logic_vector (63 downto 0)
-);
-end component;
-component Cache is
-port ( 	
-	clock	: 	in std_logic;
-	reset		: 	in std_logic;
-	Mre		:	in std_logic;
-	Mwe		:	in std_logic;
-	address	:	in std_logic_vector(11 downto 0);
+	address	:	in std_logic_vector(7 downto 0);
 	data_in	:	in std_logic_vector(15 downto 0);
-	data_out:	out std_logic_vector(15 downto 0);
-	delayReq :  out std_logic
+	data_out:	out std_logic_vector(15 downto 0)
 );
-end component;
-
-component CacheController is
-port(	
-		clock					: in std_logic;
-		reset					:  in std_logic;
-		MreIn					:	in STD_LOGIC;
-		MweIn					:	in STD_LOGIC;
-		addressIN			:	in STD_LOGIC_VECTOR(11 downto 0);
-		addressOUT			:  out STD_LOGIC_VECTOR (11 downto 0);
-		data_in				:  in STD_LOGIC_VECTOR(15 downto 0);
-		data_out_cpu		:  out STD_LOGIC_VECTOR(15 downto 0);
-		replaceStatusIn   :  in std_logic; 
-		replaceStatusOut  :  out std_logic;
-		data_block_in     :  in std_logic_vector(63 downto 0);
-		address_block_in  :  in std_logic_vector(11 downto 0);
-		delayReq: out std_logic
-		);
-end component;
-
-component LineMemory is
-port(	
-	reset : in std_logic;
-	tagIndex : in std_logic_vector(6 downto 0);
-	hit : out std_logic; 
-	lineIndex: in std_logic_vector(2 downto 0);
-	writeTag  : buffer std_logic
-
-	);
-end component;
-
-component DataMemory is 
-port(
-	reset      : in std_logic;
-	readEnable : in std_logic;
-	writeEnable: in std_logic;
-	lineIndex: in std_logic_vector(2 downto 0);
-	dataOut: out std_logic_vector(15 downto 0);
-	dataIn: in std_logic_vector(15 downto 0);
-	wordIndex: in std_logic_vector(1 downto 0);
-	replaceBlock: buffer std_logic;
-	data_block : in std_logic_vector(63 downto 0));
 end component;
 
 component obuf is
@@ -210,6 +263,8 @@ end component;
 
 component ctrl_unit is
 port(
+	state_cpu            : out std_logic_vector(11 downto 0 ) ;
+	controller_en : std_logic;
 	clock_cu:	in 	std_logic;
 	rst_cu:		in 	std_logic;
 	PCld_cu:	in 	std_logic;
@@ -228,8 +283,7 @@ port(
 	ALUs_cu:	out	std_logic_vector(1 downto 0);	
 	Mre_cu:		out 	std_logic;
 	Mwe_cu:		out 	std_logic;
-	oe_cu:		out 	std_logic;
-	delayReq :  in std_logic 
+	oe_cu:		out 	std_logic
 );
 end component;
 
