@@ -49,6 +49,9 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST ON -section_id eda_s
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VHDL_FILE cacheController.vhd
+set_global_assignment -name VHDL_FILE cache.vhd
+set_global_assignment -name MIF_FILE "matrix_addition-64bits.mif"
 set_global_assignment -name MIF_FILE "fibonacci-64bits.mif"
 set_global_assignment -name MIF_FILE "mem-file.mif"
 set_global_assignment -name VHDL_FILE obuf.vhd
@@ -65,8 +68,6 @@ set_global_assignment -name VHDL_FILE DataMemory.vhd
 set_global_assignment -name VHDL_FILE ctrl_unit.vhd
 set_global_assignment -name VHDL_FILE CPU.vhd
 set_global_assignment -name VHDL_FILE controller.vhd
-set_global_assignment -name VHDL_FILE CacheController.vhd
-set_global_assignment -name VHDL_FILE Cache.vhd
 set_global_assignment -name VHDL_FILE bigmux.vhd
 set_global_assignment -name VHDL_FILE alu.vhd
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf

@@ -15,6 +15,8 @@ use work.MP_lib.all;
 
 entity controller is
 port(	
+	cache_en : out std_logic;
+	done_write_back : in std_logic;
 	state_cpu : out std_logic_vector(11 downto 0);
 	controller_en : in std_logic;
 	clock:		in std_logic;
@@ -67,16 +69,15 @@ begin
     elsif (clock'event and clock='1') then
 	case state is 
 		when sDelay => 
-			state_cpu <= x"BBB";
+			state_cpu <= x"AAA";
 			PCinc_ctrl <= '0';
-			if (controller_en = '0') then 
-				state <= nextState;
+			if (controller_en = '0') then
+				state <= sDelay2;
 			end if;
 			
 		when sDelay2 => 
-			state_cpu <= x"AAA";
-			numDelayCylcles <= numDelayCylcles -1;
-			if (numDelayCylcles = 0) then 
+			state_cpu <= x"BBB";
+			if (done_write_back = '1') then
 				state <= nextState;
 			end if;
 			
@@ -95,28 +96,25 @@ begin
 			oe_ctrl <= '0';
 			state_cpu <= x"001";
 			
-			state <= sDelay2;
+			state <= sDelay;
 			nextState <= s1a;
-			numDelayCylcles <= 2;
+			cache_en <= '1';
+--			numDelayCylcles <= 2;
 --			state <= s1a;
 	  when S1a =>
-				state_cpu <= x"01A";
-	        
-	        Mre_ctrl <= '0';
-			  
-	  		state <= sDelay;
-		   nextState <= S1b;			-- Fetch end ...
+			state_cpu <= x"01A";
+	      IRld_ctrl <= '0';
+	      PCinc_ctrl <= '1';
+	      Mre_ctrl <= '0';
+			cache_en <= '0';  
+	  		state <= s1b;
+--		   nextState <= S1b;			-- Fetch end ...
 --			state <= s1b;
 	  when S1b => 
-			IRld_ctrl <= '0';
-	      PCinc_ctrl <= '1';  
-		   state <= S1c;
-			state_cpu <= x"01b";
-			
-		when s1c => 
 			PCinc_ctrl <= '0';
-			state <= s2;
-	  		state_cpu <= x"01c";		
+		   state <= S2;
+			state_cpu <= x"01b";
+				
 	  when S2 =>	OPCODE := IR_word(15 downto 12);
 			  case OPCODE is
 			    when mov1 => 	state <= S3;
@@ -133,23 +131,26 @@ begin
 			    end case;
 				state_cpu <= x"002";	
 				
-	  when S3 =>	RFwa_ctrl <= IR_word(11 downto 8);	
+	  when S3 =>	
+			RFwa_ctrl <= IR_word(11 downto 8);	
 			RFs_ctrl <= "01";  -- RF[rn] <= mem[direct]
 			Ms_ctrl <= "01";
 			Mre_ctrl <= '1';
 			Mwe_ctrl <= '0';
 			state_cpu <= x"003";
 			
-			state <= sDelay2;
-			nextState <= s3a;
-			numDelayCylcles <= 2;
---			state<= s3a;
-	  when S3a =>   RFwe_ctrl <= '1'; 
-	        Mre_ctrl <= '0'; 
-			  state_cpu <= x"03a";
-			  
 			state <= sDelay;
-		   nextState <= S3b;	
+			nextState <= s3a;
+			cache_en <= '1';
+--			numDelayCylcles <= 2;
+--			state<= s3a;
+	  when S3a =>   
+			RFwe_ctrl <= '1'; 
+	      Mre_ctrl <= '0'; 
+			state_cpu <= x"03a";
+			cache_en <= '0';  
+			state <= s3b;
+--		   nextState <= S3b;	
 --			state <= s3b;
 
 	  when S3b =>
@@ -166,25 +167,21 @@ begin
 			IRld_ctrl <= '0';
 			state <= S4a;			-- read value from RF
 			state_cpu <= x"004";
-	  when S4a =>   Mre_ctrl <= '0';
+	  when S4a =>   
+			Mre_ctrl <= '0';
 			Mwe_ctrl <= '1';
 			state_cpu <= x"04a";
 			
-			state <= sDelay2;
+			state <= sDelay;
 			nextState <= s4b;
-			numDelayCylcles <= 2;      -- write into memory
+			cache_en <= '1';
+--			numDelayCylcles <= 2;      -- write into memory
 --			state <= s4b;
 	  when S4b =>   				  
 			Mwe_ctrl <= '0';
 			state_cpu <= x"04b";
-			
-			state <= sDelay;
-		   nextState <= S4C;
---			state <= s1;
-		when 	s4c => 
-			Ms_ctrl <= "10";
-			state <= S1;
-			state_cpu <= x"04c";
+			state <= s1;
+			cache_en <= '0';
 			
 	  when S5 =>	RFr1a_ctrl <= IR_word(11 downto 8);	
 			RFr1e_ctrl <= '1'; -- mem[RF[rn]] <= RF[rm]
@@ -195,27 +192,21 @@ begin
 			state <= S5a;
 			state_cpu <= x"005";
 			
-	  when S5a =>   Mre_ctrl <= '0';			
+	  when S5a =>   
+			Mre_ctrl <= '0';			
 			Mwe_ctrl <= '1'; -- write into memory
 			state_cpu <= x"05a";
 			
-			state <= sDelay2;
+			state <= sDelay;
 			nextState <= s5b;
-			numDelayCylcles <= 2;
---			state <= s5b;
+			cache_en <= '1';
 
 	  when S5b => 	
 			Mwe_ctrl <= '0';
-			state_cpu <= x"05b";
-			
-			state <= sDelay;
-		   nextState <= S5c;	
---			state <= s1;
-		when s5c => 
-			Ms_ctrl <= "10";-- return
-			state_cpu <= x"05c";
+			Ms_ctrl <=  "10";
+			state_cpu <= x"05b";	
 			state <= s1;
-			
+			cache_en <= '0';
 --					
 	  when S6 =>	RFwa_ctrl <= IR_word(11 downto 8);	
 			RFwe_ctrl <= '1'; -- RF[rn] <= imm.
@@ -281,21 +272,23 @@ begin
 	  when S10 =>	state <= S10; -- halt
 				state_cpu <= x"010";
 				
-	  when S11 =>   Ms_ctrl <= "01";
+	  when S11 =>   
+			Ms_ctrl <= "01";
 			state_cpu <= x"011";
 			Mre_ctrl <= '1'; -- read memory
 			Mwe_ctrl <= '0';
 			
-			state <= sDelay2;
+			state <= sDelay;
 			nextState <= s11a;
-			numDelayCylcles <= 2;
---			state <= s11a;
+			cache_en <= '1';
+
 	  when S11a =>  
 			state_cpu <= x"11a";
 			Mre_ctrl <= '0';
-			state <= sDelay;
-		   nextState <= S11b;	
---			state <= s1;
+			oe_ctrl <= '1'; 
+			state <= s1;
+			cache_en <= '0';	
+
 	when  s11b =>
 			oe_ctrl <= '1'; 
 			state_cpu <= x"11b";
@@ -315,19 +308,21 @@ begin
 			RFr1e_ctrl <= '0';
 			Mre_ctrl <= '1';
 			RFwa_ctrl <= IR_word(7 downto 4);
-			state<= sDelay2;
+			state<= sDelay;
 			nextState<= s13b;
-			numDelayCylcles <= 2;
+			cache_en <= '1';
 			
 		when S13b =>
 			state_cpu <=x"13b";
 			RFwe_ctrl <= '1';
 			Mre_ctrl <= '0';
-			state <= sDelay;
-			nextState <= s1;
+			state <= s1;
+			cache_en <= '0';
 			
 	  when others =>
+	  
 	end case;
+	
     end if;
   end process;
 end fsm;

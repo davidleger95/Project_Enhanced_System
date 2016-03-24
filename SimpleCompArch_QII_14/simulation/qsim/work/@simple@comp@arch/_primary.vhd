@@ -17,6 +17,7 @@ entity SimpleCompArch is
         D_PCld          : out    vl_logic;
         D_jpz           : out    vl_logic;
         state_cpu       : out    vl_logic_vector(11 downto 0);
+        cache_en_d      : out    vl_logic;
         D_mdout_bus     : out    vl_logic_vector(15 downto 0);
         D_mdin_bus      : out    vl_logic_vector(15 downto 0);
         D_mem_addr      : out    vl_logic_vector(11 downto 0);
@@ -24,6 +25,10 @@ entity SimpleCompArch is
         D_Mwe           : out    vl_logic;
         controller_en_d : out    vl_logic;
         cont_state_d    : out    vl_logic_vector(3 downto 0);
-        cache_state_d   : out    vl_logic_vector(3 downto 0)
+        cache_state_d   : out    vl_logic_vector(3 downto 0);
+        write_back_block: out    vl_logic_vector(63 downto 0);
+        done_write_back_d: out    vl_logic;
+        write_block_controller_sig: out    vl_logic;
+        write_back_mem  : out    vl_logic
     );
 end SimpleCompArch;

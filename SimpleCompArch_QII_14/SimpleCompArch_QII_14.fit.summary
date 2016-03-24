@@ -1,15 +1,15 @@
-Fitter Status : Successful - Wed Mar 23 22:55:20 2016
+Fitter Status : Successful - Thu Mar 24 19:14:21 2016
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
 Revision Name : SimpleCompArch_QII_14
 Top-level Entity Name : SimpleCompArch
 Family : Cyclone IV GX
 Device : EP4CGX30CF23C6
 Timing Models : Final
-Total logic elements : 4,556 / 29,440 ( 15 % )
-    Total combinational functions : 4,294 / 29,440 ( 15 % )
-    Dedicated logic registers : 1,367 / 29,440 ( 5 % )
-Total registers : 1367
-Total pins : 122 / 307 ( 40 % )
+Total logic elements : 4,438 / 29,440 ( 15 % )
+    Total combinational functions : 4,212 / 29,440 ( 14 % )
+    Dedicated logic registers : 1,325 / 29,440 ( 5 % )
+Total registers : 1325
+Total pins : 190 / 307 ( 62 % )
 Total virtual pins : 0
 Total memory bits : 65,536 / 1,105,920 ( 6 % )
 Embedded Multiplier 9-bit elements : 0 / 160 ( 0 % )

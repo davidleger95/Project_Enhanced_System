@@ -2,6 +2,7 @@ library verilog;
 use verilog.vl_types.all;
 entity SimpleCompArch_vlg_check_tst is
     port(
+        cache_en_d      : in     vl_logic;
         cache_state_d   : in     vl_logic_vector(3 downto 0);
         cont_state_d    : in     vl_logic_vector(3 downto 0);
         controller_en_d : in     vl_logic;
@@ -21,8 +22,12 @@ entity SimpleCompArch_vlg_check_tst is
         D_RFs           : in     vl_logic_vector(1 downto 0);
         D_RFwa          : in     vl_logic_vector(3 downto 0);
         D_RFwe          : in     vl_logic;
+        done_write_back_d: in     vl_logic;
         state_cpu       : in     vl_logic_vector(11 downto 0);
         sys_output      : in     vl_logic_vector(15 downto 0);
+        write_back_block: in     vl_logic_vector(63 downto 0);
+        write_back_mem  : in     vl_logic;
+        write_block_controller_sig: in     vl_logic;
         sampler_rx      : in     vl_logic
     );
 end SimpleCompArch_vlg_check_tst;

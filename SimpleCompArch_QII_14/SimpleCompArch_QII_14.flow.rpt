@@ -1,5 +1,5 @@
 Flow report for SimpleCompArch_QII_14
-Wed Mar 23 22:56:05 2016
+Thu Mar 24 19:15:12 2016
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -40,16 +40,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Flow Summary                                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Flow Status                        ; Successful - Wed Mar 23 22:56:05 2016            ;
+; Flow Status                        ; Successful - Thu Mar 24 19:15:12 2016            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; SimpleCompArch_QII_14                            ;
 ; Top-level Entity Name              ; SimpleCompArch                                   ;
 ; Family                             ; Cyclone IV GX                                    ;
-; Total logic elements               ; 4,556 / 29,440 ( 15 % )                          ;
-;     Total combinational functions  ; 4,294 / 29,440 ( 15 % )                          ;
-;     Dedicated logic registers      ; 1,367 / 29,440 ( 5 % )                           ;
-; Total registers                    ; 1367                                             ;
-; Total pins                         ; 122 / 307 ( 40 % )                               ;
+; Total logic elements               ; 4,438 / 29,440 ( 15 % )                          ;
+;     Total combinational functions  ; 4,212 / 29,440 ( 14 % )                          ;
+;     Dedicated logic registers      ; 1,325 / 29,440 ( 5 % )                           ;
+; Total registers                    ; 1325                                             ;
+; Total pins                         ; 190 / 307 ( 62 % )                               ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 65,536 / 1,105,920 ( 6 % )                       ;
 ; Embedded Multiplier 9-bit elements ; 0 / 160 ( 0 % )                                  ;
@@ -68,7 +68,7 @@ applicable agreement for further details.
 +-------------------+-----------------------+
 ; Option            ; Setting               ;
 +-------------------+-----------------------+
-; Start date & time ; 03/23/2016 22:54:12   ;
+; Start date & time ; 03/24/2016 19:13:07   ;
 ; Main task         ; Compilation           ;
 ; Revision Name     ; SimpleCompArch_QII_14 ;
 +-------------------+-----------------------+
@@ -79,7 +79,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------+-----------------------+----------------+----------------+
 ; Assignment Name                     ; Value                           ; Default Value         ; Entity Name    ; Section Id     ;
 +-------------------------------------+---------------------------------+-----------------------+----------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 203178706104858.145878445204896 ; --                    ; --             ; --             ;
+; COMPILER_SIGNATURE_ID               ; 203178706090320.145885758708468 ; --                    ; --             ; --             ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; On                              ; --                    ; --             ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                     ; --                    ; --             ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)       ; <None>                ; --             ; --             ;
@@ -95,14 +95,14 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:09     ; 1.0                     ; 586 MB              ; 00:00:09                           ;
-; Fitter                    ; 00:00:58     ; 2.5                     ; 1423 MB             ; 00:01:14                           ;
-; Assembler                 ; 00:00:05     ; 1.0                     ; 513 MB              ; 00:00:04                           ;
-; TimeQuest Timing Analyzer ; 00:00:08     ; 1.6                     ; 580 MB              ; 00:00:08                           ;
-; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 475 MB              ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 474 MB              ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 490 MB              ; 00:00:02                           ;
-; Total                     ; 00:01:25     ; --                      ; --                  ; 00:01:39                           ;
+; Analysis & Synthesis      ; 00:00:10     ; 1.0                     ; 586 MB              ; 00:00:09                           ;
+; Fitter                    ; 00:01:04     ; 2.3                     ; 1417 MB             ; 00:01:20                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 500 MB              ; 00:00:04                           ;
+; TimeQuest Timing Analyzer ; 00:00:08     ; 1.5                     ; 586 MB              ; 00:00:08                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 475 MB              ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 483 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 483 MB              ; 00:00:02                           ;
+; Total                     ; 00:01:33     ; --                      ; --                  ; 00:01:46                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -111,13 +111,13 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; FR-ECE-30173     ; Windows 7 ; 6.1        ; x86_64         ;
-; Fitter                    ; FR-ECE-30173     ; Windows 7 ; 6.1        ; x86_64         ;
-; Assembler                 ; FR-ECE-30173     ; Windows 7 ; 6.1        ; x86_64         ;
-; TimeQuest Timing Analyzer ; FR-ECE-30173     ; Windows 7 ; 6.1        ; x86_64         ;
-; EDA Netlist Writer        ; FR-ECE-30173     ; Windows 7 ; 6.1        ; x86_64         ;
-; EDA Netlist Writer        ; FR-ECE-30173     ; Windows 7 ; 6.1        ; x86_64         ;
-; EDA Netlist Writer        ; FR-ECE-30173     ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; FR-ECE-30165     ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; FR-ECE-30165     ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; FR-ECE-30165     ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; FR-ECE-30165     ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer        ; FR-ECE-30165     ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer        ; FR-ECE-30165     ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer        ; FR-ECE-30165     ; Windows 7 ; 6.1        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

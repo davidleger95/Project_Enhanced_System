@@ -23,6 +23,8 @@ port( cpu_clk					: in std_logic;
 		oe_s						: out std_logic;
 		controller_en 			: in std_logic;
 		state_cpu            : out std_logic_vector(11 downto 0 ) ;
+		done_write_back 		: in std_logic;
+		cache_en					: out std_logic;
 		-- Debug signals: output to upper level for simulation purpose only
 		D_rfout_bus: out std_logic_vector(15 downto 0);  
 		D_RFwa_s, D_RFr1a_s, D_RFr2a_s: out std_logic_vector(3 downto 0);
@@ -51,7 +53,7 @@ signal jpz_s					: std_logic;												-- Jump check flag					(CTRLER 	-> ALU)
 
 begin
 	mem_addr <= addr_bus(11 downto 0); 
-	Unit0: ctrl_unit port map(state_cpu, controller_en, cpu_clk,cpu_rst,PCld_s,mdout_bus,rfout_bus,addr_bus,immd_bus, RFs_s,
+	Unit0: ctrl_unit port map(cache_en, done_write_back, state_cpu, controller_en, cpu_clk,cpu_rst,PCld_s,mdout_bus,rfout_bus,addr_bus,immd_bus, RFs_s,
 								RFwa_s,RFr1a_s,RFr2a_s,RFwe_s,RFr1e_s,RFr2e_s,jpz_s,ALUs_s,Mre_s,Mwe_s,oe_s);
 	Unit1: datapath port map( cpu_clk,cpu_rst,immd_bus,mdout_bus, RFs_s,RFwa_s,RFr1a_s,
 								RFr2a_s,RFwe_s,RFr1e_s,RFr2e_s,jpz_s,ALUs_s,PCld_s,rfout_bus, mdin_bus);

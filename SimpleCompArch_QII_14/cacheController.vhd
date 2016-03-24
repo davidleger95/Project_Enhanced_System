@@ -84,8 +84,8 @@ signal saved_dirty_block : std_logic_vector(63 downto 0);
 signal tag_out : std_logic_vector (6 downto 0);
 begin 
 tagIndex <= addressIN(11 downto 5);
-lineIndex <= (addressIN(4 downto 2));
-wordIndex <= (addressIN (1 downto 0));
+lineIndex <= addressIN(4 downto 2);
+wordIndex <= addressIN (1 downto 0);
 send_block_out_mem <= send_block_out;
 done_out <= done;
 	
@@ -121,21 +121,22 @@ begin
 			data_enable <= hit;
 			read_tag <= '1';
 			write_tag <= '0';
+			
 			if (done_write_back = '1') then 
 				send_block_out <= '0';
 			end if;
 			if (clock_en = '1') then
 				
 				
---				read_data <= MreIn;
---				write_data <= MweIn;
+				read_data <= MreIn;
+				write_data <= MweIn;
 				
 				case state is
 					when sReset =>
 						state_d <= "1111";
 						state <= s0;
 						data_enable <= '0';
-						done <= '0';
+--						done <= '1';
 						delayReq <= '0';
 						replaceStatusOut <='0';
 						read_data <= MreIn;

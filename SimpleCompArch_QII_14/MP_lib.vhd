@@ -93,6 +93,7 @@ END component;
 
 component Cache is
 port (
+		cache_en				: in std_logic;
 		clock					: 	in STD_LOGIC;
 		reset					:  in STD_LOGIC;
 		Mre					:	in STD_LOGIC;
@@ -102,24 +103,21 @@ port (
 		data_out				:	out STD_LOGIC_VECTOR(15 downto 0);
 		delayReq				: out std_logic;
 		controller_en_d : out std_LOGIC;
-		state_con_d : out std_LOGIC_VECTOR(3 downto 0);
-		cache_state_d : out std_logic_vector(3 downto 0)
-		
 		-----debug signals----
---		state_con_d : out std_LOGIC_VECTOR(3 downto 0);
---		cache_state_d : out std_logic_vector(3 downto 0);
+		state_con_d : out std_LOGIC_VECTOR(3 downto 0);
+		state_d : out std_logic_vector(3 downto 0);
 --		done_cache : out std_LOGIC;
---		done_controller_d : out std_logic;
---		
---		done_check_d : out std_logic;
+--		done_out_d : out std_logic;
+
+
 --		replaceStatusOut_d : out std_logic; 
 --		replaceStatusIn_d : out std_logic;
---		mem_block_out_d : out std_logic_vector(63 downto 0);
+--		block_to_cache_d : out std_logic_vector(63 downto 0);
 --		slowClock_d : out std_logic;
---		write_block_d : out std_logic;
---		cont_out_block : out std_logic_vector(63 downto 0);
---		write_back_mem_d : out std_logic;
---		done_write_back_d : out std_logic;
+		send_to_mem_d : out std_logic;
+		block_to_mem_d : out std_logic_vector(63 downto 0);
+		write_to_mem_d : out std_logic;
+		done_write_back_d : out std_logic
 --		write_address_mem_d : out std_LOGIC_VECTOR(9 downto 0)
 		);
 		
@@ -137,6 +135,8 @@ port (
 		oe_s						: out std_logic;
 		controller_en        : in std_logic;
 		state_cpu            : out std_logic_vector(11 downto 0 ) ;
+		done_write_back 		: in std_logic;
+		cache_en : out std_logic;
 		-- Debug variables: output to upper level for simulation purpose only
 		D_rfout_bus: out std_logic_vector(15 downto 0);  
 		D_RFwa_s, D_RFr1a_s, D_RFr2a_s: out std_logic_vector(3 downto 0);
@@ -171,6 +171,8 @@ end component;
 
 component controller is
 port(	
+	cache_en : out std_logic;
+	done_write_back : std_logic;
 	state_cpu            : out std_logic_vector(11 downto 0 ) ;
 	controller_en : in std_logic;
 	clock:		in std_logic;
@@ -263,6 +265,8 @@ end component;
 
 component ctrl_unit is
 port(
+	cache_en : out std_logic;
+	done_write_back : in std_logic;
 	state_cpu            : out std_logic_vector(11 downto 0 ) ;
 	controller_en : std_logic;
 	clock_cu:	in 	std_logic;

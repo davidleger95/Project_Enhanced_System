@@ -16,8 +16,8 @@
 # vsim -L cycloneiv_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -t 1ps -novopt work.SimpleCompArch_vlg_vec_tst 
 # Loading work.SimpleCompArch_vlg_vec_tst
 # Loading work.SimpleCompArch
-# Loading cycloneiv_ver.cycloneiv_lcell_comb
 # Loading altera_ver.dffeas
+# Loading cycloneiv_ver.cycloneiv_lcell_comb
 # Loading cycloneiv_ver.cycloneiv_clkctrl
 # Loading cycloneiv_ver.cycloneiv_mux41
 # Loading cycloneiv_ver.cycloneiv_ena_reg
@@ -32,6 +32,9 @@
 # ** Warning: Design size of 4 instances exceeds ModelSim ALTERA recommended capacity.
 # This may because you are loading cell libraries which are not recommended with
 # the ModelSim Altera version. Expect performance to be adversely affected.
-# Simulation passed !
-# ** Note: $finish    : SimpleCompArch_QII_14.vt(2459)
+# ERROR! Vector Mismatch for output port cache_en_d :: @time = 10000.000 ps
+#      Expected value = 1
+#      Real value = 0
+#           1 mismatched vectors : Simulation failed !
+# ** Note: $finish    : SimpleCompArch_QII_14.vt(3727)
 #    Time: 100 us  Iteration: 0  Instance: /SimpleCompArch_vlg_vec_tst/tb_out

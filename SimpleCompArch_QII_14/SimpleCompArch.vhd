@@ -27,12 +27,17 @@ port( sys_clk								:	in std_logic;
 		-- end debug variables	
 
 		-- Debug signals from Memory: output for simulation purpose only	
+		cache_en_d : out std_logic;
 		D_mdout_bus,D_mdin_bus					: out std_logic_vector(15 downto 0); 
 		D_mem_addr											: out std_logic_vector(11 downto 0); 
 		D_Mre,D_Mwe										: out std_logic ;
 		controller_en_d : out std_logic;
 		cont_state_d : out std_LOGIC_VECTOR(3 downto 0);
-		cache_state_d : out std_logic_vector(3 downto 0)
+		cache_state_d : out std_logic_vector(3 downto 0);
+		write_back_block : out std_LOGIC_VECTOR(63 downto 0);
+		done_write_back_d : out std_logic;
+		write_block_controller_sig : out std_logic;
+		write_back_mem : out std_logic 
 		-- end debug variables	
 );
 end SimpleCompArch;
@@ -48,13 +53,16 @@ architecture rtl of SimpleCompArch is
 	signal controller_en  : std_logic:='0';
 	--System local variables
 	signal oe							: std_logic;	
+	signal done_write_back : std_logic;
+	signal cache_en : std_logic:= '0';
 begin
 
-Unit1: CPU port map (sys_clk,sys_rst,mdout_bus,mdin_bus,mem_addr,Mre,Mwe,oe,controller_en, state_cpu,
+Unit1: CPU port map (sys_clk,sys_rst,mdout_bus,mdin_bus,mem_addr,Mre,Mwe,oe,controller_en, state_cpu,done_write_back,cache_en,
 										D_rfout_bus,D_RFwa, D_RFr1a, D_RFr2a,D_RFwe, 			 				--Degug signals
 										D_RFr1e, D_RFr2e,D_RFs, D_ALUs,D_PCld, D_jpz);	 						--Degug signals
 																					
-Unit2: Cache port map(	sys_clk,sys_rst,Mre,Mwe,mem_addr,mdin_bus,mdout_bus, delayReq, controller_en, cont_state_d, cache_state_d);
+Unit2: Cache port map(	cache_en,sys_clk,sys_rst,Mre,Mwe,mem_addr,mdin_bus,mdout_bus, delayReq, controller_en, cont_state_d, cache_state_d,
+							write_block_controller_sig, write_back_block,write_back_mem, done_write_back);
 Unit3: obuf port map(oe, mdout_bus, sys_output);
 
 -- Debug signals: output to upper level for simulation purpose only
@@ -64,6 +72,8 @@ Unit3: obuf port map(oe, mdout_bus, sys_output);
 	D_Mre <= Mre;
 	D_Mwe <= Mwe;
 	controller_en_d <= controller_en;
+	done_write_back_d <= done_write_back;
+	cache_en_d <= cache_en;
 -- end debug variables		
 		
 end rtl;
