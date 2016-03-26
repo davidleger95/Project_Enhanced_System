@@ -52,7 +52,7 @@ port(	clock_en : in std_logic;
 end component;
 
 component CacheController is 
-port(	clock_en				:in std_logic;
+port(		clock_en				:in std_logic;
 		clock					: in std_logic;
 		reset					: in std_LOGIC;
 		MreIn					:	in STD_LOGIC;
@@ -71,7 +71,28 @@ port(	clock_en				:in std_logic;
 		send_block_out_mem     : out std_logic;
 		done_write_back     : in std_logic;
 		blockAddressOut : out std_logic_vector(9 downto 0); 
-		state_d					: out std_logic_vector(3 downto 0)
+		
+		----debug lines
+--		 read_data_d : out std_logic; 
+-- write_data_d : out std_logic;
+-- write_tag_d :  out std_logic;
+-- read_tag_d : out std_logic;
+-- write_block_d:  out std_logic;
+
+ tempDataIn_d : out std_logic_vector(15 downto 0);
+tempDataOut_d : out std_logic_vector(15 downto 0);
+tagIndex_d: out std_logic_vector(6 downto 0);
+lineIndex_d: out std_logic_vector(2 downto 0);
+---- wordIndex_d: out std_logic_vector(1 downto 0);
+-- hit_d: out STD_LOGIC; 
+--send_block_out_d : out std_logic;
+--tag_enable_d: out std_logic;
+-- data_enable_d: out std_logic;
+-- blockReplaced_d: out std_logic;
+---- read_var_d :out std_logic;
+---- write_var_d :out std_logic;
+state_d : out std_logic_vector(3 downto 0);
+slowClock : in std_logic
 		);
 end component;
 
@@ -114,6 +135,10 @@ port (
 --		replaceStatusIn_d : out std_logic;
 --		block_to_cache_d : out std_logic_vector(63 downto 0);
 --		slowClock_d : out std_logic;
+		 tempDataIn_d : out std_logic_vector(15 downto 0);
+tempDataOut_d : out std_logic_vector(15 downto 0);
+tagIndex_d: out std_logic_vector(6 downto 0);
+lineIndex_d: out std_logic_vector(2 downto 0);
 		send_to_mem_d : out std_logic;
 		block_to_mem_d : out std_logic_vector(63 downto 0);
 		write_to_mem_d : out std_logic;
@@ -142,7 +167,11 @@ port (
 		D_RFwa_s, D_RFr1a_s, D_RFr2a_s: out std_logic_vector(3 downto 0);
 		D_RFwe_s, D_RFr1e_s, D_RFr2e_s: out std_logic;
 		D_RFs_s, D_ALUs_s: out std_logic_vector(1 downto 0);
-		D_PCld_s, D_jpz_s: out std_logic
+		D_PCld_s, D_jpz_s: out std_logic;
+		reg_in_data : out std_logic_vector(15 downto 0);
+		reg_out_data_1 : out std_logic_vector(15 downto 0);
+	reg_out_data_2 : out std_logic_vector(15 downto 0)
+		
 		-- end debug variables				
 );
 end component;
@@ -250,6 +279,7 @@ port (
 	RFw	: 	in std_logic_vector(15 downto 0);
 	RFr1	: 	out std_logic_vector(15 downto 0);
 	RFr2	:	out std_logic_vector(15 downto 0)
+	
 );
 end component;
 
@@ -308,7 +338,10 @@ port(
 	ALUs_dp:	in 	std_logic_vector(1 downto 0);
 	ALUz_dp:	out 	std_logic;
 	RF1out_dp:	out 	std_logic_vector(15 downto 0);
-	ALUout_dp:	out 	std_logic_vector(15 downto 0)
+	ALUout_dp:	out 	std_logic_vector(15 downto 0);
+	reg_in_data : out std_logic_vector ( 15 downto 0);
+	reg_out_data_1 : out std_logic_vector(15 downto 0);
+	reg_out_data_2 : out std_logic_vector(15 downto 0)
 );
 end component;
 

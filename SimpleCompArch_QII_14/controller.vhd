@@ -72,7 +72,8 @@ begin
 			state_cpu <= x"AAA";
 			PCinc_ctrl <= '0';
 			if (controller_en = '0') then
-				state <= sDelay2;
+				state <= nextState;
+				cache_en <= '0';
 			end if;
 			
 		when sDelay2 => 
@@ -182,8 +183,10 @@ begin
 			state_cpu <= x"04b";
 			state <= s1;
 			cache_en <= '0';
+			ms_ctrl <= "01";
 			
-	  when S5 =>	RFr1a_ctrl <= IR_word(11 downto 8);	
+	  when S5 =>	
+			RFr1a_ctrl <= IR_word(11 downto 8);	
 			RFr1e_ctrl <= '1'; -- mem[RF[rn]] <= RF[rm]
 			Ms_ctrl <= "00";
 			ALUs_ctrl <= "01";

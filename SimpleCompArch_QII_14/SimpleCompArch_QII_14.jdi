@@ -1,8 +1,8 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="10f1c9335b34f82f26f8"/>
+    <hash md5_digest_80b="f53cd20c12e87ebe0afd"/>
   </project>
   <file_info>
-    <file device="EP4CGX30CF23C6" path="SimpleCompArch_QII_14.sof" usercode="0xFFFFFFFF"/>
+    <file device="EP4CGX110DF27C7" path="SimpleCompArch_QII_14.sof" usercode="0xFFFFFFFF"/>
   </file_info>
 </sld_project_info>

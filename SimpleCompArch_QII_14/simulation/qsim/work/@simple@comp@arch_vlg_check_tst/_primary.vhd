@@ -23,8 +23,15 @@ entity SimpleCompArch_vlg_check_tst is
         D_RFwa          : in     vl_logic_vector(3 downto 0);
         D_RFwe          : in     vl_logic;
         done_write_back_d: in     vl_logic;
+        lineIndex_d     : in     vl_logic_vector(2 downto 0);
+        reg_in_data     : in     vl_logic_vector(15 downto 0);
+        reg_out_data_1  : in     vl_logic_vector(15 downto 0);
+        reg_out_data_2  : in     vl_logic_vector(15 downto 0);
         state_cpu       : in     vl_logic_vector(11 downto 0);
         sys_output      : in     vl_logic_vector(15 downto 0);
+        tagIndex_d      : in     vl_logic_vector(6 downto 0);
+        tempDataIn_d    : in     vl_logic_vector(15 downto 0);
+        tempDataOut_d   : in     vl_logic_vector(15 downto 0);
         write_back_block: in     vl_logic_vector(63 downto 0);
         write_back_mem  : in     vl_logic;
         write_block_controller_sig: in     vl_logic;

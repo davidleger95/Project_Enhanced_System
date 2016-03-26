@@ -32,9 +32,9 @@
 # ** Warning: Design size of 4 instances exceeds ModelSim ALTERA recommended capacity.
 # This may because you are loading cell libraries which are not recommended with
 # the ModelSim Altera version. Expect performance to be adversely affected.
-# ERROR! Vector Mismatch for output port cache_en_d :: @time = 10000.000 ps
+# ERROR! Vector Mismatch for output port cache_en_d :: @time = 5000.000 ps
 #      Expected value = 1
 #      Real value = 0
 #           1 mismatched vectors : Simulation failed !
-# ** Note: $finish    : SimpleCompArch_QII_14.vt(3727)
+# ** Note: $finish    : SimpleCompArch_QII_14.vt(5403)
 #    Time: 100 us  Iteration: 0  Instance: /SimpleCompArch_vlg_vec_tst/tb_out

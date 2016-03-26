@@ -30,7 +30,10 @@ port(
 	ALUs_dp:	in 	std_logic_vector(1 downto 0);
 	ALUz_dp:	out 	std_logic;
 	RF1out_dp:	out 	std_logic_vector(15 downto 0);
-	ALUout_dp:	out 	std_logic_vector(15 downto 0)
+	ALUout_dp:	out 	std_logic_vector(15 downto 0);
+	reg_in_data: out std_logic_vector ( 15 downto 0);
+	reg_out_data_1 : out std_logic_vector(15 downto 0);
+	reg_out_data_2 : out std_logic_vector(15 downto 0)
 );
 end datapath;
 
@@ -52,5 +55,7 @@ begin
 			 
   ALUout_dp <= alu2memmux;
   RF1out_dp <= rf2alu1;
-	
+	reg_in_data <= mux2rf;
+	reg_out_data_1 <= rf2alu1;
+	reg_out_data_2 <= rf2alu2;
 end struct;

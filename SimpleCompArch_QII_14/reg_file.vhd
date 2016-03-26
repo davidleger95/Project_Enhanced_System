@@ -25,6 +25,7 @@ port ( 	clock	: 	in std_logic;
 	RFw		: 	in std_logic_vector(15 downto 0);
 	RFr1	: 	out std_logic_vector(15 downto 0);
 	RFr2	:	out std_logic_vector(15 downto 0)
+	
 );
 end reg_file;
 
@@ -35,6 +36,7 @@ architecture behv of reg_file is
   signal tmp_rf: rf_type;
 
 begin
+	
   write12: process(clock, rst, RFwa, RFwe, RFw)
   begin
     if rst='1' then				-- high active

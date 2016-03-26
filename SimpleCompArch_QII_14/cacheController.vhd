@@ -24,6 +24,7 @@ port (
 		send_block_out_mem     : out std_logic;
 		done_write_back     : in std_logic;
 		blockAddressOut : out std_logic_vector(9 downto 0); 
+		
 		----debug lines
 --		 read_data_d : out std_logic; 
 -- write_data_d : out std_logic;
@@ -31,10 +32,10 @@ port (
 -- read_tag_d : out std_logic;
 -- write_block_d:  out std_logic;
 
----- tempDataIn_d : out std_logic_vector(15 downto 0);
----- tempDataOut_d : out std_logic_vector(15 downto 0);
--- --tagIndex_d: out std_logic_vector(6 downto 0);
--- --lineIndex_d: out std_logic_vector(2 downto 0);
+ tempDataIn_d : out std_logic_vector(15 downto 0);
+tempDataOut_d : out std_logic_vector(15 downto 0);
+tagIndex_d: out std_logic_vector(6 downto 0);
+lineIndex_d: out std_logic_vector(2 downto 0);
 ---- wordIndex_d: out std_logic_vector(1 downto 0);
 -- hit_d: out STD_LOGIC; 
 --send_block_out_d : out std_logic;
@@ -43,8 +44,8 @@ port (
 -- blockReplaced_d: out std_logic;
 ---- read_var_d :out std_logic;
 ---- write_var_d :out std_logic;
-state_d : out std_logic_vector(3 downto 0)
-  	
+state_d : out std_logic_vector(3 downto 0);
+slowClock : in std_logic	
 		);
 		
 end CacheController;
@@ -66,8 +67,8 @@ signal tagWrote: std_logic;
 signal tag_enable: std_logic;
 signal data_enable: std_logic;
 signal blockReplaced: std_logic;
-type state_type is (sWait,sReset, Sdelay,s0,s1, s1b, s1c,s2,s3,s4, s5, s6,s6b,s7,s8);
-type line_array is array (0 to 7, 0 to 3) of std_logic;
+type state_type is (sWriteback1, sWriteback2, sWriteback3, sWait,sReset, Sdelay,s0,s1, s1b, s1c,s2, s3,s4, s5, s6,s6b,s7,s8);
+type line_array is array (0 to 7) of std_logic;
 signal state: state_type;	
 signal done: std_logic;
   signal nextState: state_type;
@@ -110,23 +111,23 @@ begin
 		state <=sReset;
 		done <= '0';
 		send_block_out <='0';
-		dirtybit_mem <= (others =>(others =>'0'));
+		dirtybit_mem <= ((others =>'0'));
 --		read_var <= MreIn;
 --		write_var <= MweIn;
 	else
 --	if (clock_en = '1') then
 	
 		if (rising_edge(clock)) then
-			tag_enable <='1';
-			data_enable <= hit;
-			read_tag <= '1';
-			write_tag <= '0';
 			
-			if (done_write_back = '1') then 
-				send_block_out <= '0';
-			end if;
+			
+--			if (done_write_back = '1') then 
+--				send_block_out <= '0';
+--			end if;
 			if (clock_en = '1') then
-				
+				tag_enable <='1';
+				data_enable <= hit;
+				read_tag <= '1';
+				write_tag <= '0';
 				
 				read_data <= MreIn;
 				write_data <= MweIn;
@@ -146,6 +147,8 @@ begin
 						tag_enable <= '1';
 						read_tag <= '1';
 						write_tag <= '0';
+						write_block <= '0';
+						
 					when s0 =>-- initialize the tagMemory and desable the data memory;
 					
 					
@@ -174,15 +177,19 @@ begin
 					   state <= s1b;
 
 					elsif (hit ='0') then  --- if hit = 0 / miss
-						if (dirtybit_mem(to_integer(unsigned (lineIndex)), to_integer(unsigned (wordIndex))) = '1')then
+							
+						if (dirtybit_mem(to_integer(unsigned (lineIndex))) = '1')then
+								
 								send_block_out <= '1';
---								saved_dirty_block(15 downto 0)<= memory(line_check, 0);
---								saved_dirty_block(31 downto 16) <= memory(line_check, 1);
---								saved_dirty_block(47 downto 32) <= memory(line_check, 2) ;
---								saved_dirty_block(63 downto 48)<= memory(line_check, 3);
+								nextState <= s1c;
+								state <= sWriteback1;
+								blockAddressOut(9 downto 3) <= tag_out;
+								blockAddressOut(2 downto 0) <= lineIndex;
+						else 
+							state <= s1c;
 						end if;
 						
-						state <= s1c;
+						
 						
 					else 
 						state <= s1;
@@ -198,7 +205,7 @@ begin
 								state <= s2;
 						elsif ((read_data = '0') and (write_data = '1')) then 
 
-								dirtybit_mem(to_integer(unsigned (lineIndex)), to_integer(unsigned (wordIndex))) <= '1';
+								dirtybit_mem(to_integer(unsigned (lineIndex))) <= '1';
 								state <= s3;
 
 						end if;
@@ -208,8 +215,7 @@ begin
 --						read_data <= MreIn;
 --						write_data <=MweIn;
 --						send_block_out <= '0';
-						blockAddressOut(9 downto 3) <= tag_out;
-						blockAddressOut(2 downto 0) <= lineIndex;
+						send_block_out <= '0';
 						addressOUT <= addressIN;
 						replaceStatusOut <= '1';
 						delayReq <= '1';
@@ -253,10 +259,7 @@ begin
 					state_d <= "1001";
 					write_block <= '0';
 					-------
-					dirtybit_mem(to_integer(unsigned (lineIndex)), 0) <= '0';
-					dirtybit_mem(to_integer(unsigned (lineIndex)), 1) <= '0';
-					dirtybit_mem(to_integer(unsigned (lineIndex)),2) <= '0';
-					dirtybit_mem(to_integer(unsigned (lineIndex)), 3) <= '0';
+					dirtybit_mem(to_integer(unsigned (lineIndex))) <= '0';
 					--------
 					state <= s7;
 					
@@ -283,6 +286,7 @@ begin
 --								read_data <= '0';
 								state <= sDelay;
 								nextState <=s3;
+								dirtybit_mem(to_integer(unsigned (lineIndex))) <= '1';
 							
 						end if;
 				when sDelay => 
@@ -296,6 +300,19 @@ begin
 						else 
 							state<= sWait; --stay in this state if not available
 						end if;
+				when sWriteback1 =>
+						state_d <= "1110";
+						if (slowClock = '1') then 
+							state <= sWriteback2;
+						end if;
+				when sWriteback2 =>
+						if (slowClock = '0') then 
+							state <= sWriteback3;
+						end if;
+				when sWriteback3 => 
+						if (slowClock = '1') then 
+							state <= nextState;
+						end if;
 				when others =>
 				end case;
 			else 
@@ -303,6 +320,8 @@ begin
 				read_data <= '0';
 				write_data<= '0';
 				done <= '0';
+				tag_enable <= '0';
+				data_enable <= '0';
 			end if;
 		end if;
 --		else 
@@ -317,10 +336,10 @@ begin
 -- read_tag_d <= read_tag;
 -- write_block_d <= write_block;
 -- 
----- tempDataIn_d <=	tempDataIn;
----- tempDataOut_d <= tempDataOut;
----- tagIndex_d <= tagIndex;
----- lineIndex_d <= lineIndex;
+ tempDataIn_d <=	tempDataIn;
+tempDataOut_d <= tempDataOut;
+ tagIndex_d <= tagIndex;
+ lineIndex_d <= lineIndex;
 ---- wordIndex_d <= wordIndex;
 --
 -- hit_d <= hit;

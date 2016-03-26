@@ -26,6 +26,10 @@ port (
 --		replaceStatusIn_d : out std_logic;
 --		block_to_cache_d : out std_logic_vector(63 downto 0);
 --		slowClock_d : out std_logic;
+		 tempDataIn_d : out std_logic_vector(15 downto 0);
+tempDataOut_d : out std_logic_vector(15 downto 0);
+tagIndex_d: out std_logic_vector(6 downto 0);
+lineIndex_d: out std_logic_vector(2 downto 0);
 		send_to_mem_d : out std_logic;
 		block_to_mem_d : out std_logic_vector(63 downto 0);
 		write_to_mem_d : out std_logic;
@@ -51,7 +55,7 @@ signal data_block_in: std_logic_vector(63 downto 0);
 signal address_block_in : std_logic_vector(11 downto 0);
 signal replaceStatusIn: STD_LOGIC:= '0';
 signal replaceStatusOut: std_logic; 
-type state_type is (sIdle,sReset, Sdelay,sDelay2, sDelay3, s0,s1, s1b, s1c,s2,s3,s4, s5, s6,s6b,s7,s8);
+type state_type is (sIdle,sReset, Sdelay,sDelay2, sDelay3, s0,s1, s1b, s1c,s2, s2a, s3,s4, s5, s6,s6b,s7,s8);
 signal state: state_type;
 signal done_out :  std_logic;
 signal controller_en : std_logic;
@@ -89,7 +93,7 @@ begin
 	
 	Unit1: CacheController port map(controller_en, clock,reset,Mre, Mwe, address, address_mem, 
 	data_in, data_out_cpu, replaceStatusIn, replaceStatusOut, data_block_in, address_block_in, 
-	delayReq, done_out, block_to_mem, send_to_mem, done_write_back, write_address_mem, state_controller);
+	delayReq, done_out, block_to_mem, send_to_mem, done_write_back, write_address_mem,tempDataIn_d, tempDataOut_d, tagIndex_d,lineIndex_d, state_controller, slowClock);
 	Unit2: MainMemory port map( clock,reset, replaceStatusOut, write_to_mem, 
 	address_mem, write_address_mem, data_in_mem, data_out_mem, slowClock);
 
@@ -113,36 +117,51 @@ begin
 								--controller_en <= '1';
 								state_d <= x"f";
 								done_write_back <= '1';
-
+						
 						when s1 =>
 								state_d <= x"1";
 --								done_write_back <= '1';
-								if (replaceStatusOut = '1') then
-									state <= sDelay;
-									nextState <= s2;
-								end if;
+								state <= s6;
 								
-						when s2 =>
+						when s6 =>
+								state_d <= x"b";
+								state <= s2;
+								
+						when s2 => 
 								state_d <= x"2";
-								replaceStatusIn <= '1';
---								done_write_back <= '1';
+								
 								if (send_to_mem ='1')  then
 									done_write_back <= '0';
 									state <= s3;
+								else 
+									state <= s2a;
 								end if;
+								
+						when s2a =>
+								if (replaceStatusOut = '1') then
+									state <= sDelay;
+									nextState <= s5;
+								end if;
+								state_d <= x"a";
+								
+--								done_write_back <= '1';
+								
 						when s3 =>
 								
 								state_d <= x"3";
 								data_in_mem <= block_to_mem;
 								write_to_mem <= '1';
 								nextState <= s4;
-								state<= sDelay;
+								state <= sDelay;
 								
 						when s4 => 
 							done_write_back <= '1';
 								write_to_mem <= '0';
 								state_d <= x"4";
-								
+								state <= s2a;
+						when s5 => 
+								replaceStatusIn <= '1';
+								state_d <= x"5";
 						when sDelay=>
 								state_d <= x"e";
 --								

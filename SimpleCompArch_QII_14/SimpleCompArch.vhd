@@ -24,6 +24,9 @@ port( sys_clk								:	in std_logic;
 		D_RFs, D_ALUs										: out std_logic_vector(1 downto 0);
 		D_PCld, D_jpz										: out std_logic;
 		state_cpu            : out std_logic_vector(11 downto 0 ) ;
+		reg_in_data : out std_logic_vector ( 15 downto 0);
+		reg_out_data_1 : out std_logic_vector(15 downto 0);
+		reg_out_data_2 : out std_logic_vector(15 downto 0);
 		-- end debug variables	
 
 		-- Debug signals from Memory: output for simulation purpose only	
@@ -37,7 +40,12 @@ port( sys_clk								:	in std_logic;
 		write_back_block : out std_LOGIC_VECTOR(63 downto 0);
 		done_write_back_d : out std_logic;
 		write_block_controller_sig : out std_logic;
-		write_back_mem : out std_logic 
+		write_back_mem : out std_logic ;
+		 tempDataIn_d : out std_logic_vector(15 downto 0);
+tempDataOut_d : out std_logic_vector(15 downto 0);
+tagIndex_d: out std_logic_vector(6 downto 0);
+lineIndex_d: out std_logic_vector(2 downto 0)
+		
 		-- end debug variables	
 );
 end SimpleCompArch;
@@ -59,10 +67,10 @@ begin
 
 Unit1: CPU port map (sys_clk,sys_rst,mdout_bus,mdin_bus,mem_addr,Mre,Mwe,oe,controller_en, state_cpu,done_write_back,cache_en,
 										D_rfout_bus,D_RFwa, D_RFr1a, D_RFr2a,D_RFwe, 			 				--Degug signals
-										D_RFr1e, D_RFr2e,D_RFs, D_ALUs,D_PCld, D_jpz);	 						--Degug signals
+										D_RFr1e, D_RFr2e,D_RFs, D_ALUs,D_PCld, D_jpz, reg_in_data, reg_out_data_1, reg_out_data_2);	 						--Degug signals
 																					
 Unit2: Cache port map(	cache_en,sys_clk,sys_rst,Mre,Mwe,mem_addr,mdin_bus,mdout_bus, delayReq, controller_en, cont_state_d, cache_state_d,
-							write_block_controller_sig, write_back_block,write_back_mem, done_write_back);
+							tempDataIn_d, tempDataOut_d, tagIndex_d,lineIndex_d, write_block_controller_sig, write_back_block,write_back_mem, done_write_back);
 Unit3: obuf port map(oe, mdout_bus, sys_output);
 
 -- Debug signals: output to upper level for simulation purpose only

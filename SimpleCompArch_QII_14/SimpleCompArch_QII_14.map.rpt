@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SimpleCompArch_QII_14
-Thu Mar 24 19:13:17 2016
+Fri Mar 25 22:42:12 2016
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -26,7 +26,7 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
  18. General Register Statistics
  19. Inverted Register Statistics
  20. Multiplexer Restructuring Statistics (Restructuring Performed)
- 21. Source assignments for Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_mgu3:auto_generated
+ 21. Source assignments for Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_0su3:auto_generated
  22. Parameter Settings for User Entity Instance: Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component
  23. altsyncram Parameter Settings by Entity Instance
  24. Port Connectivity Checks: "Cache:Unit2|CacheController:Unit1|DataMemory:unit2"
@@ -60,16 +60,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Mar 24 19:13:16 2016            ;
+; Analysis & Synthesis Status        ; Successful - Fri Mar 25 22:42:12 2016            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; SimpleCompArch_QII_14                            ;
 ; Top-level Entity Name              ; SimpleCompArch                                   ;
 ; Family                             ; Cyclone IV GX                                    ;
-; Total logic elements               ; 4,617                                            ;
-;     Total combinational functions  ; 4,211                                            ;
-;     Dedicated logic registers      ; 1,325                                            ;
-; Total registers                    ; 1325                                             ;
-; Total pins                         ; 190                                              ;
+; Total logic elements               ; 4,588                                            ;
+;     Total combinational functions  ; 4,176                                            ;
+;     Dedicated logic registers      ; 1,313                                            ;
+; Total registers                    ; 1313                                             ;
+; Total pins                         ; 280                                              ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 65,536                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                                ;
@@ -184,40 +184,41 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                      ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                  ; Library ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------+---------+
-; cacheController.vhd              ; yes             ; User VHDL File               ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/cacheController.vhd    ;         ;
-; cache.vhd                        ; yes             ; User VHDL File               ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/cache.vhd              ;         ;
-; obuf.vhd                         ; yes             ; User VHDL File               ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/obuf.vhd               ;         ;
-; TagMemory.vhd                    ; yes             ; User VHDL File               ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/TagMemory.vhd          ;         ;
-; smallmux.vhd                     ; yes             ; User VHDL File               ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/smallmux.vhd           ;         ;
-; SimpleCompArch.vhd               ; yes             ; User VHDL File               ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/SimpleCompArch.vhd     ;         ;
-; reg_file.vhd                     ; yes             ; User VHDL File               ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/reg_file.vhd           ;         ;
-; PC.vhd                           ; yes             ; User VHDL File               ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/PC.vhd                 ;         ;
-; MP_lib.vhd                       ; yes             ; User VHDL File               ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/MP_lib.vhd             ;         ;
-; MainMemory.vhd                   ; yes             ; User Wizard-Generated File   ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/MainMemory.vhd         ;         ;
-; IR.vhd                           ; yes             ; User VHDL File               ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/IR.vhd                 ;         ;
-; datapath.vhd                     ; yes             ; User VHDL File               ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/datapath.vhd           ;         ;
-; DataMemory.vhd                   ; yes             ; User VHDL File               ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/DataMemory.vhd         ;         ;
-; ctrl_unit.vhd                    ; yes             ; User VHDL File               ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/ctrl_unit.vhd          ;         ;
-; CPU.vhd                          ; yes             ; User VHDL File               ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/CPU.vhd                ;         ;
-; controller.vhd                   ; yes             ; User VHDL File               ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/controller.vhd         ;         ;
-; bigmux.vhd                       ; yes             ; User VHDL File               ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/bigmux.vhd             ;         ;
-; alu.vhd                          ; yes             ; User VHDL File               ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/alu.vhd                ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf                              ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc                       ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc                                 ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc                              ;         ;
-; aglobal130.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                              ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc                               ;         ;
-; altrom.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc                                  ;         ;
-; altram.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc                                  ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc                                ;         ;
-; db/altsyncram_mgu3.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/db/altsyncram_mgu3.tdf ;         ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                              ;
++----------------------------------+-----------------+----------------------------------+---------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                                                      ; Library ;
++----------------------------------+-----------------+----------------------------------+---------------------------------------------------------------------------------------------------+---------+
+; matrix_addition-64bits.mif       ; yes             ; User Memory Initialization File  ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/matrix_addition-64bits.mif ;         ;
+; cacheController.vhd              ; yes             ; User VHDL File                   ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/cacheController.vhd        ;         ;
+; cache.vhd                        ; yes             ; User VHDL File                   ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/cache.vhd                  ;         ;
+; obuf.vhd                         ; yes             ; User VHDL File                   ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/obuf.vhd                   ;         ;
+; TagMemory.vhd                    ; yes             ; User VHDL File                   ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/TagMemory.vhd              ;         ;
+; smallmux.vhd                     ; yes             ; User VHDL File                   ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/smallmux.vhd               ;         ;
+; SimpleCompArch.vhd               ; yes             ; User VHDL File                   ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/SimpleCompArch.vhd         ;         ;
+; reg_file.vhd                     ; yes             ; User VHDL File                   ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/reg_file.vhd               ;         ;
+; PC.vhd                           ; yes             ; User VHDL File                   ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/PC.vhd                     ;         ;
+; MP_lib.vhd                       ; yes             ; User VHDL File                   ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/MP_lib.vhd                 ;         ;
+; MainMemory.vhd                   ; yes             ; User Wizard-Generated File       ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/MainMemory.vhd             ;         ;
+; IR.vhd                           ; yes             ; User VHDL File                   ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/IR.vhd                     ;         ;
+; datapath.vhd                     ; yes             ; User VHDL File                   ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/datapath.vhd               ;         ;
+; DataMemory.vhd                   ; yes             ; User VHDL File                   ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/DataMemory.vhd             ;         ;
+; ctrl_unit.vhd                    ; yes             ; User VHDL File                   ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/ctrl_unit.vhd              ;         ;
+; CPU.vhd                          ; yes             ; User VHDL File                   ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/CPU.vhd                    ;         ;
+; controller.vhd                   ; yes             ; User VHDL File                   ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/controller.vhd             ;         ;
+; bigmux.vhd                       ; yes             ; User VHDL File                   ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/bigmux.vhd                 ;         ;
+; alu.vhd                          ; yes             ; User VHDL File                   ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/alu.vhd                    ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                     ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf                                  ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                     ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc                           ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                     ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc                                     ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                     ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc                                  ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                     ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                                  ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                     ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc                                   ;         ;
+; altrom.inc                       ; yes             ; Megafunction                     ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc                                      ;         ;
+; altram.inc                       ; yes             ; Megafunction                     ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc                                      ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                     ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc                                    ;         ;
+; db/altsyncram_0su3.tdf           ; yes             ; Auto-Generated Megafunction      ; C:/Users/dorozco/Desktop/Project_Enhanced_System/SimpleCompArch_QII_14/db/altsyncram_0su3.tdf     ;         ;
++----------------------------------+-----------------+----------------------------------+---------------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------+
@@ -225,13 +226,13 @@ applicable agreement for further details.
 +--------------------------+------------------+
 ; Resource                 ; Usage            ;
 +--------------------------+------------------+
-; I/O pins                 ; 190              ;
+; I/O pins                 ; 280              ;
 ; Total memory bits        ; 65536            ;
 ; DSP block 9-bit elements ; 0                ;
 ; Maximum fan-out node     ; sys_rst~input    ;
-; Maximum fan-out          ; 1587             ;
-; Total fan-out            ; 19743            ;
-; Average fan-out          ; 3.30             ;
+; Maximum fan-out          ; 1566             ;
+; Total fan-out            ; 19744            ;
+; Average fan-out          ; 3.23             ;
 +--------------------------+------------------+
 
 
@@ -240,35 +241,35 @@ applicable agreement for further details.
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                         ; Library Name ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------+--------------+
-; |SimpleCompArch                              ; 4211 (1)          ; 1325 (0)     ; 65536       ; 0            ; 0       ; 0         ; 0         ; 190  ; 0            ; |SimpleCompArch                                                                                             ; work         ;
-;    |CPU:Unit1|                               ; 594 (0)           ; 379 (0)      ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SimpleCompArch|CPU:Unit1                                                                                   ; work         ;
-;       |ctrl_unit:Unit0|                      ; 153 (0)           ; 91 (0)       ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0                                                                   ; work         ;
+; |SimpleCompArch                              ; 4176 (1)          ; 1313 (0)     ; 65536       ; 0            ; 0       ; 0         ; 0         ; 280  ; 0            ; |SimpleCompArch                                                                                             ; work         ;
+;    |CPU:Unit1|                               ; 587 (0)           ; 378 (0)      ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SimpleCompArch|CPU:Unit1                                                                                   ; work         ;
+;       |ctrl_unit:Unit0|                      ; 146 (0)           ; 90 (0)       ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0                                                                   ; work         ;
 ;          |IR:U2|                             ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0|IR:U2                                                             ; work         ;
 ;          |PC:U1|                             ; 14 (14)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0|PC:U1                                                             ; work         ;
 ;          |bigmux:U3|                         ; 20 (20)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0|bigmux:U3                                                         ; work         ;
-;          |controller:U0|                     ; 103 (103)         ; 79 (79)      ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0|controller:U0                                                     ; work         ;
+;          |controller:U0|                     ; 96 (96)           ; 78 (78)      ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0|controller:U0                                                     ; work         ;
 ;       |datapath:Unit1|                       ; 441 (0)           ; 288 (0)      ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SimpleCompArch|CPU:Unit1|datapath:Unit1                                                                    ; work         ;
 ;          |alu:U3|                            ; 73 (73)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SimpleCompArch|CPU:Unit1|datapath:Unit1|alu:U3                                                             ; work         ;
 ;          |reg_file:U2|                       ; 344 (344)         ; 288 (288)    ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SimpleCompArch|CPU:Unit1|datapath:Unit1|reg_file:U2                                                        ; work         ;
 ;          |smallmux:U1|                       ; 24 (24)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SimpleCompArch|CPU:Unit1|datapath:Unit1|smallmux:U1                                                        ; work         ;
-;    |Cache:Unit2|                             ; 3616 (60)         ; 946 (81)     ; 65536       ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SimpleCompArch|Cache:Unit2                                                                                 ; work         ;
-;       |CacheController:Unit1|                ; 3492 (124)        ; 832 (176)    ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SimpleCompArch|Cache:Unit2|CacheController:Unit1                                                           ; work         ;
-;          |DataMemory:unit2|                  ; 3263 (3263)       ; 592 (592)    ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SimpleCompArch|Cache:Unit2|CacheController:Unit1|DataMemory:unit2                                          ; work         ;
+;    |Cache:Unit2|                             ; 3588 (65)         ; 935 (86)     ; 65536       ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SimpleCompArch|Cache:Unit2                                                                                 ; work         ;
+;       |CacheController:Unit1|                ; 3456 (94)         ; 816 (160)    ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SimpleCompArch|Cache:Unit2|CacheController:Unit1                                                           ; work         ;
+;          |DataMemory:unit2|                  ; 3257 (3257)       ; 592 (592)    ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SimpleCompArch|Cache:Unit2|CacheController:Unit1|DataMemory:unit2                                          ; work         ;
 ;          |TagMemory:unit1|                   ; 105 (105)         ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SimpleCompArch|Cache:Unit2|CacheController:Unit1|TagMemory:unit1                                           ; work         ;
-;       |MainMemory:Unit2|                     ; 64 (64)           ; 33 (33)      ; 65536       ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SimpleCompArch|Cache:Unit2|MainMemory:Unit2                                                                ; work         ;
+;       |MainMemory:Unit2|                     ; 67 (67)           ; 33 (33)      ; 65536       ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SimpleCompArch|Cache:Unit2|MainMemory:Unit2                                                                ; work         ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 65536       ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SimpleCompArch|Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component                                ; work         ;
-;             |altsyncram_mgu3:auto_generated| ; 0 (0)             ; 0 (0)        ; 65536       ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SimpleCompArch|Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_mgu3:auto_generated ; work         ;
+;             |altsyncram_0su3:auto_generated| ; 0 (0)             ; 0 (0)        ; 65536       ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SimpleCompArch|Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_0su3:auto_generated ; work         ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                         ;
-+--------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+------------------------+
-; Name                                                                                                   ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF                    ;
-+--------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+------------------------+
-; Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_mgu3:auto_generated|ALTSYNCRAM ; M9K  ; Single Port ; 1024         ; 64           ; --           ; --           ; 65536 ; matrix_addition-64bits ;
-+--------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                             ;
++--------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+----------------------------+
+; Name                                                                                                   ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF                        ;
++--------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+----------------------------+
+; Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_0su3:auto_generated|ALTSYNCRAM ; M9K  ; Single Port ; 1024         ; 64           ; --           ; --           ; 65536 ; matrix_addition-64bits.mif ;
++--------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+----------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -281,103 +282,111 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 Encoding Type:  One-Hot
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |SimpleCompArch|Cache:Unit2|nextState                                                                                                                                                                                                                                                    ;
-+-------------------+--------------+--------------+---------------+--------------+--------------+--------------+--------------+--------------+---------------+---------------+--------------+--------------+-------------------+-------------------+------------------+------------------+-----------------+
-; Name              ; nextState.s8 ; nextState.s7 ; nextState.s6b ; nextState.s6 ; nextState.s5 ; nextState.s4 ; nextState.s3 ; nextState.s2 ; nextState.s1c ; nextState.s1b ; nextState.s1 ; nextState.s0 ; nextState.sDelay3 ; nextState.sDelay2 ; nextState.Sdelay ; nextState.sReset ; nextState.sIdle ;
-+-------------------+--------------+--------------+---------------+--------------+--------------+--------------+--------------+--------------+---------------+---------------+--------------+--------------+-------------------+-------------------+------------------+------------------+-----------------+
-; nextState.sIdle   ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                 ; 0                 ; 0                ; 0                ; 0               ;
-; nextState.sReset  ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                 ; 0                 ; 0                ; 1                ; 1               ;
-; nextState.Sdelay  ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                 ; 0                 ; 1                ; 0                ; 1               ;
-; nextState.sDelay2 ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                 ; 1                 ; 0                ; 0                ; 1               ;
-; nextState.sDelay3 ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 1                 ; 0                 ; 0                ; 0                ; 1               ;
-; nextState.s0      ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 1            ; 0                 ; 0                 ; 0                ; 0                ; 1               ;
-; nextState.s1      ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 1            ; 0            ; 0                 ; 0                 ; 0                ; 0                ; 1               ;
-; nextState.s1b     ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 1             ; 0            ; 0            ; 0                 ; 0                 ; 0                ; 0                ; 1               ;
-; nextState.s1c     ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 1             ; 0             ; 0            ; 0            ; 0                 ; 0                 ; 0                ; 0                ; 1               ;
-; nextState.s2      ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 1            ; 0             ; 0             ; 0            ; 0            ; 0                 ; 0                 ; 0                ; 0                ; 1               ;
-; nextState.s3      ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 1            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                 ; 0                 ; 0                ; 0                ; 1               ;
-; nextState.s4      ; 0            ; 0            ; 0             ; 0            ; 0            ; 1            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                 ; 0                 ; 0                ; 0                ; 1               ;
-; nextState.s5      ; 0            ; 0            ; 0             ; 0            ; 1            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                 ; 0                 ; 0                ; 0                ; 1               ;
-; nextState.s6      ; 0            ; 0            ; 0             ; 1            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                 ; 0                 ; 0                ; 0                ; 1               ;
-; nextState.s6b     ; 0            ; 0            ; 1             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                 ; 0                 ; 0                ; 0                ; 1               ;
-; nextState.s7      ; 0            ; 1            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                 ; 0                 ; 0                ; 0                ; 1               ;
-; nextState.s8      ; 1            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                 ; 0                 ; 0                ; 0                ; 1               ;
-+-------------------+--------------+--------------+---------------+--------------+--------------+--------------+--------------+--------------+---------------+---------------+--------------+--------------+-------------------+-------------------+------------------+------------------+-----------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |SimpleCompArch|Cache:Unit2|nextState                                                                                                                                                                                                                                                                    ;
++-------------------+--------------+--------------+---------------+--------------+--------------+--------------+--------------+---------------+--------------+---------------+---------------+--------------+--------------+-------------------+-------------------+------------------+------------------+-----------------+
+; Name              ; nextState.s8 ; nextState.s7 ; nextState.s6b ; nextState.s6 ; nextState.s5 ; nextState.s4 ; nextState.s3 ; nextState.s2a ; nextState.s2 ; nextState.s1c ; nextState.s1b ; nextState.s1 ; nextState.s0 ; nextState.sDelay3 ; nextState.sDelay2 ; nextState.Sdelay ; nextState.sReset ; nextState.sIdle ;
++-------------------+--------------+--------------+---------------+--------------+--------------+--------------+--------------+---------------+--------------+---------------+---------------+--------------+--------------+-------------------+-------------------+------------------+------------------+-----------------+
+; nextState.sIdle   ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0             ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                 ; 0                 ; 0                ; 0                ; 0               ;
+; nextState.sReset  ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0             ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                 ; 0                 ; 0                ; 1                ; 1               ;
+; nextState.Sdelay  ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0             ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                 ; 0                 ; 1                ; 0                ; 1               ;
+; nextState.sDelay2 ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0             ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                 ; 1                 ; 0                ; 0                ; 1               ;
+; nextState.sDelay3 ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0             ; 0            ; 0             ; 0             ; 0            ; 0            ; 1                 ; 0                 ; 0                ; 0                ; 1               ;
+; nextState.s0      ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0             ; 0            ; 0             ; 0             ; 0            ; 1            ; 0                 ; 0                 ; 0                ; 0                ; 1               ;
+; nextState.s1      ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0             ; 0            ; 0             ; 0             ; 1            ; 0            ; 0                 ; 0                 ; 0                ; 0                ; 1               ;
+; nextState.s1b     ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0             ; 0            ; 0             ; 1             ; 0            ; 0            ; 0                 ; 0                 ; 0                ; 0                ; 1               ;
+; nextState.s1c     ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0             ; 0            ; 1             ; 0             ; 0            ; 0            ; 0                 ; 0                 ; 0                ; 0                ; 1               ;
+; nextState.s2      ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0             ; 1            ; 0             ; 0             ; 0            ; 0            ; 0                 ; 0                 ; 0                ; 0                ; 1               ;
+; nextState.s2a     ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 1             ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                 ; 0                 ; 0                ; 0                ; 1               ;
+; nextState.s3      ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 1            ; 0             ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                 ; 0                 ; 0                ; 0                ; 1               ;
+; nextState.s4      ; 0            ; 0            ; 0             ; 0            ; 0            ; 1            ; 0            ; 0             ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                 ; 0                 ; 0                ; 0                ; 1               ;
+; nextState.s5      ; 0            ; 0            ; 0             ; 0            ; 1            ; 0            ; 0            ; 0             ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                 ; 0                 ; 0                ; 0                ; 1               ;
+; nextState.s6      ; 0            ; 0            ; 0             ; 1            ; 0            ; 0            ; 0            ; 0             ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                 ; 0                 ; 0                ; 0                ; 1               ;
+; nextState.s6b     ; 0            ; 0            ; 1             ; 0            ; 0            ; 0            ; 0            ; 0             ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                 ; 0                 ; 0                ; 0                ; 1               ;
+; nextState.s7      ; 0            ; 1            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0             ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                 ; 0                 ; 0                ; 0                ; 1               ;
+; nextState.s8      ; 1            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0             ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                 ; 0                 ; 0                ; 0                ; 1               ;
++-------------------+--------------+--------------+---------------+--------------+--------------+--------------+--------------+---------------+--------------+---------------+---------------+--------------+--------------+-------------------+-------------------+------------------+------------------+-----------------+
 
 
 Encoding Type:  One-Hot
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |SimpleCompArch|Cache:Unit2|state                                                                                                                                                                                ;
-+---------------+----------+----------+-----------+----------+----------+----------+----------+----------+-----------+-----------+----------+----------+---------------+---------------+--------------+-------------+--------------+
-; Name          ; state.s8 ; state.s7 ; state.s6b ; state.s6 ; state.s5 ; state.s4 ; state.s3 ; state.s2 ; state.s1c ; state.s1b ; state.s1 ; state.s0 ; state.sDelay3 ; state.sDelay2 ; state.Sdelay ; state.sIdle ; state.sReset ;
-+---------------+----------+----------+-----------+----------+----------+----------+----------+----------+-----------+-----------+----------+----------+---------------+---------------+--------------+-------------+--------------+
-; state.sReset  ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0             ; 0             ; 0            ; 0           ; 0            ;
-; state.sIdle   ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0             ; 0             ; 0            ; 1           ; 1            ;
-; state.Sdelay  ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0             ; 0             ; 1            ; 0           ; 1            ;
-; state.sDelay2 ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0             ; 1             ; 0            ; 0           ; 1            ;
-; state.sDelay3 ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 1             ; 0             ; 0            ; 0           ; 1            ;
-; state.s0      ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 1        ; 0             ; 0             ; 0            ; 0           ; 1            ;
-; state.s1      ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 1        ; 0        ; 0             ; 0             ; 0            ; 0           ; 1            ;
-; state.s1b     ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 1         ; 0        ; 0        ; 0             ; 0             ; 0            ; 0           ; 1            ;
-; state.s1c     ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 1         ; 0         ; 0        ; 0        ; 0             ; 0             ; 0            ; 0           ; 1            ;
-; state.s2      ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 1        ; 0         ; 0         ; 0        ; 0        ; 0             ; 0             ; 0            ; 0           ; 1            ;
-; state.s3      ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 1        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0             ; 0             ; 0            ; 0           ; 1            ;
-; state.s4      ; 0        ; 0        ; 0         ; 0        ; 0        ; 1        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0             ; 0             ; 0            ; 0           ; 1            ;
-; state.s5      ; 0        ; 0        ; 0         ; 0        ; 1        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0             ; 0             ; 0            ; 0           ; 1            ;
-; state.s6      ; 0        ; 0        ; 0         ; 1        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0             ; 0             ; 0            ; 0           ; 1            ;
-; state.s6b     ; 0        ; 0        ; 1         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0             ; 0             ; 0            ; 0           ; 1            ;
-; state.s7      ; 0        ; 1        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0             ; 0             ; 0            ; 0           ; 1            ;
-; state.s8      ; 1        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0             ; 0             ; 0            ; 0           ; 1            ;
-+---------------+----------+----------+-----------+----------+----------+----------+----------+----------+-----------+-----------+----------+----------+---------------+---------------+--------------+-------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |SimpleCompArch|Cache:Unit2|state                                                                                                                                                                                            ;
++---------------+----------+----------+-----------+----------+----------+----------+----------+-----------+----------+-----------+-----------+----------+----------+---------------+---------------+--------------+-------------+--------------+
+; Name          ; state.s8 ; state.s7 ; state.s6b ; state.s6 ; state.s5 ; state.s4 ; state.s3 ; state.s2a ; state.s2 ; state.s1c ; state.s1b ; state.s1 ; state.s0 ; state.sDelay3 ; state.sDelay2 ; state.Sdelay ; state.sIdle ; state.sReset ;
++---------------+----------+----------+-----------+----------+----------+----------+----------+-----------+----------+-----------+-----------+----------+----------+---------------+---------------+--------------+-------------+--------------+
+; state.sReset  ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0             ; 0             ; 0            ; 0           ; 0            ;
+; state.sIdle   ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0             ; 0             ; 0            ; 1           ; 1            ;
+; state.Sdelay  ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0             ; 0             ; 1            ; 0           ; 1            ;
+; state.sDelay2 ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0             ; 1             ; 0            ; 0           ; 1            ;
+; state.sDelay3 ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 1             ; 0             ; 0            ; 0           ; 1            ;
+; state.s0      ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 1        ; 0             ; 0             ; 0            ; 0           ; 1            ;
+; state.s1      ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0         ; 0        ; 0         ; 0         ; 1        ; 0        ; 0             ; 0             ; 0            ; 0           ; 1            ;
+; state.s1b     ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0         ; 0        ; 0         ; 1         ; 0        ; 0        ; 0             ; 0             ; 0            ; 0           ; 1            ;
+; state.s1c     ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0         ; 0        ; 1         ; 0         ; 0        ; 0        ; 0             ; 0             ; 0            ; 0           ; 1            ;
+; state.s2      ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0         ; 1        ; 0         ; 0         ; 0        ; 0        ; 0             ; 0             ; 0            ; 0           ; 1            ;
+; state.s2a     ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 1         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0             ; 0             ; 0            ; 0           ; 1            ;
+; state.s3      ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 1        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0             ; 0             ; 0            ; 0           ; 1            ;
+; state.s4      ; 0        ; 0        ; 0         ; 0        ; 0        ; 1        ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0             ; 0             ; 0            ; 0           ; 1            ;
+; state.s5      ; 0        ; 0        ; 0         ; 0        ; 1        ; 0        ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0             ; 0             ; 0            ; 0           ; 1            ;
+; state.s6      ; 0        ; 0        ; 0         ; 1        ; 0        ; 0        ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0             ; 0             ; 0            ; 0           ; 1            ;
+; state.s6b     ; 0        ; 0        ; 1         ; 0        ; 0        ; 0        ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0             ; 0             ; 0            ; 0           ; 1            ;
+; state.s7      ; 0        ; 1        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0             ; 0             ; 0            ; 0           ; 1            ;
+; state.s8      ; 1        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0             ; 0             ; 0            ; 0           ; 1            ;
++---------------+----------+----------+-----------+----------+----------+----------+----------+-----------+----------+-----------+-----------+----------+----------+---------------+---------------+--------------+-------------+--------------+
 
 
 Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |SimpleCompArch|Cache:Unit2|CacheController:Unit1|nextState                                                                                                                                                                                     ;
-+------------------+--------------+--------------+---------------+--------------+--------------+--------------+--------------+--------------+---------------+---------------+--------------+--------------+------------------+------------------+-----------------+
-; Name             ; nextState.s8 ; nextState.s7 ; nextState.s6b ; nextState.s6 ; nextState.s5 ; nextState.s4 ; nextState.s3 ; nextState.s2 ; nextState.s1c ; nextState.s1b ; nextState.s1 ; nextState.s0 ; nextState.Sdelay ; nextState.sReset ; nextState.sWait ;
-+------------------+--------------+--------------+---------------+--------------+--------------+--------------+--------------+--------------+---------------+---------------+--------------+--------------+------------------+------------------+-----------------+
-; nextState.sWait  ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                ; 0                ; 0               ;
-; nextState.sReset ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                ; 1                ; 1               ;
-; nextState.Sdelay ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 1                ; 0                ; 1               ;
-; nextState.s0     ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 1            ; 0                ; 0                ; 1               ;
-; nextState.s1     ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 1            ; 0            ; 0                ; 0                ; 1               ;
-; nextState.s1b    ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 1             ; 0            ; 0            ; 0                ; 0                ; 1               ;
-; nextState.s1c    ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 1             ; 0             ; 0            ; 0            ; 0                ; 0                ; 1               ;
-; nextState.s2     ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 1            ; 0             ; 0             ; 0            ; 0            ; 0                ; 0                ; 1               ;
-; nextState.s3     ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 1            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                ; 0                ; 1               ;
-; nextState.s4     ; 0            ; 0            ; 0             ; 0            ; 0            ; 1            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                ; 0                ; 1               ;
-; nextState.s5     ; 0            ; 0            ; 0             ; 0            ; 1            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                ; 0                ; 1               ;
-; nextState.s6     ; 0            ; 0            ; 0             ; 1            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                ; 0                ; 1               ;
-; nextState.s6b    ; 0            ; 0            ; 1             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                ; 0                ; 1               ;
-; nextState.s7     ; 0            ; 1            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                ; 0                ; 1               ;
-; nextState.s8     ; 1            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                ; 0                ; 1               ;
-+------------------+--------------+--------------+---------------+--------------+--------------+--------------+--------------+--------------+---------------+---------------+--------------+--------------+------------------+------------------+-----------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |SimpleCompArch|Cache:Unit2|CacheController:Unit1|nextState                                                                                                                                                                                                                                                                  ;
++-----------------------+--------------+--------------+---------------+--------------+--------------+--------------+--------------+--------------+---------------+---------------+--------------+--------------+------------------+------------------+-----------------+-----------------------+-----------------------+-----------------------+
+; Name                  ; nextState.s8 ; nextState.s7 ; nextState.s6b ; nextState.s6 ; nextState.s5 ; nextState.s4 ; nextState.s3 ; nextState.s2 ; nextState.s1c ; nextState.s1b ; nextState.s1 ; nextState.s0 ; nextState.Sdelay ; nextState.sReset ; nextState.sWait ; nextState.sWriteback3 ; nextState.sWriteback2 ; nextState.sWriteback1 ;
++-----------------------+--------------+--------------+---------------+--------------+--------------+--------------+--------------+--------------+---------------+---------------+--------------+--------------+------------------+------------------+-----------------+-----------------------+-----------------------+-----------------------+
+; nextState.sWriteback1 ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                ; 0                ; 0               ; 0                     ; 0                     ; 0                     ;
+; nextState.sWriteback2 ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                ; 0                ; 0               ; 0                     ; 1                     ; 1                     ;
+; nextState.sWriteback3 ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                ; 0                ; 0               ; 1                     ; 0                     ; 1                     ;
+; nextState.sWait       ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                ; 0                ; 1               ; 0                     ; 0                     ; 1                     ;
+; nextState.sReset      ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                ; 1                ; 0               ; 0                     ; 0                     ; 1                     ;
+; nextState.Sdelay      ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 1                ; 0                ; 0               ; 0                     ; 0                     ; 1                     ;
+; nextState.s0          ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 1            ; 0                ; 0                ; 0               ; 0                     ; 0                     ; 1                     ;
+; nextState.s1          ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 1            ; 0            ; 0                ; 0                ; 0               ; 0                     ; 0                     ; 1                     ;
+; nextState.s1b         ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 1             ; 0            ; 0            ; 0                ; 0                ; 0               ; 0                     ; 0                     ; 1                     ;
+; nextState.s1c         ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 1             ; 0             ; 0            ; 0            ; 0                ; 0                ; 0               ; 0                     ; 0                     ; 1                     ;
+; nextState.s2          ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 1            ; 0             ; 0             ; 0            ; 0            ; 0                ; 0                ; 0               ; 0                     ; 0                     ; 1                     ;
+; nextState.s3          ; 0            ; 0            ; 0             ; 0            ; 0            ; 0            ; 1            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                ; 0                ; 0               ; 0                     ; 0                     ; 1                     ;
+; nextState.s4          ; 0            ; 0            ; 0             ; 0            ; 0            ; 1            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                ; 0                ; 0               ; 0                     ; 0                     ; 1                     ;
+; nextState.s5          ; 0            ; 0            ; 0             ; 0            ; 1            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                ; 0                ; 0               ; 0                     ; 0                     ; 1                     ;
+; nextState.s6          ; 0            ; 0            ; 0             ; 1            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                ; 0                ; 0               ; 0                     ; 0                     ; 1                     ;
+; nextState.s6b         ; 0            ; 0            ; 1             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                ; 0                ; 0               ; 0                     ; 0                     ; 1                     ;
+; nextState.s7          ; 0            ; 1            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                ; 0                ; 0               ; 0                     ; 0                     ; 1                     ;
+; nextState.s8          ; 1            ; 0            ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0            ; 0            ; 0                ; 0                ; 0               ; 0                     ; 0                     ; 1                     ;
++-----------------------+--------------+--------------+---------------+--------------+--------------+--------------+--------------+--------------+---------------+---------------+--------------+--------------+------------------+------------------+-----------------+-----------------------+-----------------------+-----------------------+
 
 
 Encoding Type:  One-Hot
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |SimpleCompArch|Cache:Unit2|CacheController:Unit1|state                                                                                                                         ;
-+--------------+----------+----------+-----------+----------+----------+----------+----------+----------+-----------+-----------+----------+----------+--------------+-------------+--------------+
-; Name         ; state.s8 ; state.s7 ; state.s6b ; state.s6 ; state.s5 ; state.s4 ; state.s3 ; state.s2 ; state.s1c ; state.s1b ; state.s1 ; state.s0 ; state.Sdelay ; state.sWait ; state.sReset ;
-+--------------+----------+----------+-----------+----------+----------+----------+----------+----------+-----------+-----------+----------+----------+--------------+-------------+--------------+
-; state.sReset ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0            ; 0           ; 0            ;
-; state.sWait  ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0            ; 1           ; 1            ;
-; state.Sdelay ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 1            ; 0           ; 1            ;
-; state.s0     ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 1        ; 0            ; 0           ; 1            ;
-; state.s1     ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 1        ; 0        ; 0            ; 0           ; 1            ;
-; state.s1b    ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 1         ; 0        ; 0        ; 0            ; 0           ; 1            ;
-; state.s1c    ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 1         ; 0         ; 0        ; 0        ; 0            ; 0           ; 1            ;
-; state.s2     ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 1        ; 0         ; 0         ; 0        ; 0        ; 0            ; 0           ; 1            ;
-; state.s3     ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 1        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0            ; 0           ; 1            ;
-; state.s4     ; 0        ; 0        ; 0         ; 0        ; 0        ; 1        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0            ; 0           ; 1            ;
-; state.s5     ; 0        ; 0        ; 0         ; 0        ; 1        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0            ; 0           ; 1            ;
-; state.s6     ; 0        ; 0        ; 0         ; 1        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0            ; 0           ; 1            ;
-; state.s6b    ; 0        ; 0        ; 1         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0            ; 0           ; 1            ;
-; state.s7     ; 0        ; 1        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0            ; 0           ; 1            ;
-; state.s8     ; 1        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0            ; 0           ; 1            ;
-+--------------+----------+----------+-----------+----------+----------+----------+----------+----------+-----------+-----------+----------+----------+--------------+-------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |SimpleCompArch|Cache:Unit2|CacheController:Unit1|state                                                                                                                                                                                          ;
++-------------------+----------+----------+-----------+----------+----------+----------+----------+----------+-----------+-----------+----------+----------+--------------+-------------------+-------------+-------------------+-------------------+--------------+
+; Name              ; state.s8 ; state.s7 ; state.s6b ; state.s6 ; state.s5 ; state.s4 ; state.s3 ; state.s2 ; state.s1c ; state.s1b ; state.s1 ; state.s0 ; state.Sdelay ; state.sWriteback1 ; state.sWait ; state.sWriteback3 ; state.sWriteback2 ; state.sReset ;
++-------------------+----------+----------+-----------+----------+----------+----------+----------+----------+-----------+-----------+----------+----------+--------------+-------------------+-------------+-------------------+-------------------+--------------+
+; state.sReset      ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0            ; 0                 ; 0           ; 0                 ; 0                 ; 0            ;
+; state.sWriteback2 ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0            ; 0                 ; 0           ; 0                 ; 1                 ; 1            ;
+; state.sWriteback3 ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0            ; 0                 ; 0           ; 1                 ; 0                 ; 1            ;
+; state.sWait       ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0            ; 0                 ; 1           ; 0                 ; 0                 ; 1            ;
+; state.sWriteback1 ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0            ; 1                 ; 0           ; 0                 ; 0                 ; 1            ;
+; state.Sdelay      ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 1            ; 0                 ; 0           ; 0                 ; 0                 ; 1            ;
+; state.s0          ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 1        ; 0            ; 0                 ; 0           ; 0                 ; 0                 ; 1            ;
+; state.s1          ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 1        ; 0        ; 0            ; 0                 ; 0           ; 0                 ; 0                 ; 1            ;
+; state.s1b         ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 1         ; 0        ; 0        ; 0            ; 0                 ; 0           ; 0                 ; 0                 ; 1            ;
+; state.s1c         ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 1         ; 0         ; 0        ; 0        ; 0            ; 0                 ; 0           ; 0                 ; 0                 ; 1            ;
+; state.s2          ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 1        ; 0         ; 0         ; 0        ; 0        ; 0            ; 0                 ; 0           ; 0                 ; 0                 ; 1            ;
+; state.s3          ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 1        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0            ; 0                 ; 0           ; 0                 ; 0                 ; 1            ;
+; state.s4          ; 0        ; 0        ; 0         ; 0        ; 0        ; 1        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0            ; 0                 ; 0           ; 0                 ; 0                 ; 1            ;
+; state.s5          ; 0        ; 0        ; 0         ; 0        ; 1        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0            ; 0                 ; 0           ; 0                 ; 0                 ; 1            ;
+; state.s6          ; 0        ; 0        ; 0         ; 1        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0            ; 0                 ; 0           ; 0                 ; 0                 ; 1            ;
+; state.s6b         ; 0        ; 0        ; 1         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0            ; 0                 ; 0           ; 0                 ; 0                 ; 1            ;
+; state.s7          ; 0        ; 1        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0            ; 0                 ; 0           ; 0                 ; 0                 ; 1            ;
+; state.s8          ; 1        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0            ; 0                 ; 0           ; 0                 ; 0                 ; 1            ;
++-------------------+----------+----------+-----------+----------+----------+----------+----------+----------+-----------+-----------+----------+----------+--------------+-------------------+-------------+-------------------+-------------------+--------------+
 
 
 Encoding Type:  One-Hot
@@ -477,13 +486,21 @@ Encoding Type:  One-Hot
 +-----------------------------------------------------+---------------------------------------------------+------------------------+
 ; Latch Name                                          ; Latch Enable Signal                               ; Free of Timing Hazards ;
 +-----------------------------------------------------+---------------------------------------------------+------------------------+
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[0]            ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
 ; Cache:Unit2|data_out[0]                             ; sys_rst                                           ; yes                    ;
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[1]            ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
 ; Cache:Unit2|data_out[1]                             ; sys_rst                                           ; yes                    ;
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[2]            ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
 ; Cache:Unit2|data_out[2]                             ; sys_rst                                           ; yes                    ;
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[3]            ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
 ; Cache:Unit2|data_out[3]                             ; sys_rst                                           ; yes                    ;
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[4]            ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
 ; Cache:Unit2|data_out[4]                             ; sys_rst                                           ; yes                    ;
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[5]            ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
 ; Cache:Unit2|data_out[5]                             ; sys_rst                                           ; yes                    ;
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[6]            ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
 ; Cache:Unit2|data_out[6]                             ; sys_rst                                           ; yes                    ;
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[7]            ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
 ; Cache:Unit2|data_out[7]                             ; sys_rst                                           ; yes                    ;
 ; Cache:Unit2|data_out[8]                             ; sys_rst                                           ; yes                    ;
 ; Cache:Unit2|data_out[9]                             ; sys_rst                                           ; yes                    ;
@@ -506,14 +523,6 @@ Encoding Type:  One-Hot
 ; CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[6]         ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
 ; CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[7]         ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
 ; Cache:Unit2|controller_en                           ; Cache:Unit2|controller_en                         ; yes                    ;
-; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[4]            ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
-; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[5]            ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
-; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[6]            ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
-; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[7]            ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
-; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[0]            ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
-; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[1]            ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
-; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[2]            ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
-; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[3]            ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
 ; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[12]           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
 ; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[13]           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
 ; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[14]           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
@@ -538,34 +547,18 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------------------------------------------+-------------------------------------------------------------------+
 ; Register name                                             ; Reason for Removal                                                ;
 +-----------------------------------------------------------+-------------------------------------------------------------------+
-; Cache:Unit2|CacheController:Unit1|tag_enable              ; Stuck at VCC due to stuck port data_in                            ;
 ; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|hit~en  ; Lost fanout                                                       ;
 ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|state_cpu[10]     ; Stuck at GND due to stuck port data_in                            ;
-; Cache:Unit2|CacheController:Unit1|blockAddressOut[2]      ; Merged with Cache:Unit2|CacheController:Unit1|addressOUT[4]       ;
-; Cache:Unit2|CacheController:Unit1|blockAddressOut[1]      ; Merged with Cache:Unit2|CacheController:Unit1|addressOUT[3]       ;
-; Cache:Unit2|CacheController:Unit1|blockAddressOut[0]      ; Merged with Cache:Unit2|CacheController:Unit1|addressOUT[2]       ;
 ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|state_cpu[9]      ; Merged with CPU:Unit1|ctrl_unit:Unit0|controller:U0|state_cpu[11] ;
-; Cache:Unit2|nextState.sIdle                               ; Lost fanout                                                       ;
-; Cache:Unit2|nextState.s0                                  ; Lost fanout                                                       ;
-; Cache:Unit2|nextState.s1b                                 ; Lost fanout                                                       ;
-; Cache:Unit2|nextState.s1c                                 ; Lost fanout                                                       ;
-; Cache:Unit2|nextState.s5                                  ; Lost fanout                                                       ;
-; Cache:Unit2|nextState.s6                                  ; Lost fanout                                                       ;
-; Cache:Unit2|nextState.s6b                                 ; Lost fanout                                                       ;
-; Cache:Unit2|nextState.s7                                  ; Lost fanout                                                       ;
-; Cache:Unit2|nextState.s8                                  ; Lost fanout                                                       ;
-; Cache:Unit2|state.sIdle                                   ; Lost fanout                                                       ;
-; Cache:Unit2|state.s0                                      ; Lost fanout                                                       ;
-; Cache:Unit2|state.s1b                                     ; Lost fanout                                                       ;
-; Cache:Unit2|state.s1c                                     ; Lost fanout                                                       ;
-; Cache:Unit2|state.s5                                      ; Lost fanout                                                       ;
-; Cache:Unit2|state.s6                                      ; Lost fanout                                                       ;
-; Cache:Unit2|state.s6b                                     ; Lost fanout                                                       ;
-; Cache:Unit2|state.s7                                      ; Lost fanout                                                       ;
-; Cache:Unit2|state.s8                                      ; Lost fanout                                                       ;
 ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|state.s1c         ; Merged with CPU:Unit1|ctrl_unit:Unit0|controller:U0|state.s11b    ;
 ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|state.s4c         ; Merged with CPU:Unit1|ctrl_unit:Unit0|controller:U0|state.s11b    ;
 ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|state.s5c         ; Merged with CPU:Unit1|ctrl_unit:Unit0|controller:U0|state.s11b    ;
+; CPU:Unit1|ctrl_unit:Unit0|controller:U0|state.sDelay2     ; Merged with CPU:Unit1|ctrl_unit:Unit0|controller:U0|state.s11b    ;
+; Cache:Unit2|state.s1b                                     ; Merged with Cache:Unit2|state.s0                                  ;
+; Cache:Unit2|state.s1c                                     ; Merged with Cache:Unit2|state.s0                                  ;
+; Cache:Unit2|state.s6b                                     ; Merged with Cache:Unit2|state.s0                                  ;
+; Cache:Unit2|state.s7                                      ; Merged with Cache:Unit2|state.s0                                  ;
+; Cache:Unit2|state.s8                                      ; Merged with Cache:Unit2|state.s0                                  ;
 ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|nextState.S1      ; Merged with CPU:Unit1|ctrl_unit:Unit0|controller:U0|nextState.S0  ;
 ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|nextState.S10     ; Merged with CPU:Unit1|ctrl_unit:Unit0|controller:U0|nextState.S0  ;
 ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|nextState.S11     ; Merged with CPU:Unit1|ctrl_unit:Unit0|controller:U0|nextState.S0  ;
@@ -598,7 +591,6 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Cache:Unit2|CacheController:Unit1|nextState.s0            ; Merged with Cache:Unit2|CacheController:Unit1|nextState.Sdelay    ;
 ; Cache:Unit2|CacheController:Unit1|nextState.s1            ; Merged with Cache:Unit2|CacheController:Unit1|nextState.Sdelay    ;
 ; Cache:Unit2|CacheController:Unit1|nextState.s1b           ; Merged with Cache:Unit2|CacheController:Unit1|nextState.Sdelay    ;
-; Cache:Unit2|CacheController:Unit1|nextState.s1c           ; Merged with Cache:Unit2|CacheController:Unit1|nextState.Sdelay    ;
 ; Cache:Unit2|CacheController:Unit1|nextState.s4            ; Merged with Cache:Unit2|CacheController:Unit1|nextState.Sdelay    ;
 ; Cache:Unit2|CacheController:Unit1|nextState.s5            ; Merged with Cache:Unit2|CacheController:Unit1|nextState.Sdelay    ;
 ; Cache:Unit2|CacheController:Unit1|nextState.s6            ; Merged with Cache:Unit2|CacheController:Unit1|nextState.Sdelay    ;
@@ -606,8 +598,20 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Cache:Unit2|CacheController:Unit1|nextState.s7            ; Merged with Cache:Unit2|CacheController:Unit1|nextState.Sdelay    ;
 ; Cache:Unit2|CacheController:Unit1|nextState.s8            ; Merged with Cache:Unit2|CacheController:Unit1|nextState.Sdelay    ;
 ; Cache:Unit2|CacheController:Unit1|nextState.sReset        ; Merged with Cache:Unit2|CacheController:Unit1|nextState.Sdelay    ;
+; Cache:Unit2|CacheController:Unit1|nextState.sWait         ; Merged with Cache:Unit2|CacheController:Unit1|nextState.Sdelay    ;
+; Cache:Unit2|CacheController:Unit1|nextState.sWriteback2   ; Merged with Cache:Unit2|CacheController:Unit1|nextState.Sdelay    ;
+; Cache:Unit2|CacheController:Unit1|nextState.sWriteback3   ; Merged with Cache:Unit2|CacheController:Unit1|nextState.Sdelay    ;
+; Cache:Unit2|nextState.s0                                  ; Merged with Cache:Unit2|nextState.Sdelay                          ;
 ; Cache:Unit2|nextState.s1                                  ; Merged with Cache:Unit2|nextState.Sdelay                          ;
+; Cache:Unit2|nextState.s1b                                 ; Merged with Cache:Unit2|nextState.Sdelay                          ;
+; Cache:Unit2|nextState.s1c                                 ; Merged with Cache:Unit2|nextState.Sdelay                          ;
+; Cache:Unit2|nextState.s2                                  ; Merged with Cache:Unit2|nextState.Sdelay                          ;
+; Cache:Unit2|nextState.s2a                                 ; Merged with Cache:Unit2|nextState.Sdelay                          ;
 ; Cache:Unit2|nextState.s3                                  ; Merged with Cache:Unit2|nextState.Sdelay                          ;
+; Cache:Unit2|nextState.s6                                  ; Merged with Cache:Unit2|nextState.Sdelay                          ;
+; Cache:Unit2|nextState.s6b                                 ; Merged with Cache:Unit2|nextState.Sdelay                          ;
+; Cache:Unit2|nextState.s7                                  ; Merged with Cache:Unit2|nextState.Sdelay                          ;
+; Cache:Unit2|nextState.s8                                  ; Merged with Cache:Unit2|nextState.Sdelay                          ;
 ; Cache:Unit2|nextState.sDelay2                             ; Merged with Cache:Unit2|nextState.Sdelay                          ;
 ; Cache:Unit2|nextState.sDelay3                             ; Merged with Cache:Unit2|nextState.Sdelay                          ;
 ; Cache:Unit2|nextState.sReset                              ; Merged with Cache:Unit2|nextState.Sdelay                          ;
@@ -616,7 +620,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|state.s11b        ; Stuck at GND due to stuck port data_in                            ;
 ; CPU:Unit1|ctrl_unit:Unit0|PC:U1|tmp_PC[12..15]            ; Lost fanout                                                       ;
 ; Cache:Unit2|nextState.Sdelay                              ; Stuck at GND due to stuck port data_in                            ;
-; Total Number of Removed Registers = 81                    ;                                                                   ;
+; Cache:Unit2|state.s0                                      ; Stuck at GND due to stuck port data_in                            ;
+; Total Number of Removed Registers = 77                    ;                                                                   ;
 +-----------------------------------------------------------+-------------------------------------------------------------------+
 
 
@@ -625,12 +630,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1325  ;
-; Number of registers using Synchronous Clear  ; 5     ;
-; Number of registers using Synchronous Load   ; 13    ;
-; Number of registers using Asynchronous Clear ; 975   ;
+; Total registers                              ; 1313  ;
+; Number of registers using Synchronous Clear  ; 10    ;
+; Number of registers using Synchronous Load   ; 12    ;
+; Number of registers using Asynchronous Clear ; 957   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1134  ;
+; Number of registers using Clock Enable       ; 1152  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -641,24 +646,16 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Inverted Register                                              ; Fan out ;
 +----------------------------------------------------------------+---------+
 ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|Ms_ctrl[1]             ; 19      ;
-; Cache:Unit2|done_write_back                                    ; 8       ;
+; Cache:Unit2|done_write_back                                    ; 2       ;
 ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|PCclr_ctrl             ; 13      ;
-; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[5][3] ; 1       ;
-; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[6][3] ; 1       ;
-; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[4][3] ; 1       ;
-; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[7][3] ; 1       ;
-; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[2][3] ; 1       ;
-; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[1][3] ; 1       ;
-; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[0][3] ; 1       ;
-; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[3][3] ; 1       ;
-; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[5][2] ; 1       ;
-; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[6][2] ; 1       ;
-; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[4][2] ; 1       ;
-; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[7][2] ; 1       ;
-; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[2][2] ; 1       ;
-; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[1][2] ; 1       ;
-; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[0][2] ; 1       ;
-; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[3][2] ; 1       ;
+; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[5][1] ; 1       ;
+; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[6][1] ; 1       ;
+; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[4][1] ; 1       ;
+; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[7][1] ; 1       ;
+; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[2][1] ; 1       ;
+; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[1][1] ; 1       ;
+; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[0][1] ; 1       ;
+; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[3][1] ; 1       ;
 ; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[5][0] ; 1       ;
 ; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[6][0] ; 1       ;
 ; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[4][0] ; 1       ;
@@ -667,14 +664,6 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[1][0] ; 1       ;
 ; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[0][0] ; 1       ;
 ; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[3][0] ; 1       ;
-; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[2][1] ; 1       ;
-; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[1][1] ; 1       ;
-; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[0][1] ; 1       ;
-; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[3][1] ; 1       ;
-; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[5][1] ; 1       ;
-; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[6][1] ; 1       ;
-; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[4][1] ; 1       ;
-; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[7][1] ; 1       ;
 ; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[5][5] ; 1       ;
 ; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[6][5] ; 1       ;
 ; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[4][5] ; 1       ;
@@ -699,6 +688,22 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[1][6] ; 1       ;
 ; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[0][6] ; 1       ;
 ; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[3][6] ; 1       ;
+; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[5][3] ; 1       ;
+; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[6][3] ; 1       ;
+; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[4][3] ; 1       ;
+; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[7][3] ; 1       ;
+; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[2][3] ; 1       ;
+; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[1][3] ; 1       ;
+; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[0][3] ; 1       ;
+; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[3][3] ; 1       ;
+; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[5][2] ; 1       ;
+; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[6][2] ; 1       ;
+; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[4][2] ; 1       ;
+; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[7][2] ; 1       ;
+; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[2][2] ; 1       ;
+; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[1][2] ; 1       ;
+; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[0][2] ; 1       ;
+; Cache:Unit2|CacheController:Unit1|TagMemory:unit1|memory[3][2] ; 1       ;
 ; Cache:Unit2|MainMemory:Unit2|counter[0]                        ; 2       ;
 ; Total number of inverted registers = 60                        ;         ;
 +----------------------------------------------------------------+---------+
@@ -710,33 +715,33 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------+
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0|controller:U0|RFwa_ctrl[3]                 ;
-; 8:1                ; 64 bits   ; 320 LEs       ; 320 LEs              ; 0 LEs                  ; Yes        ; |SimpleCompArch|Cache:Unit2|CacheController:Unit1|DataMemory:unit2|data_block_out[0] ;
+; 8:1                ; 64 bits   ; 320 LEs       ; 320 LEs              ; 0 LEs                  ; Yes        ; |SimpleCompArch|Cache:Unit2|CacheController:Unit1|DataMemory:unit2|data_block_out[8] ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0|PC:U1|tmp_PC[11]                           ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0|PC:U1|tmp_PC[0]                            ;
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; Yes        ; |SimpleCompArch|CPU:Unit1|datapath:Unit1|reg_file:U2|RFr1[3]                         ;
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; Yes        ; |SimpleCompArch|CPU:Unit1|datapath:Unit1|reg_file:U2|RFr2[11]                        ;
-; 32:1               ; 16 bits   ; 336 LEs       ; 336 LEs              ; 0 LEs                  ; Yes        ; |SimpleCompArch|Cache:Unit2|CacheController:Unit1|DataMemory:unit2|data_out[7]       ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |SimpleCompArch|CPU:Unit1|datapath:Unit1|smallmux:U1|Mux1                            ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |SimpleCompArch|CPU:Unit1|datapath:Unit1|smallmux:U1|Mux11                           ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |SimpleCompArch|CPU:Unit1|datapath:Unit1|alu:U3|Mux13                                ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |SimpleCompArch|Cache:Unit2|nextState.sIdle                                          ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0|bigmux:U3|Mux4                             ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0|bigmux:U3|Mux8                             ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0|bigmux:U3|Mux13                            ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; No         ; |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0|controller:U0|nextState.s13a               ;
-; 8:1                ; 7 bits    ; 35 LEs        ; 35 LEs               ; 0 LEs                  ; No         ; |SimpleCompArch|Cache:Unit2|CacheController:Unit1|TagMemory:unit1|Mux2               ;
-; 4:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; No         ; |SimpleCompArch|Cache:Unit2|CacheController:Unit1|nextState.s4                       ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |SimpleCompArch|Cache:Unit2|CacheController:Unit1|state                              ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0|PC:U1|tmp_PC[3]                            ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; Yes        ; |SimpleCompArch|CPU:Unit1|datapath:Unit1|reg_file:U2|RFr1[15]                        ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; Yes        ; |SimpleCompArch|CPU:Unit1|datapath:Unit1|reg_file:U2|RFr2[6]                         ;
+; 32:1               ; 16 bits   ; 336 LEs       ; 336 LEs              ; 0 LEs                  ; Yes        ; |SimpleCompArch|Cache:Unit2|CacheController:Unit1|DataMemory:unit2|data_out[3]       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |SimpleCompArch|CPU:Unit1|datapath:Unit1|smallmux:U1|Mux7                            ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |SimpleCompArch|CPU:Unit1|datapath:Unit1|smallmux:U1|Mux10                           ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |SimpleCompArch|CPU:Unit1|datapath:Unit1|alu:U3|Mux7                                 ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; No         ; |SimpleCompArch|Cache:Unit2|nextState.sIdle                                          ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0|bigmux:U3|Mux5                             ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0|bigmux:U3|Mux11                            ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0|bigmux:U3|Mux14                            ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; No         ; |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0|controller:U0|nextState.S8b                ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |SimpleCompArch|Cache:Unit2|CacheController:Unit1|TagMemory:unit1|Mux3               ;
 ; 6:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; No         ; |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0|controller:U0|Selector18                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |SimpleCompArch|Cache:Unit2|CacheController:Unit1|nextState.s3                       ;
-; 7:1                ; 9 bits    ; 36 LEs        ; 27 LEs               ; 9 LEs                  ; No         ; |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0|controller:U0|Selector43                   ;
-; 12:1               ; 15 bits   ; 120 LEs       ; 60 LEs               ; 60 LEs                 ; No         ; |SimpleCompArch|Cache:Unit2|Selector15                                               ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |SimpleCompArch|Cache:Unit2|Selector2                                                ;
+; 7:1                ; 9 bits    ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; No         ; |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0|controller:U0|Selector33                   ;
+; 7:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |SimpleCompArch|Cache:Unit2|CacheController:Unit1|nextState.sWriteback3              ;
+; 10:1               ; 12 bits   ; 72 LEs        ; 36 LEs               ; 36 LEs                 ; No         ; |SimpleCompArch|Cache:Unit2|Selector0                                                ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |SimpleCompArch|Cache:Unit2|CacheController:Unit1|nextState.s3                       ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 8 LEs                ; 6 LEs                  ; No         ; |SimpleCompArch|Cache:Unit2|CacheController:Unit1|state                              ;
+; 13:1               ; 2 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |SimpleCompArch|Cache:Unit2|CacheController:Unit1|state                              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------+
-; Source assignments for Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_mgu3:auto_generated ;
+; Source assignments for Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_0su3:auto_generated ;
 +---------------------------------+--------------------+------+------------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                   ;
 +---------------------------------+--------------------+------+------------------------------------------------------+
@@ -746,62 +751,62 @@ Note: All latches listed above may not be present at the end of synthesis due to
 
 +-----------------------------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component ;
-+------------------------------------+------------------------+---------------------------------------------+
-; Parameter Name                     ; Value                  ; Type                                        ;
-+------------------------------------+------------------------+---------------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                      ; Untyped                                     ;
-; AUTO_CARRY_CHAINS                  ; ON                     ; AUTO_CARRY                                  ;
-; IGNORE_CARRY_BUFFERS               ; OFF                    ; IGNORE_CARRY                                ;
-; AUTO_CASCADE_CHAINS                ; ON                     ; AUTO_CASCADE                                ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                    ; IGNORE_CASCADE                              ;
-; WIDTH_BYTEENA                      ; 1                      ; Untyped                                     ;
-; OPERATION_MODE                     ; SINGLE_PORT            ; Untyped                                     ;
-; WIDTH_A                            ; 64                     ; Signed Integer                              ;
-; WIDTHAD_A                          ; 10                     ; Signed Integer                              ;
-; NUMWORDS_A                         ; 1024                   ; Signed Integer                              ;
-; OUTDATA_REG_A                      ; UNREGISTERED           ; Untyped                                     ;
-; ADDRESS_ACLR_A                     ; NONE                   ; Untyped                                     ;
-; OUTDATA_ACLR_A                     ; CLEAR0                 ; Untyped                                     ;
-; WRCONTROL_ACLR_A                   ; NONE                   ; Untyped                                     ;
-; INDATA_ACLR_A                      ; NONE                   ; Untyped                                     ;
-; BYTEENA_ACLR_A                     ; NONE                   ; Untyped                                     ;
-; WIDTH_B                            ; 1                      ; Signed Integer                              ;
-; WIDTHAD_B                          ; 1                      ; Signed Integer                              ;
-; NUMWORDS_B                         ; 0                      ; Signed Integer                              ;
-; INDATA_REG_B                       ; CLOCK1                 ; Untyped                                     ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                 ; Untyped                                     ;
-; RDCONTROL_REG_B                    ; CLOCK1                 ; Untyped                                     ;
-; ADDRESS_REG_B                      ; CLOCK1                 ; Untyped                                     ;
-; OUTDATA_REG_B                      ; UNREGISTERED           ; Untyped                                     ;
-; BYTEENA_REG_B                      ; CLOCK1                 ; Untyped                                     ;
-; INDATA_ACLR_B                      ; NONE                   ; Untyped                                     ;
-; WRCONTROL_ACLR_B                   ; NONE                   ; Untyped                                     ;
-; ADDRESS_ACLR_B                     ; NONE                   ; Untyped                                     ;
-; OUTDATA_ACLR_B                     ; NONE                   ; Untyped                                     ;
-; RDCONTROL_ACLR_B                   ; NONE                   ; Untyped                                     ;
-; BYTEENA_ACLR_B                     ; NONE                   ; Untyped                                     ;
-; WIDTH_BYTEENA_A                    ; 1                      ; Signed Integer                              ;
-; WIDTH_BYTEENA_B                    ; 1                      ; Signed Integer                              ;
-; RAM_BLOCK_TYPE                     ; M9K                    ; Untyped                                     ;
-; BYTE_SIZE                          ; 8                      ; Signed Integer                              ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE              ; Untyped                                     ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ   ; Untyped                                     ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ   ; Untyped                                     ;
-; INIT_FILE                          ; matrix_addition-64bits ; Untyped                                     ;
-; INIT_FILE_LAYOUT                   ; PORT_A                 ; Untyped                                     ;
-; MAXIMUM_DEPTH                      ; 0                      ; Signed Integer                              ;
-; CLOCK_ENABLE_INPUT_A               ; BYPASS                 ; Untyped                                     ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL                 ; Untyped                                     ;
-; CLOCK_ENABLE_OUTPUT_A              ; BYPASS                 ; Untyped                                     ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                 ; Untyped                                     ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN        ; Untyped                                     ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN        ; Untyped                                     ;
-; ENABLE_ECC                         ; FALSE                  ; Untyped                                     ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                  ; Untyped                                     ;
-; WIDTH_ECCSTATUS                    ; 3                      ; Signed Integer                              ;
-; DEVICE_FAMILY                      ; Cyclone IV GX          ; Untyped                                     ;
-; CBXI_PARAMETER                     ; altsyncram_mgu3        ; Untyped                                     ;
-+------------------------------------+------------------------+---------------------------------------------+
++------------------------------------+----------------------------+-----------------------------------------+
+; Parameter Name                     ; Value                      ; Type                                    ;
++------------------------------------+----------------------------+-----------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                          ; Untyped                                 ;
+; AUTO_CARRY_CHAINS                  ; ON                         ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS               ; OFF                        ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS                ; ON                         ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                        ; IGNORE_CASCADE                          ;
+; WIDTH_BYTEENA                      ; 1                          ; Untyped                                 ;
+; OPERATION_MODE                     ; SINGLE_PORT                ; Untyped                                 ;
+; WIDTH_A                            ; 64                         ; Signed Integer                          ;
+; WIDTHAD_A                          ; 10                         ; Signed Integer                          ;
+; NUMWORDS_A                         ; 1024                       ; Signed Integer                          ;
+; OUTDATA_REG_A                      ; UNREGISTERED               ; Untyped                                 ;
+; ADDRESS_ACLR_A                     ; NONE                       ; Untyped                                 ;
+; OUTDATA_ACLR_A                     ; CLEAR0                     ; Untyped                                 ;
+; WRCONTROL_ACLR_A                   ; NONE                       ; Untyped                                 ;
+; INDATA_ACLR_A                      ; NONE                       ; Untyped                                 ;
+; BYTEENA_ACLR_A                     ; NONE                       ; Untyped                                 ;
+; WIDTH_B                            ; 1                          ; Signed Integer                          ;
+; WIDTHAD_B                          ; 1                          ; Signed Integer                          ;
+; NUMWORDS_B                         ; 0                          ; Signed Integer                          ;
+; INDATA_REG_B                       ; CLOCK1                     ; Untyped                                 ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                     ; Untyped                                 ;
+; RDCONTROL_REG_B                    ; CLOCK1                     ; Untyped                                 ;
+; ADDRESS_REG_B                      ; CLOCK1                     ; Untyped                                 ;
+; OUTDATA_REG_B                      ; UNREGISTERED               ; Untyped                                 ;
+; BYTEENA_REG_B                      ; CLOCK1                     ; Untyped                                 ;
+; INDATA_ACLR_B                      ; NONE                       ; Untyped                                 ;
+; WRCONTROL_ACLR_B                   ; NONE                       ; Untyped                                 ;
+; ADDRESS_ACLR_B                     ; NONE                       ; Untyped                                 ;
+; OUTDATA_ACLR_B                     ; NONE                       ; Untyped                                 ;
+; RDCONTROL_ACLR_B                   ; NONE                       ; Untyped                                 ;
+; BYTEENA_ACLR_B                     ; NONE                       ; Untyped                                 ;
+; WIDTH_BYTEENA_A                    ; 1                          ; Signed Integer                          ;
+; WIDTH_BYTEENA_B                    ; 1                          ; Signed Integer                          ;
+; RAM_BLOCK_TYPE                     ; M9K                        ; Untyped                                 ;
+; BYTE_SIZE                          ; 8                          ; Signed Integer                          ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                  ; Untyped                                 ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ       ; Untyped                                 ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ       ; Untyped                                 ;
+; INIT_FILE                          ; matrix_addition-64bits.mif ; Untyped                                 ;
+; INIT_FILE_LAYOUT                   ; PORT_A                     ; Untyped                                 ;
+; MAXIMUM_DEPTH                      ; 0                          ; Signed Integer                          ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS                     ; Untyped                                 ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                     ; Untyped                                 ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS                     ; Untyped                                 ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                     ; Untyped                                 ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN            ; Untyped                                 ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN            ; Untyped                                 ;
+; ENABLE_ECC                         ; FALSE                      ; Untyped                                 ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                      ; Untyped                                 ;
+; WIDTH_ECCSTATUS                    ; 3                          ; Signed Integer                          ;
+; DEVICE_FAMILY                      ; Cyclone IV GX              ; Untyped                                 ;
+; CBXI_PARAMETER                     ; altsyncram_0su3            ; Untyped                                 ;
++------------------------------------+----------------------------+-----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -876,7 +881,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Thu Mar 24 19:13:06 2016
+    Info: Processing started: Fri Mar 25 22:42:01 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SimpleCompArch_QII_14 -c SimpleCompArch_QII_14
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file cachecontroller.vhd
@@ -934,7 +939,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
     Info (12022): Found design unit 1: alu-behv
     Info (12023): Found entity 1: alu
 Info (12127): Elaborating entity "SimpleCompArch" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at SimpleCompArch.vhd(52): object "delayReq" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at SimpleCompArch.vhd(60): object "delayReq" assigned a value but never read
 Info (12128): Elaborating entity "CPU" for hierarchy "CPU:Unit1"
 Info (12128): Elaborating entity "ctrl_unit" for hierarchy "CPU:Unit1|ctrl_unit:Unit0"
 Info (12128): Elaborating entity "controller" for hierarchy "CPU:Unit1|ctrl_unit:Unit0|controller:U0"
@@ -980,31 +985,31 @@ Info (12128): Elaborating entity "smallmux" for hierarchy "CPU:Unit1|datapath:Un
 Info (12128): Elaborating entity "reg_file" for hierarchy "CPU:Unit1|datapath:Unit1|reg_file:U2"
 Info (12128): Elaborating entity "alu" for hierarchy "CPU:Unit1|datapath:Unit1|alu:U3"
 Info (12128): Elaborating entity "Cache" for hierarchy "Cache:Unit2"
-Warning (10036): Verilog HDL or VHDL warning at cache.vhd(42): object "Mre_mem" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at cache.vhd(43): object "Mwe_mem" assigned a value but never read
-Warning (10541): VHDL Signal Declaration warning at cache.vhd(51): used implicit default value for signal "address_block_in" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10492): VHDL Process Statement warning at cache.vhd(173): signal "data_out_cpu" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10631): VHDL Process Statement warning at cache.vhd(96): inferring latch(es) for signal or variable "controller_en", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at cache.vhd(96): inferring latch(es) for signal or variable "data_out", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "data_out[0]" at cache.vhd(96)
-Info (10041): Inferred latch for "data_out[1]" at cache.vhd(96)
-Info (10041): Inferred latch for "data_out[2]" at cache.vhd(96)
-Info (10041): Inferred latch for "data_out[3]" at cache.vhd(96)
-Info (10041): Inferred latch for "data_out[4]" at cache.vhd(96)
-Info (10041): Inferred latch for "data_out[5]" at cache.vhd(96)
-Info (10041): Inferred latch for "data_out[6]" at cache.vhd(96)
-Info (10041): Inferred latch for "data_out[7]" at cache.vhd(96)
-Info (10041): Inferred latch for "data_out[8]" at cache.vhd(96)
-Info (10041): Inferred latch for "data_out[9]" at cache.vhd(96)
-Info (10041): Inferred latch for "data_out[10]" at cache.vhd(96)
-Info (10041): Inferred latch for "data_out[11]" at cache.vhd(96)
-Info (10041): Inferred latch for "data_out[12]" at cache.vhd(96)
-Info (10041): Inferred latch for "data_out[13]" at cache.vhd(96)
-Info (10041): Inferred latch for "data_out[14]" at cache.vhd(96)
-Info (10041): Inferred latch for "data_out[15]" at cache.vhd(96)
-Info (10041): Inferred latch for "controller_en" at cache.vhd(96)
+Warning (10036): Verilog HDL or VHDL warning at cache.vhd(46): object "Mre_mem" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at cache.vhd(47): object "Mwe_mem" assigned a value but never read
+Warning (10541): VHDL Signal Declaration warning at cache.vhd(55): used implicit default value for signal "address_block_in" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10492): VHDL Process Statement warning at cache.vhd(192): signal "data_out_cpu" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at cache.vhd(100): inferring latch(es) for signal or variable "controller_en", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at cache.vhd(100): inferring latch(es) for signal or variable "data_out", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "data_out[0]" at cache.vhd(100)
+Info (10041): Inferred latch for "data_out[1]" at cache.vhd(100)
+Info (10041): Inferred latch for "data_out[2]" at cache.vhd(100)
+Info (10041): Inferred latch for "data_out[3]" at cache.vhd(100)
+Info (10041): Inferred latch for "data_out[4]" at cache.vhd(100)
+Info (10041): Inferred latch for "data_out[5]" at cache.vhd(100)
+Info (10041): Inferred latch for "data_out[6]" at cache.vhd(100)
+Info (10041): Inferred latch for "data_out[7]" at cache.vhd(100)
+Info (10041): Inferred latch for "data_out[8]" at cache.vhd(100)
+Info (10041): Inferred latch for "data_out[9]" at cache.vhd(100)
+Info (10041): Inferred latch for "data_out[10]" at cache.vhd(100)
+Info (10041): Inferred latch for "data_out[11]" at cache.vhd(100)
+Info (10041): Inferred latch for "data_out[12]" at cache.vhd(100)
+Info (10041): Inferred latch for "data_out[13]" at cache.vhd(100)
+Info (10041): Inferred latch for "data_out[14]" at cache.vhd(100)
+Info (10041): Inferred latch for "data_out[15]" at cache.vhd(100)
+Info (10041): Inferred latch for "controller_en" at cache.vhd(100)
 Info (12128): Elaborating entity "CacheController" for hierarchy "Cache:Unit2|CacheController:Unit1"
-Warning (10036): Verilog HDL or VHDL warning at cacheController.vhd(68): object "blockReplaced" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at cacheController.vhd(69): object "blockReplaced" assigned a value but never read
 Info (12128): Elaborating entity "TagMemory" for hierarchy "Cache:Unit2|CacheController:Unit1|TagMemory:unit1"
 Info (12128): Elaborating entity "DataMemory" for hierarchy "Cache:Unit2|CacheController:Unit1|DataMemory:unit2"
 Warning (10492): VHDL Process Statement warning at DataMemory.vhd(49): signal "data_block" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
@@ -1051,7 +1056,7 @@ Info (12133): Instantiated megafunction "Cache:Unit2|MainMemory:Unit2|altsyncram
     Info (12134): Parameter "indata_aclr_a" = "UNUSED"
     Info (12134): Parameter "indata_aclr_b" = "NONE"
     Info (12134): Parameter "indata_reg_b" = "CLOCK1"
-    Info (12134): Parameter "init_file" = "matrix_addition-64bits"
+    Info (12134): Parameter "init_file" = "matrix_addition-64bits.mif"
     Info (12134): Parameter "init_file_layout" = "PORT_A"
     Info (12134): Parameter "maximum_depth" = "0"
     Info (12134): Parameter "numwords_a" = "1024"
@@ -1081,23 +1086,29 @@ Info (12133): Instantiated megafunction "Cache:Unit2|MainMemory:Unit2|altsyncram
     Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_mgu3.tdf
-    Info (12023): Found entity 1: altsyncram_mgu3
-Info (12128): Elaborating entity "altsyncram_mgu3" for hierarchy "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_mgu3:auto_generated"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_0su3.tdf
+    Info (12023): Found entity 1: altsyncram_0su3
+Info (12128): Elaborating entity "altsyncram_0su3" for hierarchy "Cache:Unit2|MainMemory:Unit2|altsyncram:altsyncram_component|altsyncram_0su3:auto_generated"
 Info (12128): Elaborating entity "obuf" for hierarchy "obuf:Unit3"
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13049): Converted tri-state buffer "Cache:Unit2|CacheController:Unit1|TagMemory:unit1|hit" feeding internal logic into a wire
 Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
-    Info (13026): Duplicate LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[0]" merged with LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[0]"
-    Info (13026): Duplicate LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[1]" merged with LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[1]"
-    Info (13026): Duplicate LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[2]" merged with LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[2]"
-    Info (13026): Duplicate LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[3]" merged with LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[3]"
-    Info (13026): Duplicate LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[4]" merged with LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[4]"
-    Info (13026): Duplicate LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[5]" merged with LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[5]"
-    Info (13026): Duplicate LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[6]" merged with LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[6]"
-    Info (13026): Duplicate LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[7]" merged with LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[7]"
+    Info (13026): Duplicate LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[0]" merged with LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[0]"
+    Info (13026): Duplicate LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[1]" merged with LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[1]"
+    Info (13026): Duplicate LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[2]" merged with LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[2]"
+    Info (13026): Duplicate LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[3]" merged with LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[3]"
+    Info (13026): Duplicate LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[4]" merged with LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[4]"
+    Info (13026): Duplicate LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[5]" merged with LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[5]"
+    Info (13026): Duplicate LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[6]" merged with LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[6]"
+    Info (13026): Duplicate LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[7]" merged with LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[7]"
 Warning (13012): Latch Cache:Unit2|controller_en has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal Cache:Unit2|CacheController:Unit1|state_d[3]
+Warning (13012): Latch Cache:Unit2|MainMemory:Unit2|blockAddress[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Cache:Unit2|write_to_mem
+Warning (13012): Latch Cache:Unit2|MainMemory:Unit2|blockAddress[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Cache:Unit2|write_to_mem
+Warning (13012): Latch Cache:Unit2|MainMemory:Unit2|blockAddress[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Cache:Unit2|write_to_mem
 Warning (13012): Latch Cache:Unit2|MainMemory:Unit2|blockAddress[3] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal Cache:Unit2|write_to_mem
 Warning (13012): Latch Cache:Unit2|MainMemory:Unit2|blockAddress[4] has unsafe behavior
@@ -1630,17 +1641,17 @@ Warning (13004): Presettable and clearable registers converted to equivalent cir
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "state_cpu[10]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 23 registers lost all their fanouts during netlist optimizations.
+Info (17049): 5 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 4929 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4990 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 188 output pins
-    Info (21061): Implemented 4675 logic cells
+    Info (21059): Implemented 278 output pins
+    Info (21061): Implemented 4646 logic cells
     Info (21064): Implemented 64 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 551 warnings
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 557 warnings
     Info: Peak virtual memory: 586 megabytes
-    Info: Processing ended: Thu Mar 24 19:13:17 2016
+    Info: Processing ended: Fri Mar 25 22:42:12 2016
     Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:10
 
