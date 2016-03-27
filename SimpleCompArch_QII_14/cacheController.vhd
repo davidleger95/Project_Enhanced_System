@@ -5,48 +5,34 @@ use work.MP_lib.all;
 
 entity CacheController is
 port (
-		clock_en				:in std_logic;
-		clock					: in std_logic;
-		reset					: in std_LOGIC;
-		MreIn					:	in STD_LOGIC;
-		MweIn					:	in STD_LOGIC;
-		addressIN			:	in STD_LOGIC_VECTOR(11 downto 0);
-		addressOUT			:  out STD_LOGIC_VECTOR (11 downto 0);
-		data_in				:  in STD_LOGIC_VECTOR(15 downto 0);
-		data_out_cpu		:  out STD_LOGIC_VECTOR(15 downto 0);
-		replaceStatusIn   :  in std_logic; 
-		replaceStatusOut  :  out std_logic;
-		data_block_in     :  in std_logic_vector(63 downto 0);
-		address_block_in  :  in std_logic_vector(11 downto 0);
-		delayReq				: out std_logic;
-		done_out             : out std_logic;
-		data_block_out     : out std_logic_vector(63 downto 0);
-		send_block_out_mem     : out std_logic;
-		done_write_back     : in std_logic;
-		blockAddressOut : out std_logic_vector(9 downto 0); 
-		
-		----debug lines
---		 read_data_d : out std_logic; 
--- write_data_d : out std_logic;
--- write_tag_d :  out std_logic;
--- read_tag_d : out std_logic;
--- write_block_d:  out std_logic;
+	clock_en				:in std_logic;
+	clock					: in std_logic;
+	reset					: in std_LOGIC;
+	MreIn					:	in STD_LOGIC;
+	MweIn					:	in STD_LOGIC;
+	addressIN			:	in STD_LOGIC_VECTOR(11 downto 0);
+	addressOUT			:  out STD_LOGIC_VECTOR (11 downto 0);
+	data_in				:  in STD_LOGIC_VECTOR(15 downto 0);
+	data_out_cpu		:  out STD_LOGIC_VECTOR(15 downto 0);
+	replaceStatusIn   :  in std_logic; 
+	replaceStatusOut  :  out std_logic;
+	data_block_in     :  in std_logic_vector(63 downto 0);
+	address_block_in  :  in std_logic_vector(11 downto 0);
+	delayReq				: out std_logic;
+	done_out             : out std_logic;
+	data_block_out     : out std_logic_vector(63 downto 0);
+	send_block_out_mem     : out std_logic;
+	done_write_back     : in std_logic;
+	blockAddressOut : out std_logic_vector(9 downto 0); 
 
- tempDataIn_d : out std_logic_vector(15 downto 0);
-tempDataOut_d : out std_logic_vector(15 downto 0);
-tagIndex_d: out std_logic_vector(6 downto 0);
-lineIndex_d: out std_logic_vector(2 downto 0);
----- wordIndex_d: out std_logic_vector(1 downto 0);
--- hit_d: out STD_LOGIC; 
---send_block_out_d : out std_logic;
---tag_enable_d: out std_logic;
--- data_enable_d: out std_logic;
--- blockReplaced_d: out std_logic;
----- read_var_d :out std_logic;
----- write_var_d :out std_logic;
-state_d : out std_logic_vector(3 downto 0);
-slowClock : in std_logic	
-		);
+	tempDataIn_d : out std_logic_vector(15 downto 0);
+	tempDataOut_d : out std_logic_vector(15 downto 0);
+	tagIndex_d: out std_logic_vector(6 downto 0);
+	lineIndex_d: out std_logic_vector(2 downto 0);
+	
+	state_d : out std_logic_vector(3 downto 0);
+	slowClock : in std_logic	
+	);
 		
 end CacheController;
 
@@ -89,9 +75,7 @@ lineIndex <= addressIN(4 downto 2);
 wordIndex <= addressIN (1 downto 0);
 send_block_out_mem <= send_block_out;
 done_out <= done;
-	
 
- 
 unit1 : TagMemory port map(tag_enable, clock, reset, 
 tagIndex, hit, lineIndex, write_tag, tag_out, read_tag);
 unit2 : DataMemory port map(data_enable, clock, reset,
@@ -102,7 +86,6 @@ process (clock, reset)
 
 	
 begin 
-			
 	if (reset = '1')then
 		write_tag <= '0';
 		--data_enable <='1';
@@ -115,14 +98,8 @@ begin
 --		read_var <= MreIn;
 --		write_var <= MweIn;
 	else
---	if (clock_en = '1') then
-	
 		if (rising_edge(clock)) then
-			
-			
---			if (done_write_back = '1') then 
---				send_block_out <= '0';
---			end if;
+
 			if (clock_en = '1') then
 				tag_enable <='1';
 				data_enable <= hit;
@@ -166,7 +143,7 @@ begin
 --					write_data <= write_var;
 					state <= s1;
 						
-				when s1 => ----check if theres a hit or miss
+				when s1 => --check if theres a hit or miss
 					state_d <= "0001";
 
 					read_data <= MreIn;
@@ -265,15 +242,9 @@ begin
 					
 				when s7 => -- check if block was replaced;
 					state_d <= "1010";
---					if (blockReplaced ='1') then 
-						
-						data_enable <= '1';--enable the dataMemory
-						state <= s8;
---						read_data <= read_in;
---						write_data <= write_in;
---					else 
---						state <= s7;
---					end if;
+					data_enable <= '1';--enable the dataMemory
+					state <= s8;
+--			
 				when s8 => --read or write the new block;
 					state_d <= "1011";
 						if ((read_data = '1') and (write_data ='0')) then
@@ -324,27 +295,12 @@ begin
 				data_enable <= '0';
 			end if;
 		end if;
---		else 
---		state <= sReset;
---		end if;
 		end if;
 	end process;
 
---	read_data_d <= read_data;
--- write_data_d <= write_data;
--- write_tag_d <= write_tag;
--- read_tag_d <= read_tag;
--- write_block_d <= write_block;
--- 
  tempDataIn_d <=	tempDataIn;
 tempDataOut_d <= tempDataOut;
  tagIndex_d <= tagIndex;
  lineIndex_d <= lineIndex;
----- wordIndex_d <= wordIndex;
---
--- hit_d <= hit;
--- send_block_out_d <= send_block_out;
---tag_enable_d <= tag_enable;
--- data_enable_d <= data_enable;
--- blockReplaced_d <=blockReplaced;
+
 end behav;
